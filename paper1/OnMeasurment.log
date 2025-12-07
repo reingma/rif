@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2025.2.1)  1 DEC 2025 03:24
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2025.2.1)  7 DEC 2025 03:06
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -594,16 +594,13 @@ LaTeX Warning: Citation `Williams' on page 2 undefined on input line 126.
 
 [2]
 
-LaTeX Warning: Citation `' on page 3 undefined on input line 183.
-
-
-Package amsfonts Warning: Obsolete command \bold; \mathbf should be used instead on input line 198.
+Package amsfonts Warning: Obsolete command \bold; \mathbf should be used instead on input line 214.
 
 
 
 [3]
 
-LaTeX Warning: Citation `Abramsky&Brandenburger' on page 4 undefined on input line 245.
+LaTeX Warning: Citation `Abramsky&Brandenburger' on page 4 undefined on input line 253.
 
 
 
@@ -611,35 +608,36 @@ LaTeX Warning: Citation `Abramsky&Brandenburger' on page 4 undefined on input li
 
 [5]
 
-LaTeX Warning: Citation `Abramsky&Brandenburger' on page 6 undefined on input line 371.
+LaTeX Warning: Citation `Abramsky&Brandenburger' on page 6 undefined on input line 377.
+
+
+LaTeX Warning: Citation `Abramsky&Brandenburger' on page 6 undefined on input line 378.
+
+
+LaTeX Warning: Citation `Abramsky&Brandenburger' on page 6 undefined on input line 387.
 
 
 
 [6]
 
+LaTeX Warning: Citation `Abramsky&Brandenburger' on page 7 undefined on input line 426.
+
+
+LaTeX Warning: Citation `Kochen-Specker' on page 7 undefined on input line 428.
+
+
+
 [7]
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 495.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\sigma' on input line 495.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 495.
-
-
-LaTeX Warning: Citation `Abramsky&Brandenburger' on page 8 undefined on input line 517.
-
-
 
 [8]
 
 [9]
 
-[10] (./OnMeasurment.aux)
+[10]
+
+[11]
+
+[12] (./OnMeasurment.aux)
  ***********
 LaTeX2e <2024-11-01> patch level 2
 L3 programming layer <2025-01-18>
@@ -649,21 +647,21 @@ L3 programming layer <2025-01-18>
 LaTeX Warning: There were undefined references.
 
 Package rerunfilecheck Info: File `OnMeasurment.out' has not changed.
-(rerunfilecheck)             Checksum: 205D9B6277F068719BA3CF2D0FCE07D8;5258.
+(rerunfilecheck)             Checksum: B4B71B4E2904E639AE121D50278C464B;4481.
  ) 
 Here is how much of TeX's memory you used:
- 15962 strings out of 473795
- 261572 string characters out of 5727276
- 742542 words of memory out of 5000000
- 38770 multiletter control sequences out of 15000+600000
- 574976 words of font info for 149 fonts, out of 8000000 for 9000
+ 15987 strings out of 473795
+ 261815 string characters out of 5727276
+ 741542 words of memory out of 5000000
+ 38773 multiletter control sequences out of 15000+600000
+ 576624 words of font info for 161 fonts, out of 8000000 for 9000
  695 hyphenation exceptions out of 8191
  79i,7n,93p,1009b,625s stack positions out of 10000i,1000n,20000p,200000b,200000s
-</usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmbsy10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cmextra/cmex8.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt12.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/rsfs/rsfs10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/cm-super/sfrm1095.pfb>
-Output written on OnMeasurment.pdf (10 pages, 275724 bytes).
+</usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmbsy10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cmextra/cmex8.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmti8.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt12.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/rsfs/rsfs10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/cm-super/sfrm1095.pfb>
+Output written on OnMeasurment.pdf (12 pages, 279857 bytes).
 PDF statistics:
- 350 PDF objects out of 1000 (max. 8388607)
- 291 compressed objects within 3 object streams
+ 347 PDF objects out of 1000 (max. 8388607)
+ 286 compressed objects within 3 object streams
  85 named destinations out of 1000 (max. 500000)
- 31481 words of extra memory for PDF output out of 35830 (max. 10000000)
+ 35553 words of extra memory for PDF output out of 35830 (max. 10000000)
 

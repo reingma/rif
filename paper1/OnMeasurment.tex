@@ -110,7 +110,7 @@ We extend this principle.
 \textbf{Relativity of Information Frames (RIF)}
 
 Nature does not favor one perspective over another. Nature is the same no matter the
-observer frame of information.
+frame of information.
 \end{center}
 
 \end{principlebox}
@@ -131,7 +131,7 @@ only this crude introduction but familiarity with the subject is advised.
 \subsubsection*{$\sigma$-algebras}
 \subsubsection*{Probability Measure}
 \subsubsection*{Probability Spaces}
-Throughout this paper, we will often not be using specific probability measures, often
+Throughout this paper, we will often not be using specific probability measures, 
 working only with the sample space and the $\sigma$-algebras.
 \subsubsection*{Measurable Functions}
 \subsubsection*{Pushfoward Measure}
@@ -153,13 +153,20 @@ how different probability spaces interact.
             \]
         \item For every fixed $A \in \mathcal F_2$
             \[
-                K(\cdot, A) \text{ is a measurable function } \Omega_1 \to \bigl([0,1],\mathcal B\left([0,1]\right)\bigr)
+                K(\cdot, A) \text{ is a measurable function } \Omega_1 \to
+                \left([0,1],\mathcal B\left([0,1]\right)\right)
             \]
     \end{itemize}
+    \noindent
+    The idea is that Markov Kernels define probability measures on the target space that
+    respect the structure of the source space. It is often written $K: \Omega_1 \to 
+    \mathcal P(\Omega_2)$ to say, a Kernel that defines probabilities on $\Omega_2$ from
+    $\Omega_1$.
 \end{definition}
-One important use of Markov Kernels we will need is its pushfoward measure:
+Markov Kernels allow us to define probability measures on the target space from measures
+on the source.
 \begin{definition}[Markov Pushfoward Measure]
-    Given the measurable spaces and Kernel on the definition 3~4. Let $\mu$ be a probability 
+    Given the measurable spaces and Kernel on the Definition 3~4. Let $\mu$ be a probability 
     measure on $\Omega_1$. The \emph{pushfoward measure} given by the Kernel
     \[
         (\mu K) (A) := \int_{\Omega_1} K(\omega, A) \,\mu (dx), \qquad A \in \mathcal F_2
@@ -168,20 +175,29 @@ One important use of Markov Kernels we will need is its pushfoward measure:
     And it is a probability measure on $\mathcal F_2$.
 \end{definition}
 
-The other piece that will be important for this theory is:
-\begin{theorem}[DPI for KL-Divergence in Markov Kernels]
-    Every Markov Kernel safisfies the \emph{data processing inequality} for KL-Divergence.
-    Let $\mu$, $\nu$ be probability measures on $(\Omega_1, \mathcal F_1)$ and 
-    $K: \Omega_1 \to \Omega_2$ be a Markov Kernel. Then:
+And finally, we also need to look at the definition of a 
+\emph{effective $\sigma$-algebra} of a Markov Kernel.
+\begin{definition}[Effective $\sigma$-algebra of K]
+    For a Kernel $K: \left(\Omega_1,\mathcal F_1\right) \to
+    \left(\Omega_2,\mathcal F_2\right)$. The effective sigma algebra of 
+    $K$ is given by:
     \[
-        D_{KL}(\mu K || \nu K) \leq D_{KL}(\mu || \nu)
+        \mathcal F_K := \sigma\left\{\omega \to K(\omega,A) 
+        \mid A \in \mathcal F\right\}
     \]
     \noindent
-    Meaning we only lose or retain KL-distinguishbility by applying Markov Kernels.
-\end{theorem}
-\begin{proof}
-This theorem is prove in \cite{}.
-\end{proof}
+    That is, the algebra of all random variables that $K$ generates. It can also be seen
+    as the algebra of events of $\Omega_1$ that remain distinguishable after passing 
+    through $K$.
+\end{definition}
+\subsubsection*{Composition of Markov Kernels}
+Markov Kernels compose, in particular if $K_1: \Omega_1 \to \mathcal P(\Omega_2)$ and
+$K_2: \Omega_2 \to \mathcal P(\Omega_3)$ are Markov Kernels. Then their composite is
+given for $A \in \mathcal F_3$:
+\[
+    \left(K_2 \circ K_1\right)(x,A) := \int_{\Omega_2} K_2(y,A) d K_1(x,\cdot)
+\]
+And naturally defines probability measures on $\Omega_3$.
 \subsubsection*{Deterministic Markov Kernels}
 These are a special class of Markov Kernels that can act as transport structure from one 
 probability space to another.
@@ -200,7 +216,7 @@ probability space to another.
 
 \end{definition}
 The function $f$ can be seen as the transport from one probability space into another. The
-Kernel then, induces a probability measure in the target space.
+Kernel then, allows us to pushfoward probability measures from it.
 \subsubsection*{Embeddings}
 As we have seen, we can use a measurable function $f: \Omega_1 \to \Omega_2$ to define
 a Markov Kernel. The Markov Kernel then allows us to transport probabilities to the new
@@ -213,33 +229,25 @@ a full \emph{isomorphism} of spaces:
     inverse $T^{-1}: \Omega_2 \to \Omega_1$ is also measurable defines a \emph{isomorphism}
     of probability spaces:
     \[
-        \bigl(\Omega_1, \mathcal F_1\bigr) \cong \bigl(\Omega_2, \mathcal F_2\bigr)
+        \left(\Omega_1, \mathcal F_1\right) \cong \bigl(\Omega_2, \mathcal F_2\bigr)
     \]
 \end{definition}
 Naturally such bijections form a group:
 \begin{definition}[Measurable Space Automorphisms]
 \[
-    \text{Aut}_{\Omega,\mathcal F} := \bigl\{T: \Omega \to \Omega 
-    \text{ is bijective, } T\text{ and }T^{-1}\text{ are measurable }\bigr\}
+    \text{Aut}_{\Omega,\mathcal F} := \left\{T: \Omega \to \Omega 
+    \text{ is bijective, } T\text{ and }T^{-1}\text{ are measurable }\right\}
 \]
 \end{definition}
 These maps preserve the full structure of the measurable space, for our work we will need
 a class that still preserves structure but can embed the measurable space into a larger
 one.
 \begin{definition}[Measurable Embedding]
-    A measurable embedding $i: \Omega_1 \to \Omega_2$ is a \emph{injective} measurable
-    function with a measurable inverse.
+    A measurable embedding $\iota: \Omega_1 \to \Omega_2$ is a \emph{injective} measurable
+    function with a measurable inverse. It can also be seen as a local homomorphism.
 \end{definition}
 These embeddings preserve the $\sigma$-algebra of the source space entirely in the target
 space.
-\subsubsection*{Quocient of $\sigma$-algebras}
-We now look at the construction of the \emph{Quocient} measurable space. For the rest of
-this section we work on the probability space $\bigl(\Omega, \mathcal F\bigr)$.
-
-First we must have a equivalence relation on $\Omega$, points in $\Omega$ we cannot 
-distinguish.
-
-%TODO: Continue here.
 \subsection{Contextuality}
 The first important concept the theory relies upon is that of contextuality. All our
 definitions here are translated from the \cite{Abramsky&Brandenburger} contextuality
@@ -263,12 +271,14 @@ Then naturally, our global space, where all measurament labels exist is then:
 \begin{definition}[Global Space]
     The global space, the space of all degrees of freedom and all their distinctions is 
     \[
-        \bigl(\Omega_{\mathcal M}, \mathcal F_{\mathcal M}\bigr) = 
-        \bigl(\prod_{m \in \mathcal M} \Omega_m \;, \bigotimes_{m \in \mathcal M} 
-        \mathcal F_m \bigr)
+        \left(\Omega_{\mathcal M}, \mathcal F_{\mathcal M}\right) = 
+        \left(\prod_{m \in \mathcal M} \Omega_m \;, \bigotimes_{m \in \mathcal M} 
+        \mathcal F_m \right)
     \]
     \noindent
-    We note that, we do not define a particular probability measure on this space, that
+    Where $\mathcal F_1 \otimes \mathcal F_2 = 
+    \sigma\left(\left\{F_1 \times F_2: F_1 \in \mathcal F_1, F_2 \in 
+    \mathcal F_2\right\}\right)$. We note that, we do not define a particular probability measure on this space, that
     is because what we are interested in at the moment is the structure of the space,
     not a specfic measure on it.
 \end{definition}
@@ -287,10 +297,6 @@ with.
         (\Omega_{C}, \mathcal F_{C}) := \left(\prod_{m \in C}
         \Omega_m \;, \bigotimes_{m \in C} \mathcal F_m \right)
     \]
-    \noindent
-    Where $\mathcal F_1 \otimes \mathcal F_2 = 
-    \sigma\bigl(\left\{F_1 \times F_2: F_1 \in \mathcal F_1, F_2 \in 
-    \mathcal F_2\right\}\bigr)$
 \end{definition}
 
 Within a context we also define the projections:
@@ -302,7 +308,7 @@ Within a context we also define the projections:
 \]
 With:
 \[
-    \pi_{C \to \{m\}}\bigl(\omega\bigr) = \omega_m \quad \forall \omega \in C
+    \pi_{C \to \{m\}}\left(\omega\right) = \omega_m \quad \forall \omega \in C
 \]
 \noindent
 That is, the projections map to the context corresponding to the label $m$ within
@@ -334,11 +340,11 @@ particular realization of a \emph{perspective} on the underlying world.
 We can also think of it as a particular family of \emph{coodinates} in the probability 
 spaces of the contexts.
 \begin{definition}[Empirical model]
-    An \emph{empirical model} is a family $\bigl\{e_C \bigr\}_{ C \in \mathcal M}$ 
-    of probability measures on $\bigl(\Omega_C, \mathcal F_C\bigr)$. 
+    An \emph{empirical model} is a family $\left\{e_C \right\}_{ C \in \mathcal M}$ 
+    of probability measures on $\left(\Omega_C, \mathcal F_C\right)$. 
     For all $C,C' \in \mathcal M$ and all $D \in C \cap C'$ we have:
     \[
-        \bigl(\pi_{C \to D}\bigr)_* e_C \; = \; \bigl(\pi_{C' \to D}\bigr)_* e_{C'}
+        \left(\pi_{C \to D}\right)_* e_C \; = \; \left(\pi_{C' \to D}\right)_* e_{C'}
     \]
     This condition means that on overlaps, the probability measures must agree. They
     come from the same underlying labels.
@@ -350,11 +356,11 @@ framework. It is the defintion of \emph{Contextuality}. When \emph{perspectives}
 only completly exist on the context they came from.
 
 \begin{definition}[Contextuality]
-    The family $\bigl\{e_{E} \bigr\}_{ E \in \mathcal M}$ is called contextual 
+    The family $\left\{e_{E} \right\}_{ E \in \mathcal M}$ is called contextual 
     in $\mathcal M$ if no probability measure $\mu$ on the global space $\mathcal M$ 
     exists satisfying:
     \[
-        \bigl(\pi_{C \to E}\bigr)_* \mu \; = e_{E} \quad \forall E \subset \mathcal M
+        \left(\pi_{C \to E}\right)_* \mu \; = e_{E} \quad \forall E \subset \mathcal M
     \]
     \noindent
     They are called non-contextual, if such probability measure exists.
@@ -368,242 +374,232 @@ on the global space that agrees with all probabilities the contexts of that spac
 
 The core feature we will need here is that, there exists experiments or real situations
 where the global space is contextual this fact can be seen in depth in 
-\cite{Abramsky&Brandenburger}. 
-
-These are the pieces from sheaf-theory contextuality, adapted to measure theory which 
-we require.
+\cite{Abramsky&Brandenburger}. This particular definition, is of probabilistic 
+contextuality as defined on \cite{Abramsky&Brandenburger}.
 \section{Structural Contextuality}
-To define RIF precisely we need to modify contextuality. As it stands, contextuality 
-relies on a specific \emph{empirical model} realization. It can be thought of specific
-coordinate assigment on the probability spaces.
+To get a better understanding on RIF we need to look at other formulations of 
+contextuality. We want to understand contextuality without particular probability 
+distributions.
 
-We wish to define contextuality from only the structure of the probability spaces. That
-is, their $\sigma$-algebras.
-\section{The Relativity Of Information Frames}
-With the required concepts now in place, we are able to make RIF's definition precise.
-\subsection{Information Frames}
-Information frames are the only ontic objects in RIF. Intuitively a information frame 
-in RIF represents a system and its perspective, what distinctions it can make about 
-the model, or interaction, we are describing.
+
+For this, we adapt the sheaf like condition, than just the failure of probabilities to
+have the correct marginals, this in particular matches the \emph{strong contextuality} 
+defined in \cite{Abramsky&Brandenburger}. First we define a \emph{Information Frame}.
 
 \begin{definition}[Information Frame]
-    Given a context $C$ and a perspective $\sigma (e)$ its information frame is:
+    A information frame is a probability space over a context $C \subseteq \mathcal M$ 
+    with a particular event algebra 
+    $\mathcal F \subseteq \bigotimes_{m \in C} \mathcal F_m$ corresponding to the set
+    of distinctions that frame can see about the labels $m$.
     \[
-        \mathscr I_{C, e} = \bigl(\Omega_C, \sigma(e), e \bigr)
+        \mathscr I_{C, \mathcal F} := \left(\prod_{m \in C} \Omega_m, \mathcal F\right)
     \]
-\noindent
-Naturally $\sigma(e)$ is a sub-$\sigma$-algebra of the context total $\sigma$-algebra.
+    \noindent
+    A information frame could be seen as a perspective on the world. A view of what it
+    can in principle see about a system. A probability measure there represents a 
+    particular state of the world. For notation convinience we will use 
+    $\mathscr I_1 = \mathscr I_{C1, \mathcal F_1}$
 \end{definition}
 
-We will often omit the probability measure $e$ in our constructions.
+In general, Information Frames are defined on the support of some probability measure,
+meaning we get rid of events that a context does not see as possible. \begin{definition}[Structural Contextuality]
+    Given a family of contexts $\mathcal C$ of $\mathcal M$ and corresponding 
+    information frames $\mathscr I_{C, \mathcal F_C}$ and a global space 
+    $\left(\Omega, \mathcal F\right)$. 
 
-We note that, we will be using the projections on information frames. This is because,
-you can always project it to the information frame with 
-$\mathbb E\bigl(\pi_{C\to \{m\}}\mid \, \mathcal F\bigr)$.
+    The family is said to be \emph{structuraly non-contextual} if there is a family of 
+    corresponding \emph{embeddings} and some sub-$\sigma$-algebra 
+    $\mathcal G \subseteq \mathcal F$ such that:
+    \[
+        \iota_{C \in \mathcal C}: \mathscr I_{C, \mathcal F_C} \to 
+        \left(\Omega, \mathcal G\right)
+    \]
+    Such that for every pair $C,C'$ and every event 
+    $E \in \mathcal F_C \cap \mathcal F_{C'}$, that is events on shared labels, we have:
+    \[
+        \iota_C(E) = \iota_{C'}(E)
+    \]
+    \noindent
+    If no such embedding exists then the family is called \emph{structuraly contextual}.
+\end{definition}
 
-Also, when we are talking about $\mathcal F_m$ of a label $m \in C$ for a information 
-frame, we are potentially talking about a sub $\sigma$-algebra of $\mathcal F_m$.
+The existence of \emph{strong contextuality} as seem in \cite{Abramsky&Brandenburger} 
+guarantees structural contextuality also exists, in particular the results in 
+\cite{Kochen-Specker} show that, if we try to keep the full $\sigma$-algebra event structure, 
+structural contextuality will eventually happen. This shows contextuality is 
+essentially inevitable in sufficiently complex logics.
+\section{The Relativity Of Information Frames}
+\subsection{Interaction}
+Now we work on making precise the meaning of the \emph{Relativity of Information Frames}, 
+RIF, for short. To do so, the central objects of study will be \emph{Information Frames} as
+in defintion 4~.1. Information frames are the only ontic objects in this theory, 
+everything works on their interactions.
 
-For convinience of notation, when the frames perspective is not important, we 
-may omit it.
-\subsection{Admissible Maps: Invertable Deterministic Channels.}
-\begin{definition}[Admissible Map]
-An admissible map is a Markov Kernel that acts on information frames
-$K: \mathscr I_{C, e} \to  \left(\Omega, \mathcal F \right)$ 
-and preserve perspectives. They are invertable deterministic channels, 
-they do not change what distinctions a system makes.
-
-Formally, let $\bigl(\Omega_C \cross \Omega_Z, \mathcal F_C \otimes \mathcal F_Z\bigr)$ 
-be such space. Then there exists a injective measurable $f: \Omega_C \to \Omega_Z$ whose
-inverse $f^{-1}$ is also measurable in its natural domain $f(\Omega_C)$ for which:
+We now turn our attetion to making the definition of interaction precise. 
+The first step is to define the \emph{Joint Frame}. A information frame where 
+the interaction takes place. Before this we will note that when we write:
 \[
-    K(\omega, \cdot) = \delta_{(\omega,f(\omega))} \quad \forall \omega \in \Omega_C
+    \iota(\mathcal F_C) := \mathcal G 
 \]
-\noindent
-And they preserve $KL-$Divergence exactly.
-\end{definition}
-It is work noting that here the codomain may be larger. All we require is that there is
-a subspace that can hold all distinctions consistently.
-
-Intuitively, all perspectives that generate the same set of distinctions are treated as 
-just relabeling of that perspective. Such maps in fact, define a 
-symmetry when mapping to the same space.
-\begin{definition}[The Symmetry Of Perspectives]
-    When mapping from $\mathscr I_{C,e} \to \mathscr I_{C,e}$ the admissible maps form
-    a symmetry group. In classic probability and information theory this group is called
-    the \emph{automorphism group of the probability space}. It is called
-    $\text{Aut}(\Omega_C, \sigma(e), e)$ and defined as:
+That is, there is some sub-$\sigma$-algebra $\mathcal G$ on the global space where that
+embedding exits. We also note that there can be many such embeddings. 
+These differences are not of particular interest to us, they are related 
+by the automorphism symmetry defined in Definition~3.7, so we can treat them as equivalent.
+\begin{definition}[Joint Frame]
+    Given a family of information frames $\left\{\mathscr I_i\right\}_{i \in I}$ we 
+    can construct their joint frame as:
     \[
-        \bigl\{T: \Omega_C \to \Omega_C 
-        \text{ is bijective, } T\text{ and }T^{-1}\text{ are measurable }, 
-    e(T^{-1}(A))= e(A)\quad \forall A \in \sigma(e) \bigr\}
+        \mathcal J_{I} :=\left( \Omega_{\mathcal J_I},\; \mathcal F_{\mathcal J_I}\right) 
+        := \left(\prod_{m \in \{\bigcup_{i \in I}C_i \subseteq \mathcal M\}}
+            \Omega_{m},\; 
+        \bigotimes_{i \in I}\iota_i\left(\mathcal F_i\right)\right)
     \]
     \noindent
-    Effectively, all probability measures consistent with this symmetry are considered the
-    same for us.
+    The space that hold all distinctions of all information frames.
 \end{definition}
+Such joint frame always exists, but it might be contextual. Structural contextuality tells
+us directly when it is even possible to make a non-contextual joint frame.
 
-While throught the rest of the paper we will be working only with admissible maps, we will
-not be restricting it only to automorphisms. We may define the following:
-\begin{definition}[Effective $\sigma$-algebra of K]
-    For $K: \mathscr I_{C,e} \to \left(\Omega, \mathcal F\right)$. 
-    We define the effective $\sigma$-algebra of $K$, denoted $\sigma\bigl( K \bigr)$ as:
-    \[
-        \sigma(K):= \sigma\bigl\{K(.,A) : A \in \mathcal F_2 \bigr\}
-    \]
-    \noindent
-    That is, the distinctions that survive through $K$. The effective 
-    $\sigma$-algebra of $K$ represents the perspective of $\mathscr I_{C,e}$ on the target
-    space.
-\end{definition}
+One important thing to note however, is that once we generate such a joint space, the 
+embeddings are no longer nescessarly embeddings. That is because in contextual cases,
+the event in the intersection $E$ must choose one of the embeddings. This is critical
+for our relativity principle.
+\subsection{The Structure of the contexts}
+To make our realitivity principle precise we need a way to compare the structure of contexts 
+in the joint frame.The problem is once we fix a joint frame $\mathcal J_I$ through some 
+family of embeddings $\iota_{i \in I}$ we still can't properly compare the contexts as
+they do not live in the global space.
 
-\section{The Joint Frames}
-We now define a new concept, that of \emph{joint frames}. During this chapter we will work
-with the join of only two frames. But this can be naturally extended to multiple joins.
-
-Given two frames $\mathscr I_{C_1, e_1}$ and $\mathscr I_{C_2,e_2}$, we can 
-join them together into a single probability space:
+A way to do this is to consider the following map
+\begin{definition}[Local Projections]
+Given a family of embeddings $\iota_i$ that generated a particular frame $\mathcal J_I$.
+The local projections $e_i$ are
 \[
-    \mathcal J_{\text{total}}:= \bigl(\Omega_{C_1} \times \Omega_{C_2}, 
-    \mathcal F_{C_1} \otimes \mathcal F_{C_2} \bigr)
+    e_i := e_{C_i} := \left( \iota_i\circ \pi_{\mathcal J_I \to C_i}\right): 
+    \Omega_{\mathcal J_I} \to \Omega_{\mathcal J_I}
 \]
-This space has all the distinctions that both contexts could possibly make. All potential
-distinctions that the \emph{labels}, or degrees of freedom, allow.
-
-But RIF makes a additional restriction. We must have all \emph{perspectives} preserved.
-Failure to do so would mean we are priviliging some perspective over another.
-Therefore when joining two information frames, it must happen through admissible maps.
-
-For convinience we will use $\mathscr I_1 = \mathscr I_{C_1,e_1}$ and 
-$\mathscr I_2 = \mathscr I_{C_2,e_2}$ and .
-
-\begin{definition}[Candidate Joint Frames]
-    A \emph{Candidate Joint Frame} is a measurable space, 
-    $\mathcal J$ reacheable through admissible maps from each frame. 
-    That is, there exists $K_1: \mathscr I_1 \to \mathcal J_{\text{total}}$ and 
-    a $K_2: \mathscr I_2 \to \mathcal J_{\text{total}}$ with:
-    \[
-        \mathcal J :=  \bigl(\Omega_{C_1} \cross \Omega_{C_2},\;
-        \sigma\bigl( \sigma(K_1) \cup \sigma(K_2) \bigr)\bigr)
-    \]
-    \noindent
-    The measurable space that keeps all distinctions, all the information, of both frames.
 \end{definition}
-
-Each candidate frame can be viewed as a particular realization of a symmetry that tells
-valid ways to view a joint system from the perspective of their component frames.
-\subsection{The Admissible $\sigma$-algebras}
-We have an important class of $\sigma$-algebras that represent valid ways both frames 
-could in principle view each other. That is, the class of all $\sigma$-algebras 
-reacheable by some admissible interaction.
-\begin{definition}[Admissible Joint Frames]
-    The family of $\sigma$-algebras that are considered admissible for the joint frame is
-    defined as follows:
-    \[
-        \mathscr F_{\mathscr I_1 \otimes \mathscr I_2} := \bigl\{\sigma:\; 
-        \exists K_1: \mathscr I_1 \to \mathcal J_{\text{total}}\text{, }
-    \exists K_2: \mathscr I_2 \to \mathcal J_{\text{total}} \text{, st: }
-\sigma = \bigl( \sigma(K_1) \cup \sigma(K_2) \bigr) \bigr\}
-    \]
-\end{definition}
-\begin{theorem}
-    The family $\mathscr F_{\mathscr I_1 \otimes \mathscr I_2}$ is not nescessarely 
-    closed under meets.
-    That is, there is $\sigma_1, \sigma_2 \in \mathscr F_{\mathscr I_1 \otimes \mathscr I_2}$
-    such that $\sigma_1 \cap \sigma_2 \not\in \mathscr F_{\mathscr I_1 \otimes \mathscr I_2}$
-\end{theorem}
-\begin{proof}
-    Here is enought to provide a single case where the meet fails. 
-    By \cite{Abramsky&Brandenburger} we know that we can construct a model where 
-    non-contextuality fails. If we translate that to our language this means there 
-    there is context $C_1$ and $C_2$ such that the global space is contextual.
-
-    Our situation maps cleanly to the contextuality case, if $(\Omega, \mathcal F)$ is 
-    the global space. If a admissible map existed then we can get 
-    $f_1: \Omega_{C_1} \to \Omega$ and $f_1: \Omega_{C_2} \to \Omega$ we have: 
-    \[
-        e_{C_i}^* := e_{C_i} \circ f_i^{-1}
-    \]
-    Which is a probability measure on the sub-$\sigma$-algebra $f_i(\mathcal F_{C_i})$.
-
-    But here since $f_i(\mathcal F_{C_i}) \subseteq \sigma_1 \cap \sigma_2$ we must have
-    a global measure $\mu$ on $(\Omega, \mathcal F)$, induced by $\sigma_1 \cap \sigma_2$
-    and the marginals $e_{C_i}$ with:
-    \[
-        \mu\mid_{f_i(\mathcal F_i)} = e_{C_i}^*
-    \]
-    This is possible because empirical models must agree on the intersections.
-
-    Therefore the existence of contextual models shows that meets do not always remain
-    in this family.
-\end{proof}
-
-\subsection{The Pointer Frame}
-We define a special $\sigma$-algebra using the family 
-$\mathscr F_{\bigotimes_{i \in I} \mathscr I_i}$. Intuitively we want a sigma algebra
-that contains only distinctions all frames can agree upon.
-\begin{definition}[The Pointer $\sigma$-algebra]
-    For a family of \emph{admissible joint frames} 
-    $\mathscr F_{\bigotimes_{i \in I} \mathscr I_i}$ its pointer $\sigma$-algebra is:
-    \[
-        \mathcal F_{ptr} = \bigcap_{i \in I} \sigma_i
-    \]
-\end{definition}
-
-\begin{theorem}[The Pointer Frame is non-contextual]
-    If we consider the joint frame given by $\mathscr I_{ptr} = \bigl(\Pi_{i \in I} \Omega_{C_i}, 
-    \mathcal F_{ptr}\bigr)$ then there is a probability measure $\mu$ on it for which:
-    \[
-        \mu \mid_{\sigma(e_{C_i})} = e_{C_i}
-    \]
-\end{theorem}
-\begin{proof}
-    For simplicity we consider the case of two frames.
-
-    Let $E \in \mathcal F_{ptr}$ and let $e_{C_1}$ and $e_{C_2}$ in be the 
-    perspective measure on the frames. Then since $E \in \sigma(K1) \cap \sigma(K2)$ 
-    for some $K_i: \mathscr I_i \to \bigl( \Omega_{C_1} \times \Omega_{C_2}, \mathcal F_{C_1} 
-    \otimes F_{C_2}\bigr)$ we have:
-    \[
-        E \in \sigma(K_1) \cap \sigma(K_2) \rightarrow E \in \mathcal F_{C_1} \cap 
-        \mathcal F_{C_2}
-    \]
-    Since for a empirical model and $E \subseteq C_1\cap C_2$ we must have:
-    \[
-        \bigl(\pi_{C_1 \to E}\bigr)_* e_{C_1} \; = \; \bigl(\pi_{C_2 \to E}\bigr)_* e_{C_2}
-    \]
-    The probability marginals agree on $E$. Since this is true for every 
-    $E \in \mathcal F_{ptr}$ we can define:
-    \[
-        \mu(E) := e_{C_1}\bigl(\pi_{C_1 \cup C_2 \to C_1}(E)\bigr)
-    \]
-    Then we automatically have:
-    \[
-        \mu(E) = e_{C_2}\bigl(\pi_{C_1 \cup C_2 \to C_2}(E)\bigr)
-    \]
-    Therefore the frame is non-contextual.
-\end{proof}
-This is the largest non-contextual sub-algebra touching the family of admissible frames.
-Any larger frame would have at least one element that some frame cannot detect and
-agree upon.
-
-Another way to construct the pointer algebra is through quocient of admissible maps:
-\begin{definition}[The Quocient Pointer Space]
-    
-\end{definition}
-
-\section{The Relativity of Information Frames}
-With the definitions in place we are finally able to make the relativity of information
-frames mathemathically precise.
+These $e_{i}$ represent the full event structure of the frame $\mathscr I_i$ in the joint
+frame.
 \subsection{The Symmetry Of Information}
+\subsubsection*{Privilege}
+We are finally ready to introduce the concept of \emph{The Relativity of Information Frames}.
+We begin with the definition of \emph{Privilege} in a \emph{Joint Frame}.
+\begin{definition}[Privilege]
+    We say a joint frame $\mathcal J_{C_1 \cup C_2}$ privileges $C_1$ over $C_2$ if for
+    some shared event $E \in C_1 \cap C_2$ if, for its local projections $e_1,e_2$ we have:
+    \[
+        e_1(E) = e_1(e_2(E)) \quad \text{ and } \quad e_2(E) \neq e_2(e_1(E))
+    \]
+\end{definition}
+Intuitively, when the joint frame was built, when there is contextuality the joint frame
+had to pick one $\iota$ over another for each event they disagreed upon. That is favoring
+on that concept over that event.
+
+In particular, its worth noting that the local projections do not commute in the 
+contextual case:
+\[
+    e_1 \circ e_2(E) \neq e_2 \circ e_1(E)
+\]
+\subsubsection*{The Relativity of Information Frames}
+We can now state the relativity of information frames precisely.
+\begin{axiom}[The Relativity Of Information Frames]
+    After interaction, a physically admissible frame $J_{\text{phys}}$ must not privilege
+    any interacting information frame over another on any event.
+\end{axiom}
+
+More explicitly for any pair of frames $i,j$ of the joint frame and any shared event $E$
+we have:
+\[
+    e_i(E) = e_i(e_j(E))\quad \text{ and }\quad e_j(E) = e_j(e_i(E))
+\]
+Equivalently, the event is in the intersection of fixed points:
+\[
+    E \in \text{Fix}(e_i)\cap \text{Fix}(e_j)
+\]
+The above condition shows that:
+\[
+    E \in \text{Fix}(e_i)\cap \text{Fix}(e_j) \quad \forall E \in \mathcal F_{\text{phys}}
+    \quad \forall i,j
+\]
+We define a important object using the definition above, with $\mathcal F_I$ being the $\sigma$-algebra of the full joint frame: 
+\begin{definition}[Pointer algebra]
+The pointer algebra of a joint frame is given by:
+\[
+    \mathcal F_{\text{ptr}} := \bigcap_i \text{Fix}(e_i) = \left\{E\in 
+    \mathcal F_I :\; e_i(E) = E \;\forall i\right\}
+\]
+\end{definition}
+
+It is clear from the definition that:
+\[
+    \mathcal F_{\text{phys}} \subseteq \mathcal F_{\text{ptr}}
+\]
+In fact, since its obviously true that for all $E \in \mathcal F_{\text{ptr}}$
+\[
+    e_i(E) = e_i(e_j(E))\quad \text{ and }\quad e_j(E) = e_j(e_i(E))
+\]
+This intersection is the largest algebra that is physically admissible for the interaction.
 \subsection{Symmetry Breaking: Collapse}
-\section{Hilbert Space}
-\subsection{The Lattice of Admissible Joint Frames}
-\subsection{Orthogonality}
-\subsection{Gleanson Theorem}
+Now our study in contextuality already revealed that, the naive embedding joint frame,
+that attempts to preserve all distinctions in all information frames, may yield a contextual
+joint frame.
+
+\begin{theorem}[Maximality of the pointer algebra]
+    The pointer algera $\mathcal F_{\text{ptr}}$ is the largest $\sigma$-algebra that
+    is physically admissible under Axiom~1.
+\end{theorem}
+\begin{proof}
+Such joint frame cannot obey Axiom~1. Because structural contextuality shows that for any
+joint frame $\mathcal J_I$ that is built from a contextual family there is some event 
+$E \in \mathcal F_I$ and some pair $i,j$ for which 
+\[
+    e_i(E) \neq e_j(E)
+\]
+Therefore for at least some particular $e_i$ we must have:
+\[
+    \mathcal F_{\text{ptr}} \subseteq \text{Fix}(e_i)
+\]
+And for any $\mathcal F_{\text{ptr}}\subsetneq \mathcal G \subseteq \mathcal F_I$
+we must have:
+\[
+    E \in \mathcal G \setminus \mathcal F_{\text{ptr}} \quad \exists k \in I \rightarrow 
+    e_k(e_k(E)) \neq e_k(E) 
+\]
+But by construction of the joint frame, the event $e_k(E)$ must have come from some 
+context. So we must have $\iota_j(E) = e_k(E)$. And this means:
+\[
+ e_j(E) = e_j(e_k(E)) \quad \text{ and } \quad  e_k(e_j(E)) = e_k(e_k(E)) \neq e_k(E)
+\]
+\end{proof}
+And finally we have:
+\begin{theorem}[Collapse Theorem]
+    Let $\mathcal F_I$ be the contextual joint $\sigma$-algebra of the joint frame generated
+    by the interaction of the contextual families $\mathcal F_I$. Let $\mathcal F_{text{ptr}}$
+    be its pointer algebra.
+
+    Then under Axiom~1 we have $\mathcal F_{\text{phys}} = \mathcal F_{\text{ptr}}$.
+\end{theorem}
+\begin{proof}
+    For every event $E \not\in \mathcal F_{\text{ptr}}$ by Theorem~5.5 we know it exhibits 
+    privilege for some pair of contexts. Therefore such events are physically forbidden
+    by RIF. Every event in $\mathcal F_{\text{ptr}}$ is physically admissible. So we have:
+    \[
+\mathcal F_{\text{phys}} = \mathcal F_{\text{ptr}}
+    \]
+\end{proof}
+\subsection{The Markov View}
+A important thing to note is that, once a joint frame has been built, and it has picked
+a algebra. The initial embeddings are no longer nescessarely embeddings in that frame.
+
+In fact, for the ones that are not privileged the kernel generated by the original embedding
+is no longer injective. It is a strict coarse graining. This will allow us to give precise
+numerics and dynamics by implementing information geometry once we are free to assume
+states (particular probability distributions). But this is not in the scope of this paper.
 \section{Born Rule Martingale}
-\section{No Global Wavefunction}
 \section{Arrow of Time}
+\section{Locality Graph}
+\section{Maximum Speed}
 \section{Markovianity}
 \section{Wigner's Friend Consistency}
 \section{Intrepetation and Comparisons}
@@ -611,6 +607,28 @@ frames mathemathically precise.
 \subsection{The Ontology of Information Frames}
 \subsection{Comparisons - Collapse Models}
 \subsection{Comparisons - Intrepetations}
+\section{Discussion}
+\subsection{The Hilbert Space Reconstruction}
+It is well known that the contextual space, here the joint frame, form a boolean lattice
+that recovers most of the properties of a Hilbert Space. 
+
+This view gives us a additional tool, mainly the automorphisms or the idea that, when a 
+event must collpase down to a coarse grained version it picks up a phase, representing 
+all the distinctions it could have held that map down to the same event. That might allow
+us to get the complex field.
+
+The rest of the reconstruction should already have precedent with contextuality frameworks.
+\subsection{The Fisher metric view}
+By taking the Markov view in section 5.5 we can explore this framework from the point of
+view of the fisher metric. When contextuality happens, the ricci curvature of the fisher
+metric blows up. That should trigger a back action on the tensor to adjust for the pointer
+basis.
+
+Known derivations of the schrodiger equation using the quantum fisher metric can be explained
+and made canonical with this framework.
+
+Furthermore, one can define a action principle of interactions. Using information geometry,
+we believe that can give a new way to model physical systems.
 \section{Conclusion}
 
 \phantomsection
