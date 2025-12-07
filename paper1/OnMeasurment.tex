@@ -123,14 +123,28 @@ geometry follow as consequences.
 \section{Background}
 \subsection{Measure Theory}
 The complete introduction to the richness of measure theory probability theory 
-is not in the scope of this work, we refer to \cite{Williams} for that, 
+is not in the scope of this work, we refer to \cite{Williams1991} for that, 
 we will at least the concept of probability space. We hope the work is understandable with
 only this crude introduction but familiarity with the subject is advised.
 
-
-\subsubsection*{$\sigma$-algebras}
-\subsubsection*{Probability Measure}
 \subsubsection*{Probability Spaces}
+In measure theoretical probability, a probability space consists of a triplet 
+$(\Omega, \mathcal F, \mu$. Each piece represents a core element of a probality model.
+\subsubsection*{The Sample Space $\Omega$}
+The sample space $\Omega$ represents all events that can happen. It is often not defined
+to be something in particular. Simply a space where we can draw samples $\omega \in \Omega$
+from.
+
+It can be seen as particular realizations of an experiment, or trials of a coin toss or
+observations of a particular population model.
+\subsubsection*{The $\sigma$-algebra $\mathcal F$}
+A $\sigma$-algebra represents the set of events the model view as possible. It can be seen
+as what can happen in the probability model. Events are are sets composed of samples 
+$\omega \in \Omega$.
+
+The events in a probability space must obey certain rules. The rules, 
+%TODO: CONTINUE THIS SESSION
+\subsubsection*{The Probability Measure $\mu$}
 Throughout this paper, we will often not be using specific probability measures, 
 working only with the sample space and the $\sigma$-algebras.
 \subsubsection*{Measurable Functions}
@@ -492,9 +506,16 @@ We begin with the definition of \emph{Privilege} in a \emph{Joint Frame}.
         e_1(E) = e_1(e_2(E)) \quad \text{ and } \quad e_2(E) \neq e_2(e_1(E))
     \]
 \end{definition}
-Intuitively, when the joint frame was built, when there is contextuality the joint frame
-had to pick one $\iota$ over another for each event they disagreed upon. That is favoring
-on that concept over that event.
+The idea is that one context is favored over another if its perspective is closer to
+that of the joint frame than another context. It can be thought of as preserving the
+its structure more than that of another frame.
+
+Intuitively, as the joint frame is built, if there is contextuality the joint frame
+had to pick one $\iota$ over another for each event they disagreed upon. This manifests as
+favoring.
+
+Another way to see this is that, the $\iota$ of a privileged frame, is no longer a true
+embedding on the joint frame with its full sigma algebra, it now forgets some distinctions.
 
 In particular, its worth noting that the local projections do not commute in the 
 contextual case:
@@ -588,6 +609,64 @@ And finally we have:
 \mathcal F_{\text{phys}} = \mathcal F_{\text{ptr}}
     \]
 \end{proof}
+While we do not have a dynamical picture of collapse in this work, one may picture collapse
+as the effect of repeatedly applying all contextual projections. Each projection shaves off
+parts of an event it cannot stabilize, only the events that survive all projections belong
+to the pointer algebra.
+
+So what survives is:
+\[
+    E \cap \bigcap_{i \in I} \text{Fix}(e_i)
+\]
+We end with the definition of the joint pointer frame.
+\begin{definition}[Joint Pointer Frame]
+    \[
+        \mathcal J_I^{\text{ptr}} := \left(\Omega_I, \mathcal F_{\text{ptr}}\right)
+    \]
+\end{definition}
+\subsection{Relation to Contextuality}
+What we aim to do here is to show that $\mathcal F_{\text{ptr}}$ is non-contextual. While
+every larger sub-sigma algebra is contextual.
+
+But we note that, the structural definition we used before is not possible here. It requires
+spaces that allow for full embeddings, which we know does not fit the pointer frame. We
+provide very rough proof sketches as not to crowd the paper, but it should be enough to
+see the correlation.
+
+So we turn our attention to probabilistic contextuality. We have the following theorem:
+\begin{theorem}[The Joint Pointer Frame is noncontextual]
+    Let $\left\{p_i\right\}_{i \in I}$ be a empirical family of probabilties on the
+    contexts. There exists a probability measure $\mu$ in the pointer frame generated
+    by the information frames corresponding to that empirical family with:
+    \[
+        (\pi_{J\to C_i})_* \mu = p_i
+    \]
+\end{theorem}
+\begin{proof}[Proof sketch]
+    First pick the information frames with the support of each $p_i$ for its sigma algebra.
+    Then construct the joint frame with embeddings. Because the event structure is picked
+    only to agree with all embeddings we can restrict the embedding to common events.
+
+    Then the probabilties will pass along to those events.
+\end{proof}
+
+For larger families the pointer frames, if a empirical famility is contextual it remains
+contextual in all algebras larger than the pointer.
+\begin{theorem}[Algebras larger than the pointer are contextual]
+    With the same setup as the previous theorem a algebra $\mathcal F_{\text{ptr}} 
+    \subsetneq \mathcal G$ there is no probability measure that has the correct partials.
+\end{theorem}
+\begin{proof}[Proof sketch]
+    Here, since in $\mathcal G$ we still have privilege we know there are two frame's
+    contexts $C_j$ and $C_k$ and shared event $E$ such that:
+    \[
+        e_j(E) \neq e_j(e_k(E)) \quad \text{while}\quad e_k(E) = e_k(e_j(E))
+    \]
+    And since there is consistency of empirical families on shared events no statistics
+    on the joint frame will be able to reproduce how the statistics of this event $E$
+    behave for both contexts.
+\end{proof}
+
 \subsection{The Markov View}
 A important thing to note is that, once a joint frame has been built, and it has picked
 a algebra. The initial embeddings are no longer nescessarely embeddings in that frame.
@@ -596,12 +675,200 @@ In fact, for the ones that are not privileged the kernel generated by the origin
 is no longer injective. It is a strict coarse graining. This will allow us to give precise
 numerics and dynamics by implementing information geometry once we are free to assume
 states (particular probability distributions). But this is not in the scope of this paper.
-\section{Born Rule Martingale}
-\section{Arrow of Time}
-\section{Locality Graph}
-\section{Maximum Speed}
-\section{Markovianity}
-\section{Wigner's Friend Consistency}
+\section{Quantum Mechanics}
+Here we endevor to trace the parallels with standard quantum mechanics. Where each
+ingredient fits in the picture of information frames we have built and how are they related.
+\subsection{Observables, Measurements and Operators}
+\subsubsection*{Measurement Device}
+We begin by defining the measurement devices. In this theory a measurement device is
+given by a pure information frame $\mathscr I_{\text{mes}}$.
+That is a measurement device is represented by $\left(\Omega_{\text{mes}}, 
+\mathcal F_{\text{mes}}\right)$, it can be seen as what the measurement device sees about
+the world, the events it is capable of recognizing.
+\subsubsection*{Observables}
+An observable, for a particular measurement device $i$, is a random variable 
+$O_i: \Omega_i \to \mathcal O$. Where $\mathcal O$ is the outcome space, it can be 
+$\mathbb R$ or other such spaces.
+
+Each observable through the original embeddings, induces a global random variable 
+on the joint context, which we will
+denote with $\left(\Omega, \mathcal F\right)$. To define the global random variables we 
+need the partial inverse:
+\[
+    \pi_i: \iota_i(\Omega_i) \to \Omega_i
+\]
+Then the representative of the observable in the joint frame is:
+\[
+    \widetilde{O}_i := O_i \circ \pi_i: \Omega \to \mathcal O
+\]
+The $\sigma$-algebra generated by $\widetilde{O}_i$ represents the set of events 
+distinguishable by the observable $O_i$. We say observables are \emph{compatible} if 
+their algebras remain jointly Boolean. 
+\subsubsection*{Observable Operators}
+To see how incompatible observables do not commute, we can look at a strategy similar
+to what we did we the full algebras, it also the representation that matches operators
+more directly. 
+Start with a event $E$ in the global space, for observables of different contexts 
+$O_i$ and $O_j$ we can define:
+\[
+    e_i^{O_i} := \iota_i(O_i^{-1}(O_i(\pi_i(E))))\quad \text{and} 
+    \quad e_j^{O_j} := \iota_j(O_j^{-1}(O_j(\pi_j(E))))
+\]
+If they are incompatible, we will have:
+\[
+    e_i^{O_i} \circ e_j^{O_j} \neq e_j^{O_j} \circ e_i^{O_i}
+\]
+Similarly to what we saw for local projections.
+\subsubsection*{General Operators}
+Other operators, those not associated with observables such as time evolution, 
+stochastic maps, or Hilbert-space operators without direct observational intrepetation appear
+only as a transformation built from the basic local projections of Definition~5.2 and 
+their compositions and mixtures.
+
+In general, in the Hilbert space representation, the contextual transformations 
+are represented by completely positive maps associated with the corresponding measurement.
+\subsubsection*{Measurement}
+A measurement of an observable $O_i$ corresponds to evaluating its lifted form 
+$\widetilde{O}_i: \Omega \to \mathcal O$. However, the collapse theorem restricts the
+physically admissible events to those lying in the pointer $\sigma$-algebra 
+$\mathcal F_{\text{ptr}}$.
+
+Consequently, only those values of $\widetilde{O}_i$ whose events are compatible with
+$\mathcal F_{\text{ptr}}$ can occur as outcomes. In this sense, measurement reduces 
+to evaluating the observable on the pointer algebra. The observable possible values are
+exactly those that survive the collpase into $\mathcal F_{\text{ptr}}$.
+\subsection{Born Rule Martingale}
+In this section we explore how the Born rule appears in this framework. We do not claim,
+with the current tools, to recover the quadratic nature of the born rule or its usual 
+form. That is left to a reconstruction of the Hilbert space.
+
+\subsubsection*{Setup}
+First we consider a particular context's frame $\mathscr I_i$. We define a probability
+measure representing that frame $\mu_0$. Th
+
+In the joint frame we can look at the pushfoward measure given by the original embedding.
+\[\mu := \mu_0 \pi_i = \mu_0(\pi_i(E)) \quad E \in \mathcal F_\mathcal J\]
+We note that this probability measure does not, nescessarly, represent all contexts of
+the joint frame. In fact, in contextual cases, that is not possible. This is simply
+the probability of the context $i$ transported to the global frame.
+
+In fact, this pushfoward probability is the probability distribution given by the quantum
+trace rule for the observable of that context. To see this, simply consider the observable
+model we had before and note:
+\[
+    \mu(\widetilde{O}_i^{-1}(B)) = \mu_0(O_i^{-1}(B))
+\]
+In the Hilbert space, this looks like:
+\[
+    tr(\rho E_B) = \rho(E_b)
+\]
+\subsubsection*{The Collapse Filtration}
+The collpase theorem, in particular for each partial $\mathcal F_{\text{ptr}} \subsetneq
+\mathcal G \subseteq \mathcal F_\mathcal J$, is a sub-$\sigma$ of $\mathcal F_\mathcal J$.
+
+So we can define the reverse filtration converging to the pointer basis.
+\[
+    \mathcal F_\mathcal J =: F_0 \supseteq F_1 \supseteq F_2 \supseteq ... 
+    \mathcal F_\text{ptr}
+\]
+This filtration can be seen as the joint space being coarse grained to the pointer basis.
+\subsubsection*{The Collapse Martingale}
+We can now use $\mu$ as a probability measure to define, for any event $A \in 
+\mathcal F_\mathcal J$ we define:
+\[
+    M_n := \mathbb E_{\mu}\left[ \bold{1}_A \mid \mathcal F_n\right]
+\]
+As seen \cite{Williams1991} we know this is a Martingale on the reverse filtration, 
+and by Doob convergence theorem we have:
+\[
+    M_n \rightarrow \mathbb E_{\mu}\left[\bold{1}_A \mid F_\text{ptr}\right] \quad 
+    \text{(a.s.)}
+\]
+Which means that the probability of event $A$ in the pointer filtration is exactly $\mu(A)$.
+\subsection{Wigner's Friend Consistency}
+We will now turn our attention to looking at how Wigner's Friend paradox looks like in this
+framework.
+\subsubsection*{Setup}
+For the Wigner friend scenario we acutually have two interactions. First the interaction
+of the friend, which we will map to the joint frame $\mathcal J_\text{friend}$. Which
+represents the interaction between the system and the friend.
+
+Once that interaction goes through the system has collapsed to the pointer frame
+$\mathcal J_\text{friend}^\text{ptr}$. Then Wigner comes and interacts with that joint
+frame, forming a new frame $\mathcal J_\text{Wigner}$, which again must collapse to 
+$\mathcal J_\text{Wigner}^\text{ptr}$.
+
+We use the fact that, these algebras can all be seen as filtrations of each other to show
+that, Wigner cannot assign inconsistant probabilities to the events it can observe.
+\subsubsection*{The Sequence of Filtrations}
+When the friend interacts with the system, he generates the joint frame 
+$\mathcal J_\text{friend}^\text{ptr}$. When Wigner interacts with that frame, a new
+joint frame must be built. That joint frame starts by lifting the algebras through the
+embeddings $\iota_\text{friend}$ and $\iota_\text{Wigner}$.
+
+The nature of embeddings mean we can consider this all a sequence of filtrations on the
+same space. Namely:
+\[
+    \mathcal F \supseteq \mathcal F_\text{friend}^\text{ptr} 
+    \supseteq F_\text{Wigner}^\text{ptr}
+\]
+With these filtrations in place, we can look at the same style of probability assignments
+we had in the born rule.
+\subsubsection{The Probabilities}
+Now let $A \in \mathcal F_\text{Wigner}^\text{ptr}$
+be a event that exists in the final pointe algebra. That is, a event that all systems
+involved can talk about.
+
+We can determine the friend's probaility for event $A$ as we did for the born rule 
+martingale:
+\[
+    M_\text{friend} := \mathbb E_\mu \left[\bold{1}_A \mid 
+    \mathcal F_\text{friend}^\text{ptr}\right]
+\]
+Now for Wigner, we have the same:
+\[
+    M_\text{Wigner} := \mathbb E_\mu \left[\bold{1}_A \mid 
+    \mathcal F_\text{Wigner}^\text{ptr}\right]
+\]
+But since we have
+\[
+    F_\text{Wigner}^\text{ptr} \subseteq \mathcal F_\text{friend}^\text{ptr} 
+    \subseteq \mathcal F
+\]
+The tower law for martingales gives:
+\[
+    \mathbb E_\mu \left[M_\text{friend} \mid 
+    \mathcal F_\text{Wigner}^\text{ptr}\right] = 
+    \mathbb E_\mu \left[\mathbb E_\mu \left[\bold{1}_A \mid 
+    \mathcal F_\text{friend}^\text{ptr}\right] \mid 
+    \mathcal F_\text{Wigner}^\text{ptr}\right] = \mathbb E_\mu \left[\bold{1}_A \mid 
+    \mathcal F_\text{Wigner}^\text{ptr}\right]
+\]
+Thus, when the friend's description is updated to the Wigner's pointer frame is 
+exactly Wigner's own description.
+\subsection{The Hilbert Space Realization}
+We will not attempt a full Hilbert space reconstruction in this paper. But we note the
+relations to previous work that fits this picture and where some structure might help
+narrow some things.
+\subsubsection*{The Orthomodular Lattice}
+We have Boolean $\sigma$-algebras corresponding to each context $\mathcal F_i$. We have
+their embeddings $\iota_i$ into the joint frame.
+
+We can then define on the joint frame:
+\[
+    \mathcal L := \text{ the closure of } \bigcup_i \iota_i(\mathcal F_i)
+\]
+Events here have:
+\begin{itemize}
+    \item events complement $E\rightarrow E^c$,
+    \item events meet $E \wedge F = E \cap F$,
+    \item events join $E \vee F = \text{cl}_\mathcal L (E \cup F)$,
+\end{itemize}
+\section{Dynamics}
+\subsection{Arrow of Time}
+\subsection{Locality Graph}
+\subsection{Maximum Speed}
+\subsection{Markovianity}
 \section{Intrepetation and Comparisons}
 \subsection{Spin Example}
 \subsection{The Ontology of Information Frames}
