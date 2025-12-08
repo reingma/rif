@@ -89,8 +89,8 @@ the elapsed time.
 
 However,
 \begin{itemize}
-    \item if they agree on the spatial separation, they must disagree on the elapsed time;
-    \item if they agree on the elapsed time, the measured spatial separation must differ.
+    \item If they agree on the spatial separation, they must disagree on the elapsed time;
+    \item If they agree on the elapsed time, the measured spatial separation must differ.
 \end{itemize}
 
 Their interactions with the world differ — and so does what each can resolve as an event.
@@ -109,8 +109,8 @@ We extend this principle.
 \begin{center}
 \textbf{Relativity of Information Frames (RIF)}
 
-Nature does not favor one perspective over another. Nature is the same no matter the
-frame of information.
+Nature does not privilege one information frame over another. What is physical is what
+all information frames can agree upon.
 \end{center}
 
 \end{principlebox}
@@ -150,11 +150,11 @@ working only with the sample space and the $\sigma$-algebras.
 \subsubsection*{Measurable Functions}
 \subsubsection*{Pushfoward Measure}
 \subsubsection*{Markov Kernels}
-We will also need the definition of \emph{Markov Kernels}, which give us to talk about 
+We will also need the definition of \textbf{Markov Kernels}, which give us to talk about 
 how different probability spaces interact.
 \begin{definition}[Markov Kernels]
     Let $(\Omega_1, \mathcal F_1)$ and $(\Omega_2, \mathcal F_2)$ be two measurable 
-    spaces. A \emph{Markov Kernel} is a function:
+    spaces. A \textbf{Markov Kernel} is a function:
     \[
         K: \Omega_1 \cross \mathcal F_2 \to [0,1]
     \]
@@ -181,7 +181,7 @@ Markov Kernels allow us to define probability measures on the target space from 
 on the source.
 \begin{definition}[Markov Pushfoward Measure]
     Given the measurable spaces and Kernel on the Definition 3~4. Let $\mu$ be a probability 
-    measure on $\Omega_1$. The \emph{pushfoward measure} given by the Kernel
+    measure on $\Omega_1$. The \textbf{pushfoward measure} given by the Kernel
     \[
         (\mu K) (A) := \int_{\Omega_1} K(\omega, A) \,\mu (dx), \qquad A \in \mathcal F_2
     \]
@@ -190,7 +190,7 @@ on the source.
 \end{definition}
 
 And finally, we also need to look at the definition of a 
-\emph{effective $\sigma$-algebra} of a Markov Kernel.
+\textbf{effective $\sigma$-algebra} of a Markov Kernel.
 \begin{definition}[Effective $\sigma$-algebra of K]
     For a Kernel $K: \left(\Omega_1,\mathcal F_1\right) \to
     \left(\Omega_2,\mathcal F_2\right)$. The effective sigma algebra of 
@@ -217,7 +217,7 @@ These are a special class of Markov Kernels that can act as transport structure 
 probability space to another.
 \begin{definition}[Deterministic Markov Kernels]
     Let $(\Omega_1, \mathcal F_1)$ and $(\Omega_2, \mathcal F_2)$ be two measurable 
-    spaces. A \emph{Deterministic Markov Kernel} is induced by a measurable function
+    spaces. A \textbf{Deterministic Markov Kernel} is induced by a measurable function
     $f: \Omega_1 \to \Omega_2$:
     \[
         K_f: \Omega_1 \cross \mathcal F_2 \to [0,1]
@@ -237,10 +237,10 @@ a Markov Kernel. The Markov Kernel then allows us to transport probabilities to 
 space.
 
 There are a few special measurable functions we will be interested in. The first defines
-a full \emph{isomorphism} of spaces:
+a full \textbf{isomorphism} of spaces:
 \begin{definition}[Measurable Isomorphism]
-    A measurable function $T: \Omega_1 \to \Omega_2$ that is \emph{bijective} and whose
-    inverse $T^{-1}: \Omega_2 \to \Omega_1$ is also measurable defines a \emph{isomorphism}
+    A measurable function $T: \Omega_1 \to \Omega_2$ that is \textbf{bijective} and whose
+    inverse $T^{-1}: \Omega_2 \to \Omega_1$ is also measurable defines a \textbf{isomorphism}
     of probability spaces:
     \[
         \left(\Omega_1, \mathcal F_1\right) \cong \bigl(\Omega_2, \mathcal F_2\bigr)
@@ -257,7 +257,7 @@ These maps preserve the full structure of the measurable space, for our work we 
 a class that still preserves structure but can embed the measurable space into a larger
 one.
 \begin{definition}[Measurable Embedding]
-    A measurable embedding $\iota: \Omega_1 \to \Omega_2$ is a \emph{injective} measurable
+    A measurable embedding $\iota: \Omega_1 \to \Omega_2$ is a \textbf{injective} measurable
     function with a measurable inverse. It can also be seen as a local homomorphism.
 \end{definition}
 These embeddings preserve the $\sigma$-algebra of the source space entirely in the target
@@ -315,7 +315,7 @@ with.
 
 Within a context we also define the projections:
 \begin{definition}[Canonical Context Projections]
-    The projections for a context $C$ are defined as \emph{measurable functions} from a
+    The projections for a context $C$ are defined as \textbf{measurable functions} from a
     context to one of its label spaces.
 \[
     \pi_{C \to \{m\}}: \Omega_C \to \Omega_m
@@ -329,7 +329,7 @@ That is, the projections map to the context corresponding to the label $m$ withi
 the context $C$. The extension to a subcontext $D \subseteq C$ is naturally
 $\pi_{C\to D}$.
 \end{definition}
-Intuitively projection can be seen as the \emph{perspective} $C$ has on $m$. 
+Intuitively projection can be seen as the \textbf{perspective} $C$ has on $m$. 
 For context projection we will also need its inverse definition.
 \begin{definition}[Cylinder Embedding]
     For every outcome $\omega_1 \in \Omega_m$ we embed it in the context space 
@@ -343,18 +343,18 @@ For context projection we will also need its inverse definition.
 \end{definition}
 
 We importantly note that, a context require $\pi$. They tell the context where its events
-come from. In principle, a context does not hold \emph{information that comes from nowhere.}
+come from. In principle, a context does not hold \textbf{information that comes from nowhere.}
 
 \subsubsection*{Empirical Model}
 We will now introduce the first concept that requires the use of specific probability 
-measures that is the definition of an \emph{empirical model}. 
+measures that is the definition of an \textbf{empirical model}. 
 
 Intuitively can be seen as a particular realization of the model, or a 
-particular realization of a \emph{perspective} on the underlying world. 
-We can also think of it as a particular family of \emph{coodinates} in the probability 
+particular realization of a \textbf{perspective} on the underlying world. 
+We can also think of it as a particular family of \textbf{coodinates} in the probability 
 spaces of the contexts.
 \begin{definition}[Empirical model]
-    An \emph{empirical model} is a family $\left\{e_C \right\}_{ C \in \mathcal M}$ 
+    An \textbf{empirical model} is a family $\left\{e_C \right\}_{ C \in \mathcal M}$ 
     of probability measures on $\left(\Omega_C, \mathcal F_C\right)$. 
     For all $C,C' \in \mathcal M$ and all $D \in C \cap C'$ we have:
     \[
@@ -366,7 +366,7 @@ spaces of the contexts.
 
 \subsubsection*{Contextuality}
 The empirical families allows us to define what will be the driving feature of our 
-framework. It is the defintion of \emph{Contextuality}. When \emph{perspectives} 
+framework. It is the defintion of \textbf{Contextuality}. When \textbf{perspectives} 
 only completly exist on the context they came from.
 
 \begin{definition}[Contextuality]
@@ -397,8 +397,8 @@ distributions.
 
 
 For this, we adapt the sheaf like condition, than just the failure of probabilities to
-have the correct marginals, this in particular matches the \emph{strong contextuality} 
-defined in \cite{Abramsky&Brandenburger}. First we define a \emph{Information Frame}.
+have the correct marginals, this in particular matches the \textbf{strong contextuality} 
+defined in \cite{Abramsky&Brandenburger}. First we define a \textbf{Information Frame}.
 
 \begin{definition}[Information Frame]
     A information frame is a probability space over a context $C \subseteq \mathcal M$ 
@@ -421,8 +421,8 @@ meaning we get rid of events that a context does not see as possible. \begin{def
     information frames $\mathscr I_{C, \mathcal F_C}$ and a global space 
     $\left(\Omega, \mathcal F\right)$. 
 
-    The family is said to be \emph{structuraly non-contextual} if there is a family of 
-    corresponding \emph{embeddings} and some sub-$\sigma$-algebra 
+    The family is said to be \textbf{structuraly non-contextual} if there is a family of 
+    corresponding \textbf{embeddings} and some sub-$\sigma$-algebra 
     $\mathcal G \subseteq \mathcal F$ such that:
     \[
         \iota_{C \in \mathcal C}: \mathscr I_{C, \mathcal F_C} \to 
@@ -434,23 +434,23 @@ meaning we get rid of events that a context does not see as possible. \begin{def
         \iota_C(E) = \iota_{C'}(E)
     \]
     \noindent
-    If no such embedding exists then the family is called \emph{structuraly contextual}.
+    If no such embedding exists then the family is called \textbf{structuraly contextual}.
 \end{definition}
 
-The existence of \emph{strong contextuality} as seem in \cite{Abramsky&Brandenburger} 
+The existence of \textbf{strong contextuality} as seem in \cite{Abramsky&Brandenburger} 
 guarantees structural contextuality also exists, in particular the results in 
 \cite{Kochen-Specker} show that, if we try to keep the full $\sigma$-algebra event structure, 
 structural contextuality will eventually happen. This shows contextuality is 
 essentially inevitable in sufficiently complex logics.
 \section{The Relativity Of Information Frames}
 \subsection{Interaction}
-Now we work on making precise the meaning of the \emph{Relativity of Information Frames}, 
-RIF, for short. To do so, the central objects of study will be \emph{Information Frames} as
+Now we work on making precise the meaning of the \textbf{Relativity of Information Frames}, 
+RIF, for short. To do so, the central objects of study will be \textbf{Information Frames} as
 in defintion 4~.1. Information frames are the only ontic objects in this theory, 
 everything works on their interactions.
 
 We now turn our attetion to making the definition of interaction precise. 
-The first step is to define the \emph{Joint Frame}. A information frame where 
+The first step is to define the \textbf{Joint Frame}. A information frame where 
 the interaction takes place. Before this we will note that when we write:
 \[
     \iota(\mathcal F_C) := \mathcal G 
@@ -497,8 +497,8 @@ These $e_{i}$ represent the full event structure of the frame $\mathscr I_i$ in 
 frame.
 \subsection{The Symmetry Of Information}
 \subsubsection*{Privilege}
-We are finally ready to introduce the concept of \emph{The Relativity of Information Frames}.
-We begin with the definition of \emph{Privilege} in a \emph{Joint Frame}.
+We are finally ready to introduce the concept of \textbf{The Relativity of Information Frames}.
+We begin with the definition of \textbf{Privilege} in a \textbf{Joint Frame}.
 \begin{definition}[Privilege]
     We say a joint frame $\mathcal J_{C_1 \cup C_2}$ privileges $C_1$ over $C_2$ if for
     some shared event $E \in C_1 \cap C_2$ if, for its local projections $e_1,e_2$ we have:
@@ -702,7 +702,7 @@ Then the representative of the observable in the joint frame is:
     \widetilde{O}_i := O_i \circ \pi_i: \Omega \to \mathcal O
 \]
 The $\sigma$-algebra generated by $\widetilde{O}_i$ represents the set of events 
-distinguishable by the observable $O_i$. We say observables are \emph{compatible} if 
+distinguishable by the observable $O_i$. We say observables are \textbf{compatible} if 
 their algebras remain jointly Boolean. 
 \subsubsection*{Observable Operators}
 To see how incompatible observables do not commute, we can look at a strategy similar
@@ -737,6 +737,13 @@ Consequently, only those values of $\widetilde{O}_i$ whose events are compatible
 $\mathcal F_{\text{ptr}}$ can occur as outcomes. In this sense, measurement reduces 
 to evaluating the observable on the pointer algebra. The observable possible values are
 exactly those that survive the collpase into $\mathcal F_{\text{ptr}}$.
+
+Once a definite outcome happens after sampling. The frames carry the information of that
+outcome. Effectively, the algebras are conditioned on the outcome $A$. That is
+\[
+    \mathcal F \mid A := \left\{E \cap A : E \in \mathcal F\right\}
+\]
+That is, the perspectives of the frames are filtered to the outcome produced.
 \subsection{Born Rule Martingale}
 In this section we explore how the Born rule appears in this framework. We do not claim,
 with the current tools, to recover the quadratic nature of the born rule or its usual 
@@ -864,13 +871,365 @@ Events here have:
     \item events meet $E \wedge F = E \cap F$,
     \item events join $E \vee F = \text{cl}_\mathcal L (E \cup F)$,
 \end{itemize}
+\begin{proposition}[$\mathcal L$ is a orthomodular lattice]
+    The event structure $mathcal L$, generated by all frame embeddings in the joint frame
+    is an orthomodular lattice. Each frame embeds as a maximal Boolean subalgebra of 
+    $\mathcal L$. Contextuality is exactly the failure of distributivity in $\mathcal  L$
+    and what makes it orthomodular.
+\end{proposition}
+\begin{proof}
+\end{proof}
+\subsubsection*{The Hilbert Space}
+Under the usual regularity assumptions on $\mathcal L$, the standard representation theorems
+of quantum logic apply (e.g \cite{Piron}, \cite{Soler}, \cite{Gleason}). 
+Therefore there exists a Hilbert space $\mathcal H$ and a lattice
+isomorphism.
+\[\mathcal L \cong \mathsf{Proj}(\mathcal H)\]
+\subsubsection*{The Pointer Algebra}
+Each frame corresponds to a maximal commuting family of projections in $\mathcal H$. The
+pointer algebra $\mathcal F_\text{ptr}$ becomes the lattice of projections associated with
+a single classical basis (a maximal distributive subalgebra). 
+
+Thus the pointer corresponds to the diagonal projections in a distinguished basis, the 
+pointer basis.
+\subsubsection*{States in the Hilbert Space}
+Since $\mathcal L$ carries empirical probability measures representing the pushfoward
+from the frames preparations as we done previously, Gleanson's theorem \cite{Gleanson}
+implies that each measure corresponds uniquely to a density operator $\rho$ on $\mathcal H$.
+
+The born rule then, as we have seen appears as the familiar trace rule:
+\[
+    tr(\rho E_B) = \rho(E_b)
+\]
 \section{Dynamics}
+In this version of the framework, dynamics is not introduced as a primitive law like a 
+Hamiltonian flow or differential equation. Instead, dynamics arises from the structure
+of interactions between information frames.
+
+Each interaction between contexts induces:
+\begin{itemize}
+    \item A creation of a joint frame,
+    \item followed by collapse to its pointer algebra,
+    \item and a pushfoward updated of the preparation measure.
+\end{itemize}
+Thus, from a fixed frame point of view, the time evolution of it's description of the world
+is simply a sequence of coarse-grained $\sigma$-algebras obtained from sucessive interations,
+effectively a filtration:
+\[
+    \mathcal F_\text{frame} =: \mathcal F_0 \supseteq 
+    \mathcal F_1 \supseteq \mathcal F_2 \supseteq ... \supseteq \mathcal F_n \supseteq ...
+\]
+This point of view makes several dynamical properties appear naturally:
+\begin{enumerate}
+    \item Arrow of Time
+
+        Because each contextual interaction corresponds to additional coarse-graining,
+        the evolution of $\sigma$-algebras is monotone (information losing). This
+        monotonicity defines a natural direction of time.
+    \item Locality Graph
+
+        Interactions occur only between specific frames. The pattern of which frame couples
+        to which determines a graph structure, which plays the role of space locality.
+    \item Maximum Speed of Influence
+
+        In contextual scenarios, incompatibility forces coarse-graining. The maximal number
+        of interaction steps before contextuality appears bounds how "fast" influence can
+        propagate along the locality graph.
+    \item Markovianity
+
+        Since each update depends only on the current $\sigma$-algebra and the new 
+        interaction, the evolution is Markovian with respect to the filtrations of pointer
+        algebras.
+    \item No Signaling
+
+        Because interactions only merge $\sigma$-algebras along edges of the locality graph,
+        and collapse happens locally on the joint frame, no frame can influence another 
+        without a mediated interaction.
+\end{enumerate}
+None of these dynamical features require any additional axioms. They follow from Axiom~1 
+and the definitions of how interactions are built.
 \subsection{Arrow of Time}
+In this framework, time is not an external parameter. Instead we use the ordering of 
+interactions between information frames to induce a canonical direction: each interaction
+generates a joint frame where the initial frame algebra is embedded, collapse forces a
+coarse graining of its algebra, this monotone loss of distinguishability defines a 
+natural arrow of time for that frame.
+\subsubsection*{Interaction-induced evolution of $\sigma$-algebras}
+To begin, we first fix a information frame $\mathscr I_0$. It then proceeds to interact
+with several frames $\mathscr I_{j_1}, \mathscr I_{j_2}$ and so on. 
+
+At each step, a joint frame is first created to host the interaction, Axiom~1 and the 
+collapse theorem then converge into a physically realizable joint frame with a sigma algebra
+\[
+    \mathcal F_{\mathcal J_n}^{\text{ptr}}
+\]
+That is, the pointer frame on the $n$-th joint frame. Since this is always constructed
+by embedding the original $\sigma$-algebra $\mathcal F_0$, we can track its evolution
+along the interactions.
+
+We can look at the events of $\mathcal F_0$ that survive in the pointer frame 
+$\mathcal F_{\mathcal J_1}^\text{ptr}$ as the $\sigma$-algebra of $\mathscr I_0$ at step
+1. That is:
+\[
+    \mathcal F_1 := \mathcal F_{\mathcal J_1}^\text{ptr} \cap \iota_1(\mathcal F_0)
+\]
+This gives a natural sequence:
+\[
+    \mathcal F_0 \supseteq \mathcal F_1\supseteq \mathcal F_1 \supseteq ...
+\]
+Each step removes events that are incompatible with the new join. The future 
+$\sigma$-algebras representations of $\mathcal F_0$ are strictly coarser algebras. There
+is no way physical way in the framework to restore the lost distinctions.
 \subsection{Locality Graph}
+In this theory, \textbf{locality} is not a geometric primitive yet. It is the combinatorial
+structure that records which frames have interacted and must therefore share a joint
+pointer algebra.
+\subsubsection*{The Locality Graph}
+Let $\left\{\mathscr I_i\right\}_{i \in I}$ be a family of relevant information frames. We
+define the graph:
+\[
+    G = (V,E)
+\]
+\[
+    (i,j) \in E \quad \iff \quad \text{frames }\mathscr I_i \text{ and } \mathscr I_j
+    \text{ have interacted.}
+\]
+And at every point, an edge represents there is a joint frame where the collapse has
+taken place between $(i,j) \in E$.
+\subsubsection*{Locality as constraint on the pointer basis}
+If frames $i$ and $j$ have interacted, then their local projections $e_i$ and $e_j$ both
+act on the same joint frame. Namely the pointer basis there must satisfy:
+\[
+    \mathcal F_\text{ptr} \subseteq \text{Fix}(e_i)\cap \text{Fix}(e_j)
+\]
+And if they have not interacted their projetions do not constrain the same $\sigma$-algebra,
+which means:
+\begin{itemize}
+    \item Frames in the same subgraph in $G$ influence one another through constraints in
+        the same pointer algebra
+    \item Frames in different subgraphs remain completely independent. No constraints 
+        propagate between them.
+\end{itemize}
+This reproduces the operational notion of locality, influence propagates only along paths in
+the interaction graph.
+\subsubsection*{Dynamics respects the locality graph}
+When a new interaction occurs between frames $i$ and $j$ we:
+\begin{enumerate}
+    \item add an edge $(i,j)$ to $G$;
+    \item build the joint frame of all contexts in the connected component containing $i$ 
+        and $j$
+    \item collapse using all local projections in that component.
+\end{enumerate}
+Therefore every subgraph of $G$ behaves as local regions, every interaction affects only 
+the $\sigma$-algebra generated by its own components.
+
+Locality therefore appears as:
+\begin{itemize}
+    \item graph locality where edges are interactions
+    \item probabilistic locality conditional expectations factor across components of the
+        sub graph
+\end{itemize}
+\subsubsection*{Intrepretation}
+This provides a structural notion of spacetime locality:
+\begin{itemize}
+    \item Information frames as "positions".
+    \item Interactions as "lightlike" adjacency.
+    \item Paths in G are the only channels through which constraints can propagate.
+\end{itemize} 
+There is no geometry at this stage, geometry would be additional structure placed on top
+of the locality graph.
+
+We emphasize that "locality" and "time" in this theory are entirely structural notions.
+They arise from the patterns of interactions between frames, not from any pre-assumed 
+geometric spacetime. Any system that can be expressed through interacting information frames
+possesses a well-defined locality graph and a induced temporal order, even when no 
+traditional spacetime background is specified.
 \subsection{Maximum Speed}
-\subsection{Markovianity}
+In this framework, influence can propagate only through interactions between frames, and
+such interactions are encoded by edges in the locality graph $G$.
+
+However contextuality imposes an additional constraint: after a sufficiently long chain
+of interactions on mixed degrees of freedom, contextual incompatibility nescessarely appears.
+Forcing a coarse-graining of the joint $\sigma$-algebra. This defines a \textbf{time step},
+the length of the chain in that time step is always bounded by contextuality.
+\subsubsection*{Contextuality forces coarse-graining}
+A fundamental structural fact of contextuality (\cite{Abramsky&Brandenburger}) is that
+for a sufficiently large family of information frames on shared degrees of freedom, their
+combined $\sigma$-algebra on the joint frame cannot remain non-contextual.
+
+While this is not a formal statement, as we could stay replaying interactions on 
+non-contextual frames, in realistic scenarios contextuality will show up. At such step,
+the pointer algebra will nescessarly coarse grain for some frame. That frame then sees
+the length of the chain over the time step as the first interaction step.
+
+Over several interactions, such chains which are always finite, have varying length. But 
+any such interaction will have a finite upper bound.
+\subsubsection*{Maximum speed for frame $i$}
+Once we fix a frame $i$ we see its interaction path in $G$ as:
+\[
+    i = i_0 \rightarrow i_1 \rightarrow ... \rightarrow i_n = j
+\]
+In the step $i_n$ is when the first coarse graining happens. We can then define:
+\[
+    v_i := \sup {n: \mathcal F_n = \mathcal F_0}
+\]
+That is, the largest number of sequential interactions along which the $\sigma$-algebra of
+$i$ remains untouched.
+\subsubsection*{Intrepetation}
+This pehnomenon should not be interpreted as the emergence of a specific relativistic sped
+such as a "speed of light". It is a structural consequence of contextuality: in any 
+sufficiently rich system of interacting information frames, repeated interactions inevitably 
+produce contextual incompatibilities, which force coarse-graining and thereby prevent
+influence from propagating indefinitely without degradation.
+
+The resulting bound is a maximum interaction speed inherent to the information structure
+itself. Although different contexts may have different local bounds, a common finite upper
+bound always exists for any fixed system.
+\subsection{Markovianity of interactions}
+The evolution of descriptions in this theory is automatically \textbf{Markovian}. This
+follows directly from the construction of the joint frames and Axiom~1, without introducing
+any dynamical postulate or time parameter.
+\subsubsection*{Dynamics depends only on the current $\sigma$-algebra}
+At interaction step $n$, all previously interacting frames have already been incorporated
+into the join pointer algebra $\mathcal F_n$.
+
+The next interaction introduces a new local projection $e_{n+1}$ and the updated pointer
+algebra is obtained by:
+\[
+    \mathcal F_{n+1} = \mathcal F_n \cap \text{Fix}(e_{n+1})
+\]
+Therefore the update rule is a \textbf{functional of the present state only}:
+\[
+    \mathcal F_{n+1} = \Phi(\mathcal F_n, e_{n+1})
+\]
+This is the essence of Markovianity.
+\subsubsection*{Collapse erases historical information}
+Becase each collapse step forces consistency with the new interacting context:
+\begin{itemize}
+    \item Any information that is incompatible with $\text{Fix}(e_{n+1})$ is erased.
+    \item Any information already compatible with $\mathcal F_{n+1}$ is retained.
+\end{itemize}
+This makes evolution memoryless with respect to earlier algebras, there is no operational
+quantity that distinguishes two histories that produce the same $\mathcal F_n$.
+
+Therefore, once the current $\sigma$-algebra is known, the entire past becomes irrelevant.
+All future predictions depend only on $\mathcal F_n$.
+\subsubsection*{Intrepretation}
+Markovianity in this framework is not a dynamical approximation or assumption about
+noise. It is a structural consequence of:
+\begin{enumerate}
+    \item Interaction-driven enlargement of frames.
+    \item Axiom~1 forcing coarse-graining.
+    \item The shrinkage of $\sigma$-algebras that eliminates all incompatible distinctions.
+\end{enumerate}
+Therefore the evolution of knowledge in this theory is inherently Markovian because every
+interaction erases all incompatible distinctions, leaving the current $\sigma$-algebra as
+a complete description of everything that can influence the system on that frame.
+
+That however, does not mean the probability structure is Markovian. Probability depend
+on the outcomes reported, as we have seen in the measurement section. 
+If a measurement was performed in a given basis, the further interactions carry the 
+memory of the outcome. The algebras are conditioned on that previous outcome.
+\subsection{No Signaling}
+No signaling is an immediate structural consequence of the locality graph and Axiom~1. 
+Because interactions are encoded as edges in the graph, and Axiom~1 applies only on the 
+joint frames of the interacting frames, no frame can influence another without a path
+of interaction connecting them.
+\subsubsection*{Local Independence}
+Let $i$ and $j$ represent two frames. If they have never interacted, they lie on different
+subgraphs of $G$. Then no local projection $e_i$ of $i$ acts on any algebra observed by $j$.
+
+Thus any mutual time step between then leaves $\mathcal F_j$ untouched, that is:
+\[
+    \mathcal F_j^{n+1} = \mathcal F_j^n
+\]
+When that time step operates on $i$, quite simply that is, a frame cannot alter the algebra
+of a frame unless they interact.
+\subsubsection*{Causal Separation}
+If $i$ and $j$ lie in different subgraphs, let $e_k$ bet the local projection of a new
+interaction on the subgraph of $i$. Since there is no path from $k$ to $j$ the projection
+$e_k$ has no overlap with the algebras $j$ can see. Therefore, $e_k$ has no effect on 
+$\mathcal F_j$.
+
+Therefore
+\begin{itemize}
+    \item Effects of interactions propagate only along paths in the locality graph.
+    \item Only frames lying in the same subgraph can influence each other.
+\end{itemize}
+This is a purely structural notion of causal separation.
+\subsubsection*{Intrepretation}
+No signaling in this framework is almost tautological, information cannot be transmitted 
+between frames that have not interacted.
 \section{Intrepetation and Comparisons}
+Here we explore the theory in the context of the broader literature on measurement and
+study some of its features, including the implications it has on ontology. We begin with
+a informal example of the framework applied to the spin of a electron. To illustrate
+how this framework maps to standard Quantum Mechanics.
 \subsection{Spin Example}
+Consdier a concreate quantum scenario, that of a single spin-$\frac{1}{2}$ system.
+
+We examine two incompatible measurements:
+\begin{itemize}
+    \item $\mathscr I_z$: spin along the $z$-axis.
+    \item $\mathscr I_x$: spin along the $x$-axis.
+\end{itemize}
+Each frame is represented by a two-outcome algebra:
+\[
+    \mathcal F_z = \left\{\emptyset,\{\uparrow_z\},\{\downarrow_z\}, \Omega_z\right\} \quad
+    \mathcal F_x = \left\{\emptyset,\{\uparrow_x\},\{\downarrow_x\}, \Omega_x\right\}
+\]
+These are Boolean $\sigma$-algebras describen the events accessible to measurements in their
+respective basis.
+
+We begin with a free particle $\mathscr I_{\text{part}}$. This particle makes no 
+distinctions about its own internal spin. So for this experiment, its algebra is considered
+trivial.
+
+The particle then interacts first with $\mathscr I_x$. This generates a joint frame where
+the interaction can take place with algebra exactly:
+\[
+    \mathcal F_1^{\text{ptr}} = \mathcal F_x = \left\{\emptyset,\{\uparrow_x\},
+    \{\downarrow_x\}, \Omega_x\right\}
+\]
+The observable is sampled there and obtains event $\uparrow_x$. Then the structure of the
+joint frame is conditioned on this event. That is, the actual state is:
+\[
+    \mathcal F_1\mid \{\uparrow_x\} := \left\{E \cap \{\uparrow_x\}: E \in 
+    \mathcal F_1\right\}
+\]
+Then, if we were to measure again on the same basis, this encodes running the same 
+observable on the joint space. The only possibility in the restricted algebra is 
+$\uparrow_x$.
+
+Intuitively, the frame saw $\uparrow$ so the events, even in the measurement apparatus 
+frame are conditioned on $\{\uparrow_x\}$. Now a new apparatus $\mathscr I_z$ comes and 
+interacts with the system.
+
+That leads to a new joint frame being built, and a new pointer basis, but here the 
+observables are contextual so the pointer basis is given by:
+\[
+    \mathcal F_2^{\text{ptr}} = \text{Fix}(e_z)\cap\text{Fix}(e_x)
+\]
+But this pointer algebra is still conditioned on $\{\uparrow_x\}$. So effectively the state
+is:
+\[
+    \mathcal F_2^{\text{ptr}} \mid \{\uparrow_x\}
+\]
+The Hilbert space representation of the spin-$x$ on the basis of $z$ show that there are
+events that surive the $z$ measurement in the pointer basis. Furthermore the fact that the
+algebra is conditioned on $\{\uparrow_x\}$ means we get:
+\[
+    \uparrow_z \quad \text{ with probability } \quad \frac{1}{2}
+\]
+\[
+    \downarrow_z \quad \text{ with probability } \quad \frac{1}{2}
+\]
+Whatever outcome we get here, will again condition $\mathcal F_2^{\text{ptr}}$. If we measure
+again on $z$ we will only be able to get definite outcomes.
+
+But if we were to measure on $x$ on the joint frame conditioned on the event 
+$\{\uparrow_x\}$ there would be two possible outcomes, with probability defined by the 
+$z$ basis.
 \subsection{The Ontology of Information Frames}
 \subsection{Comparisons - Collapse Models}
 \subsection{Comparisons - Intrepetations}
