@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2025.2.1)  8 DEC 2025 02:18
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2025.2.1)  14 DEC 2025 06:33
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -592,39 +592,40 @@ Package mdframed Info: mdframed detected package amsthm
 
 [3]
 
-Package amsfonts Warning: Obsolete command \bold; \mathbf should be used instead on input line 228.
-
-
-LaTeX Warning: Citation `Abramsky&Brandenburger' on page 4 undefined on input line 267.
-
-
-
 [4]
+
+Package amsfonts Warning: Obsolete command \bold; \mathbf should be used instead on input line 301.
+
+
+LaTeX Warning: Citation `Abramsky&Brandenburger' on page 5 undefined on input line 309.
+
+
 
 [5]
 
-LaTeX Warning: Citation `Abramsky&Brandenburger' on page 6 undefined on input line 391.
-
-
-LaTeX Warning: Citation `Abramsky&Brandenburger' on page 6 undefined on input line 392.
-
-
-
 [6]
 
-LaTeX Warning: Citation `Abramsky&Brandenburger' on page 7 undefined on input line 401.
+LaTeX Warning: Citation `Abramsky&Brandenburger' on page 7 undefined on input line 433.
 
 
-LaTeX Warning: Citation `Abramsky&Brandenburger' on page 7 undefined on input line 440.
-
-
-LaTeX Warning: Citation `Kochen-Specker' on page 7 undefined on input line 442.
+LaTeX Warning: Citation `Abramsky&Brandenburger' on page 7 undefined on input line 434.
 
 
 
 [7]
 
+LaTeX Warning: Citation `Abramsky&Brandenburger' on page 8 undefined on input line 443.
+
+
+
 [8]
+
+LaTeX Warning: Citation `Abramsky&Brandenburger' on page 9 undefined on input line 504.
+
+
+LaTeX Warning: Citation `Kochen-Specker' on page 9 undefined on input line 506.
+
+
 
 [9]
 
@@ -638,37 +639,36 @@ LaTeX Warning: Citation `Kochen-Specker' on page 7 undefined on input line 442.
 
 [14]
 
-LaTeX Warning: Citation `Piron' on page 15 undefined on input line 884.
+[15]
+
+[16]
+
+LaTeX Warning: Citation `Piron' on page 17 undefined on input line 945.
 
 
-LaTeX Warning: Citation `Soler' on page 15 undefined on input line 884.
+LaTeX Warning: Citation `Soler' on page 17 undefined on input line 945.
 
 
-LaTeX Warning: Citation `Gleason' on page 15 undefined on input line 884.
+LaTeX Warning: Citation `Gleason' on page 17 undefined on input line 945.
 
 Package microtype Info: Loading generic protrusion settings for font family
 (microtype)             `cmss' (encoding: OT1).
 (microtype)             For optimal results, create family-specific settings.
 (microtype)             See the microtype manual for details.
 
-
-[15]
-
-LaTeX Warning: Citation `Gleanson' on page 16 undefined on input line 897.
+LaTeX Warning: Citation `Gleanson' on page 17 undefined on input line 958.
 
 
-
-[16]
 
 [17]
 
 [18]
 
-LaTeX Warning: Citation `Abramsky&Brandenburger' on page 19 undefined on input line 1056.
-
-
-
 [19]
+
+LaTeX Warning: Citation `Abramsky&Brandenburger' on page 20 undefined on input line 1117.
+
+
 
 [20]
 
@@ -688,21 +688,21 @@ L3 programming layer <2025-01-18>
 LaTeX Warning: There were undefined references.
 
 Package rerunfilecheck Info: File `OnMeasurment.out' has not changed.
-(rerunfilecheck)             Checksum: 5946D37531184DE976629E5DFCB205B9;5791.
+(rerunfilecheck)             Checksum: 1677F45804A382B146947F6966C5514B;5473.
  ) 
 Here is how much of TeX's memory you used:
- 16100 strings out of 473795
- 263091 string characters out of 5727276
+ 16121 strings out of 473795
+ 263326 string characters out of 5727276
  741542 words of memory out of 5000000
- 38793 multiletter control sequences out of 15000+600000
- 578010 words of font info for 178 fonts, out of 8000000 for 9000
+ 38795 multiletter control sequences out of 15000+600000
+ 579224 words of font info for 187 fonts, out of 8000000 for 9000
  695 hyphenation exceptions out of 8191
- 79i,7n,93p,1009b,589s stack positions out of 10000i,1000n,20000p,200000b,200000s
-</usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmbsy10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cmextra/cmex8.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmss10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmti8.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt12.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/rsfs/rsfs10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/cm-super/sfrm1095.pfb>
-Output written on OnMeasurment.pdf (24 pages, 338888 bytes).
+ 79i,7n,93p,1009b,653s stack positions out of 10000i,1000n,20000p,200000b,200000s
+</usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmbsy10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmbxti10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cmextra/cmex8.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmss10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmti8.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt12.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/rsfs/rsfs10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/cm-super/sfrm1095.pfb>
+Output written on OnMeasurment.pdf (24 pages, 349007 bytes).
 PDF statistics:
- 490 PDF objects out of 1000 (max. 8388607)
- 413 compressed objects within 5 object streams
- 148 named destinations out of 1000 (max. 500000)
- 41753 words of extra memory for PDF output out of 42996 (max. 10000000)
+ 491 PDF objects out of 1000 (max. 8388607)
+ 412 compressed objects within 5 object streams
+ 150 named destinations out of 1000 (max. 500000)
+ 43785 words of extra memory for PDF output out of 51595 (max. 10000000)
 
