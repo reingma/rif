@@ -56,30 +56,6 @@
 \end{abstract}
 
 \section{Introduction}
-In this paper we begin with a motivational intuition. That of a principle of relativity.
-We then throught the paper endevor to make that intuition mathematically precise. First
-by introducing the tools we will use, sheaf theory contextuality and markov kernels. Then
-we use these tools to give a precise meaning to this relativity principle.
-
-Finally we show that this principle generates a space that has the properties of a Hilbert
-space. Using Gleanson's theorem \cite{gleanson} we retrieve the born rule. We give a natural
-explanation for the pointer basis and give as a theorem Wigner friend's consistency,
-natural Markoviality of physical systems and the arrow of time.
-
-We conclude with a ontological intrepetation of this principle and suggestions for further
-reasearch directions. We conclude that, if this principle is accepted as a valid restriction
-for reality, the Copehangen intrepetation axioms are derived instead of postulated. Giving
-a potential solution to the measurement problem.
-
-We also compare it to other explanations such as GRW and Penrose collapse. Also relates
-to its direct cousin, Relation Quantum Mechanics. This is not a intrepretation but a new
-framework.
-
-Acceptance of this principle depends upon accepting the Relativity of information frames
-as physically fundamental. Further work is needed to see its consequences, in principle
-it does not disagree with quantum mechanics and provides a clean resolution to some of
-its puzzling features. No experiment to derive prove its truth is known to the authors of
-this paper at the current formulation.
 
 \section{Motivation - The Relativity of Information Frames}
 
@@ -222,88 +198,6 @@ one.
 \end{definition}
 These embeddings preserve the $\sigma$-algebra of the source space entirely in the target
 space.
-\subsubsection*{Markov Kernels}
-We will also need the definition of \textbf{Markov Kernels}, which give us to talk about 
-how different probability spaces interact.
-\begin{definition}[Markov Kernels]
-    Let $(\Omega_1, \mathcal F_1)$ and $(\Omega_2, \mathcal F_2)$ be two measurable 
-    spaces. A \textbf{Markov Kernel} is a function:
-    \[
-        K: \Omega_1 \cross \mathcal F_2 \to [0,1]
-    \]
-    \noindent
-    Where we have:
-    \begin{itemize}
-        \item For every fixed $\omega \in \Omega_1$ 
-            \[
-                K(\omega,\cdot) \text{ is a probability measure in } \mathcal F_2
-            \]
-        \item For every fixed $A \in \mathcal F_2$
-            \[
-                K(\cdot, A) \text{ is a measurable function } \Omega_1 \to
-                \left([0,1],\mathcal B\left([0,1]\right)\right)
-            \]
-    \end{itemize}
-    \noindent
-    The idea is that Markov Kernels define probability measures on the target space that
-    respect the structure of the source space. It is often written $K: \Omega_1 \to 
-    \mathcal P(\Omega_2)$ to say, a Kernel that defines probabilities on $\Omega_2$ from
-    $\Omega_1$.
-\end{definition}
-Markov Kernels allow us to define probability measures on the target space from measures
-on the source.
-\begin{definition}[Markov Pushfoward Measure]
-    Given the measurable spaces and Kernel on the Definition 3~4. Let $\mu$ be a probability 
-    measure on $\Omega_1$. The \textbf{pushfoward measure} given by the Kernel
-    \[
-        (\mu K) (A) := \int_{\Omega_1} K(\omega, A) \,\mu (dx), \qquad A \in \mathcal F_2
-    \]
-    \noindent
-    And it is a probability measure on $\mathcal F_2$.
-\end{definition}
-
-And finally, we also need to look at the definition of a 
-\textbf{effective $\sigma$-algebra} of a Markov Kernel.
-\begin{definition}[Effective $\sigma$-algebra of K]
-    For a Kernel $K: \left(\Omega_1,\mathcal F_1\right) \to
-    \left(\Omega_2,\mathcal F_2\right)$. The effective sigma algebra of 
-    $K$ is given by:
-    \[
-        \mathcal F_K := \sigma\left\{\omega \to K(\omega,A) 
-        \mid A \in \mathcal F\right\}
-    \]
-    \noindent
-    That is, the algebra of all random variables that $K$ generates. It can also be seen
-    as the algebra of events of $\Omega_1$ that remain distinguishable after passing 
-    through $K$.
-\end{definition}
-\subsubsection*{Composition of Markov Kernels}
-Markov Kernels compose, in particular if $K_1: \Omega_1 \to \mathcal P(\Omega_2)$ and
-$K_2: \Omega_2 \to \mathcal P(\Omega_3)$ are Markov Kernels. Then their composite is
-given for $A \in \mathcal F_3$:
-\[
-    \left(K_2 \circ K_1\right)(x,A) := \int_{\Omega_2} K_2(y,A) d K_1(x,\cdot)
-\]
-And naturally defines probability measures on $\Omega_3$.
-\subsubsection*{Deterministic Markov Kernels}
-These are a special class of Markov Kernels that can act as transport structure from one 
-probability space to another.
-\begin{definition}[Deterministic Markov Kernels]
-    Let $(\Omega_1, \mathcal F_1)$ and $(\Omega_2, \mathcal F_2)$ be two measurable 
-    spaces. A \textbf{Deterministic Markov Kernel} is induced by a measurable function
-    $f: \Omega_1 \to \Omega_2$:
-    \[
-        K_f: \Omega_1 \cross \mathcal F_2 \to [0,1]
-    \]
-    \noindent
-    That is given for $\omega_1 \in \Omega_1$ and $F_2 \in \mathcal F_2$
-    \[
-        K_f(\omega_1,F_2) := \bold{1}_{f(\omega_1) \in F_2}
-    \]
-
-\end{definition}
-The function $f$ can be seen as the transport from one probability space into another. The
-Kernel then, allows us to pushfoward probability measures from it.
 \subsection{Contextuality}
 The first important concept the theory relies upon is that of contextuality. All our
 definitions here are translated from the \cite{Abramsky&Brandenburger} contextuality
@@ -522,8 +416,8 @@ match the functions and identity correctly that is precisely
 \textbf{structural contextuality}.
 \section{The Relativity Of Information Frames}
 \subsection{Interaction}
-Now we work on making precise the meaning of the \textbf{Relativity of Information Frames}, 
-RIF, for short. To do so, the central objects of study will be \textbf{Information Frames} as
+Now we work on making precise the meaning of the \textbf{Relativity of Information Frames
+(RIF)}. To do so, the central objects of study will be \textbf{Information Frames} as
 in defintion 4~.1. Information frames are the only ontic objects in this theory, 
 everything works on their interactions.
 
@@ -656,33 +550,6 @@ To match quantum mechanics we will call this $\sigma$-algebra the \textbf{pointe
         \mathcal F_{\text{ptr}} = \mathcal F^\text{phys}
     \]
 \end{definition}
-\subsection{Symmetry Breaking: Contextuality}
-Now we look at what Axiom~1 implies for the joint frame, and its relation to contextuality,
-how the relativity principle is violated and what remains physically admissible.
-\begin{proposition}[Contextuality violates RIF]
-    Suppose a joint frame $\mathcal J_I$ with the full $\sigma$-algebra of the contexts
-    automatically satisfies RIF for every event. Then, up to \textbf{automorphisms} of the
-    joint frame, the joint frame is non-contextual.
-\end{proposition}
-\begin{proof}
-\end{proof}
-\begin{proposition}[An non-contextual joint frame satisfies RIF]
-    Suppose there there is a non-contextual choice of embeddings for a joint frame. Then
-    on that joint frame, RIF is satisfied for every event $E$ and every context.
-\end{proposition}
-\begin{proof}
-\end{proof}
-Together these two imply that, any contextual family of frames \textbf{fails to satisfy 
-RIF for every event}. Then Axiom~1 forces us to discard events that are not physically
-admissible which leads to the following definition.
-\begin{definition}[Joint Pointer Frame]
-    The physicaly admissible information frame representing the interaction frame is the
-    \textbf{Joint Pointer Frame}, given by:
-    \[
-        \mathcal J_I^{\text{ptr}} := \left(\Omega_I, \mathcal F_{\text{ptr}}\right)
-    \]
-\end{definition}
-In a sense, the interaction "collapses" to the pointer algebra.
 \subsection{Relation to Contextuality}
 Now we prove a few important properties of the pointer algebra. We already saw how closely
 related to contextuality the pointer algebra is, that is RIF fails exactly when 
@@ -718,13 +585,36 @@ imply:
 \]
 So $\mu$ is a consistent probability measure on the joint pointer frame.
 \end{proof}
-We also can use the same empirical contextuality to show that, any algebra larger than
-RIF is nescessarely contextual.
-\begin{lemma}[Larger $\sigma$-algebras then the pointer algebra are contextual]
-    Let $\mathcal G$ be a sub-$\sigma$-algebra of the full joint frame
-    $\mathcal F_{\mathcal J_I}$. Then there exists a empirical family 
-    $\left\{\mu_i\right\}_{i \in I}$ for which the joint space with $\mathcal G$ is
-    contextual.
+We now see that, for contextual families, RIF is not satisfied.
+\begin{proposition}[Contextuality violates RIF]
+    If a family of contexts given by $I$ is \textbf{structurally contextual}. 
+    Then the naive joint frame $\mathcal J_I$ violates RIF for some event.
+\end{proposition}
+\begin{proof}
+    For simplicity consider only two frames that disagree.
+    We know there is a shared event $E$ for which
+    \[
+        \iota_1(\pi_1(E)) \neq \iota_2(\pi_2(E))
+    \]
+    Now let $A = \iota_1(\pi_1(E))$ and $E = \iota_2(\pi_2(E))$. This makes it clear
+    that:
+    \[
+        \pi_2(E) \neq \pi_2(A)
+    \]
+    Since otherwise, because the embeddings are injective we would have $A = E$. This 
+    already implies:
+    \[
+        e_2 \circ e_1(E) \neq e_2(E)
+    \]
+    So RIF is violated for the event $E$.
+\end{proof}
+Now we show that, using a larger $\sigma$-algebra then RIF, allows us to construct
+a contextual empirical family.
+\begin{lemma}[Any larger $\sigma$-algebra is contextual]
+    Suppose $\mathcal G$ is a $\sigma$-algebra on a joint frame such that 
+    $\mathcal F_\text{ptr} \subsetneq \mathcal G$. Then there exists a empirical family
+    $\left\{\mu_i\right\}_{i \in I}$ for which no consistent probability measure $\mu$
+    exists on the joint frame with $\mathcal G$.
 \end{lemma}
 \begin{proof}
 \end{proof}
@@ -780,9 +670,12 @@ If they are incompatible, we will have:
     e_i^{O_i} \circ e_j^{O_j} \neq e_j^{O_j} \circ e_i^{O_i}
 \]
 Similarly to what we saw for local projections.
+\subsubsection*{Unitary Evolution}
+Basicaly it is automorphism selection.
+%TODO: continue this
 \subsubsection*{General Operators}
-Other operators, those not associated with observables such as time evolution, 
-stochastic maps, or Hilbert-space operators without direct observational intrepetation appear
+Other operators, those not associated with observables such as stochastic maps, 
+or Hilbert-space operators without direct observational intrepetation appear
 only as a transformation built from the basic local projections of Definition~5.2 and 
 their compositions and mixtures.
 
@@ -933,13 +826,19 @@ Events here have:
     \item events join $E \vee F = \text{cl}_\mathcal L (E \cup F)$,
 \end{itemize}
 \begin{proposition}[$\mathcal L$ is a orthomodular lattice]
-    The event structure $mathcal L$, generated by all frame embeddings in the joint frame
+    The event structure $\mathcal L$, generated by all frame embeddings in the joint frame
     is an orthomodular lattice. Each frame embeds as a maximal Boolean subalgebra of 
     $\mathcal L$. Contextuality is exactly the failure of distributivity in $\mathcal  L$
     and what makes it orthomodular.
 \end{proposition}
 \begin{proof}
+    The relation to contextuality allows us to use the standard theorems such as 
+    \cite{Gleanson} to see how this algebra represents a orthomodular lattice.
 \end{proof}
+\subsubsection*{The Complex Field}
+While we don't attempt to prove the uniqueness of the choice of the complex field in this
+work we note that, accumulation of amplitudes and its removal through the RIF principle
+leaves space to narrow down amplitudes that fit $\mathbb C$ over something like $\mathbb H$.
 \subsubsection*{The Hilbert Space}
 Under the usual regularity assumptions on $\mathcal L$, the standard representation theorems
 of quantum logic apply (e.g \cite{Piron}, \cite{Soler}, \cite{Gleason}). 
@@ -996,11 +895,6 @@ This point of view makes several dynamical properties appear naturally:
         In contextual scenarios, incompatibility forces coarse-graining. The maximal number
         of interaction steps before contextuality appears bounds how "fast" influence can
         propagate along the locality graph.
-    \item Markovianity
-
-        Since each update depends only on the current $\sigma$-algebra and the new 
-        interaction, the evolution is Markovian with respect to the filtrations of pointer
-        algebras.
     \item No Signaling
 
         Because interactions only merge $\sigma$-algebras along edges of the locality graph,
@@ -1224,7 +1118,7 @@ interacts with the system.
 That leads to a new joint frame being built, and a new pointer basis, but here the 
 observables are contextual so the pointer basis is given by:
 \[
-    \mathcal F_2^{\text{ptr}} = \text{Fix}(e_z)\cap\text{Fix}(e_x)
+    \mathcal F_2^{\text{ptr}} = \left\{E\; \mid \; e_z \circ e_x (E) = e_z(E)\right\}
 \]
 But this pointer algebra is still conditioned on $\{\uparrow_x\}$. So effectively the state
 is:
@@ -1250,17 +1144,7 @@ $z$ basis.
 \subsection{Comparisons - Collapse Models}
 \subsection{Comparisons - Intrepetations}
 \section{Discussion}
-\subsection{The Hilbert Space Reconstruction}
-It is well known that the contextual space, here the joint frame, form a boolean lattice
-that recovers most of the properties of a Hilbert Space. 
-
-This view gives us a additional tool, mainly the automorphisms or the idea that, when a 
-event must collpase down to a coarse grained version it picks up a phase, representing 
-all the distinctions it could have held that map down to the same event. That might allow
-us to get the complex field.
-
-The rest of the reconstruction should already have precedent with contextuality frameworks.
-\subsection{The Fisher metric view}
+\subsection{Geometry and Dynamics}
 By taking the Markov view in section 5.5 we can explore this framework from the point of
 view of the fisher metric. When contextuality happens, the ricci curvature of the fisher
 metric blows up. That should trigger a back action on the tensor to adjust for the pointer
@@ -1271,6 +1155,9 @@ and made canonical with this framework.
 
 Furthermore, one can define a action principle of interactions. Using information geometry,
 we believe that can give a new way to model physical systems.
+\subsection{The Complex Field}
+\subsection{Reconstruction Programs}
+\subsection{Spacetime}
 \section{Conclusion}
 
 \phantomsection
