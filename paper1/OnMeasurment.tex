@@ -3,6 +3,7 @@
 \usepackage{xcolor}
 \usepackage{microtype}
 \usepackage{booktabs}
+\usepackage{thmtools}
 \usepackage[hidelinks]{hyperref}
 \usepackage[nameinlink]{cleveref}
 \usepackage{mathrsfs}
@@ -98,31 +99,33 @@ geometry follow as consequences.
 
 \section{Background}
 \subsection{Measure Theory}
-The complete introduction to the richness of measure theory probability theory 
-is not in the scope of this work, we refer to \cite{Williams1991} for that, 
-we will at least the concept of probability space. We hope the work is understandable with
-only this crude introduction but familiarity with the subject is advised.
+A full account of measure theory and probability theory is outside the scope of this paper;
+for a standard reference, see \cite{Williams1991}. In this section we introduce only 
+the notion of a probability space and the measure-theoretic concepts that will be 
+explicitly used later. The exposition is intentionally brief and self-contained, though 
+some familiarity with the subject is helpful.
 
 \subsubsection*{Probability Spaces}
-In measure theoretical probability, a probability space consists of a triplet 
-$(\Omega, \mathcal F, \mu)$. Each piece represents a core element of a probality model.
+In measure-theoretic probability, a probability space is given by a triple:
+\[
+    (\Omega, \mathcal F, \mu)
+\]
+where each component encodes a distinct element of a probality model.
 \subsubsection*{The Sample Space $\Omega$}
-The sample space $\Omega$ represents all events that can happen. It is often not defined
-to be something in particular. Simply a space where we can draw samples $\omega \in \Omega$
-from.
+The sample space $\Omega$ is the set of all possible outcomes of an experiment. It's elements
+$\omega \in \Omega$ represent individual realizations or trials. In general, $\Omega$ is
+endowed with additional structure beyond serving as the underlying space from which outcomes
+are drawn.
 
-It can be seen as particular realizations of an experiment, or trials of a coin toss or
-observations of a particular population model.
+Depending on the context, elements of $\Omega$ may correspond to coin toss outcomes, 
+experiment runs, or realizations of an abstract physical system.
 \subsubsection*{The $\sigma$-algebra $\mathcal F$}
-A $\sigma$-algebra represents the set of events the model view as possible. It can be seen
-as what can happen in the probability model. Events are are sets composed of samples 
-$\omega \in \Omega$.
+The $\sigma$-algebra $\mathcal F$ specifies which subsets of $\Omega$ are considered 
+\textbf{events}. Events are thus sets of outcomes $\omega \in \Omega$ to which probabilities
+may be assigned.
 
-Events are described by $\sigma$-algebras. They are a set of subsets of $\Omega$ with
-the following properties:
-\begin{definition}[$\sigma$-algebra]
-    A $\sigma$-algebra $\mathcal F$ is a family of subsets of $\Omega$ with the following
-    properties:
+\begin{definition}[$\sigma$-algebra]\label{def:sigma}
+    A $\sigma$-algebra $\mathcal F$ is a collection of subsets of $\Omega$ such that:
     \begin{enumerate}
         \item $\empty,\Omega \in \mathcal F$
         \item Closed under complemetns. $F \in \mathcal F \rightarrow F^{c} \in \mathcal F$
@@ -131,201 +134,263 @@ the following properties:
             \[\left\{F_i\right\}_{i \in \mathbb N} \in \mathcal F \rightarrow 
             \bigcup_{i \in \mathbb N} F_i \in \mathcal F\]
     \end{enumerate}
-    
 \end{definition}
-The $\sigma$-algebra is the central object of this framework. They represent what is 
-possible for a given probability space.
+The $\sigma$-algebra encodes the events that are meaningfully distinguishable within the
+model and therefore forms the central structural component of a probability space.
 \subsubsection*{The Probability Measure $\mu$}
-A probability measure is a function that assigns values in $[0,1]$ to events in the
-$\sigma$-algebra $\mathcal F$, with the following additional requirements:
-\begin{definition}[Probability Measures]
-    A probability measure $\mu: \mathcal F \to [0,1]$ is a function with the following
-    properties:
+A probability measure assigns probabilities to events in $\mathcal F$.
+\begin{definition}[Probability Measures]\label{def:prob}
+    A probability measure is a function $\mu: \mathcal F \to [0,1]$ satisfying: 
     \begin{enumerate}
         \item Total probabilities:
             \[
                 \mu(\emptyset) = 0 \quad \mu(\Omega) = 1
             \]
-        \item For any collection of disjoint sets $\left\{F_i\right\}_{i \in \mathbb N}$,
+        \item For any countable collection of pairwise disjoint sets 
+            $\left\{F_i\right\}_{i \in \mathbb N}$,
             with $F_i \cap F_j = \emptyset$ for all $i \neq j$.
             \[
                 \mu\left(\bigcup_{i \in \mathbb N} F_i\right) = 
                 \sum_{i \in \mathbb N} \mu(F_i)
             \]
     \end{enumerate}
-For this work, probability measures can be seen as states on the probability space. How
-a particular sigma algebra is distributed in a particular scenario.
+In this work, probability measures will be intrepreted as states on a measurable space. 
+Encoding how probabilities are distributed over the events in $\mathcal F$.
 \end{definition}
-\subsubsection*{Measurable Functions}
-A \textbf{measurable function}, often also called a \textbf{random variable} is a function
-between probability spaces $f: \Omega_1 \to \Omega_2$ with the following property:
-\[\
-    \forall A \in \mathcal F_2\; \longrightarrow\; f^{-1}(A) \in \mathcal F_1
-\]
-That is, it takes measurable sets from $\mathcal F_2$ to measurable sets in $\mathcal F_1$.
-\subsubsection*{Pushfoward Measure}
-When we have a measurable function $f: \Omega_1 \to \Omega_2$ and a probability measure
-$\mu$ in $\Omega_1$, we can define a probability measure in $\Omega_2$ as:
+\subsubsection*{Measurable Functions}\label{def:mes-fun}
+A \textbf{measurable function}, often refered to in probability theory as a 
+\textbf{random variable}, is a function between measurable spaces 
 \[
-    \left(\mu f\right)(A) = \mu\circ f^{-1}(A) \quad A \in \mathcal F_2
+f: \Omega_1 \to \Omega_2
 \]
-It represents how the probability measure in $\Omega_1$ measures the corresponding
-events of the random variable $f$.
+such that:
+\[\
+    \forall A \in \mathcal F_2\; \quad\; f^{-1}(A) \in \mathcal F_1
+\]
+That is, the preimage of every event in $\mathcal F_2$ is a event in $\mathcal F_1$.
+\subsubsection*{Pushfoward Measure}
+Given a measurable function 
+\[
+    f: \Omega_1 \to \Omega_2
+\] 
+And a probability measure $\mu$ in $\left(\Omega_1, \mathcal F_1\right)$, we can define 
+a probability measure on $\left(\Omega_2,\mathcal F_2\right)$ by
+\[
+    \left(f_{*} \mu\right)(A) := \mu\!\left(f^{-1}(A)\right), 
+    \qquad A \in \mathcal F_2
+\]
+The measure $f_* \mu$ is called the \textbf{pushfoward} of $\mu$ along $f$.
+
+The pushfoward measure represents the probability distribution induced on $\Omega_2$ by
+the map $f$ when the underlying space is described by the measure $\mu$.
 \subsubsection*{Embeddings}
-There are a few special measurable functions we will be interested in. The first defines
-a full \textbf{isomorphism} of spaces:
-\begin{definition}[Measurable Isomorphism]
-    A measurable function $T: \Omega_1 \to \Omega_2$ that is \textbf{bijective} and whose
-    inverse $T^{-1}: \Omega_2 \to \Omega_1$ is also measurable defines a \textbf{isomorphism}
-    of probability spaces:
+We will be particulary interested in certain classes of measurable maps that preserve the
+structure of measurable spaces.
+\begin{definition}[Measurable Isomorphism]\label{def:mes-iso}
+    A measurable function $T: \Omega_1 \to \Omega_2$ is called a 
+    \textbf{measurable isomorphism} if it is \textbf{bijective} and it's inverse 
+    $T^{-1}: \Omega_2 \to \Omega_1$ is also measurable. In this case, the measurable 
+    spaces are \textbf{isomorphic}, denoted:
     \[
         \left(\Omega_1, \mathcal F_1\right) \cong \bigl(\Omega_2, \mathcal F_2\bigr)
     \]
+    \noindent
+    Such maps preserve the full measurable structure.
 \end{definition}
-Naturally such bijections form a group:
-\begin{definition}[Measurable Space Automorphisms]
+\begin{definition}[Measurable Space Automorphisms]\label{def:mes-auto}
+    For a measurable space $\left(\Omega,\mathcal F\right)$, the group of measurable 
+    automorphisms is
 \[
-    \text{Aut}_{\Omega,\mathcal F} := \left\{T: \Omega \to \Omega 
-    \text{ is bijective, } T\text{ and }T^{-1}\text{ are measurable }\right\}
+    \mathrm{Aut}\left(\Omega,\mathcal F\right) := \left\{T: \Omega \to \Omega \;\mid\; T
+    \text{ is bijective, } T\text{ and }T^{-1}\text{ are measurable.}\right\}
 \]
 \end{definition}
-These maps preserve the full structure of the measurable space, for our work we will need
-a class that still preserves structure but can embed the measurable space into a larger
-one.
-\begin{definition}[Measurable Embedding]
-    A measurable embedding $\iota: \Omega_1 \to \Omega_2$ is a \textbf{injective} measurable
-    function with a measurable inverse. It can also be seen as a local homomorphism.
-\end{definition}
-These embeddings preserve the $\sigma$-algebra of the source space entirely in the target
-space.
-\subsection{Contextuality}
-The first important concept the theory relies upon is that of contextuality. All our
-definitions here are translated from the \cite{Abramsky&Brandenburger} contextuality
-in sheaf-theory. They have been adapted to a measure theory framework.
-\subsubsection*{Labels and Contexts}
-First we look at the definition of a measurement label. A measurement label intuitively
-represents what one can tell apart, that is what questions a system can ask. It can be
-seen as the fundamental degrees of freedom of a given model. 
-\subsubsection*{Measurement Labels}
-\begin{definition}[Measurement labels]
-    A measurement label is an abstract symbol $m$ that identifies a physical distinction
-    we may attempt to extract from the system. Together with its outcome 
-    space $(\Omega_m, \mathcal F_m)$. That is:
+While measurable isomorphisms preserve the entire structure of a space, our work requires
+maps that allow a measurable space to be faithfully represented within a larger one.
+\begin{definition}[Measurable Embedding]\label{def:mes-emb}
+    A \textbf{measurable embedding}  is a injective measurable function
     \[
-        m \to (\Omega_m, \mathcal F_m)
+        \iota: \Omega_1 \to \Omega_2
     \]
-    The set of all measurement labels the model considers primitive is called $\mathcal M$.
-\end{definition}
-
-Then naturally, our global space, where all measurament labels exist is then:
-\begin{definition}[Global Space]
-    The global space, the space of all degrees of freedom and all their distinctions is 
+    such that the inverse map
     \[
-        \left(\Omega_{\mathcal M}, \mathcal F_{\mathcal M}\right) = 
+        \iota^{-1}: \iota(\Omega_1) \to \Omega_1
+    \]
+    is measurable, where $\iota(\Omega_1)$ is equipped with the sub-$\sigma$-algebra 
+    induced from $\mathcal F_2$.
+\end{definition}
+In this case, $\iota$ identifies $(\Omega_1, \mathcal F_1)$ with a measurable subspace of
+$(\Omega_2, \mathcal F_2)$, preserving the $\sigma$-algebra of the source space.
+\begin{definition}[Embedding-induced $\sigma$-algebra]\label{def:ind-emb-alg}
+Let $\iota:\Omega_1\to\Omega_2$ be a measurable embedding.  
+The \emph{embedding-induced $\sigma$-algebra} of $\iota$ is the sub-$\sigma$-algebra on
+$\iota(\Omega_1)\subset\Omega_2$ induced from $\mathcal F_2$, defined by
+\[
+\mathcal F^{\iota}
+\;:=\;
+\mathcal F_2\!\restriction_{\iota(\Omega_1)}
+\;=\;
+\{\,A\cap\iota(\Omega_1)\mid A\in\mathcal F_2\,\}.
+\]
+\noindent
+The same sub-$\sigma$-algebra used in the definition above.
+\end{definition}
+\subsection{Contextuality}
+A central concept underlying the theory developed in this work is that of 
+\textbf{contextuality}. The definitions presented here are adapted from the 
+sheaf-theoretic formulation of contextuality introduced in \cite{Abramsky&Brandenburger},
+to a measure-theoretic framework.
+\subsubsection*{Labels and Contexts}
+We begin by introducing the notion of a measurement label. Intuitively, a measurement 
+label represents a physical distinction that can be probed in a system, that is, a question
+that may be asked of the system. Measurement labels encode the primitive degrees of freedom
+of the model.
+%NOTE: I don't nescessarely like the talk of labels as questions. that is the role of
+%the sigma algebra
+\subsubsection*{Measurement Labels}
+\begin{definition}[Measurement labels]\label{def:mes-label}
+    A \textbf{measurement label} is an abstract symbol $m$ associated with an 
+    measurable space $(\Omega_m, \mathcal F_m)$, representing the possible outcomes of 
+    measuring $m$. We write
+    \[
+        m \longmapsto (\Omega_m, \mathcal F_m)
+    \]
+    The collection of all measurement labels cosidered by a model considers is denoted
+    $\mathcal M$.
+\end{definition}
+\subsubsection*{Global Space}
+\begin{definition}[Global measurable space]\label{def:global-space}
+    The \textbf{global space}, representing the joint space of all measurement labels, is
+    the product measurable space
+    \[
+        \left(\Omega_{\mathcal M}, \mathcal F_{\mathcal M}\right) := 
         \left(\prod_{m \in \mathcal M} \Omega_m \;, \bigotimes_{m \in \mathcal M} 
         \mathcal F_m \right)
     \]
     \noindent
-    Where $\mathcal F_1 \otimes \mathcal F_2 = 
-    \sigma\left(\left\{F_1 \times F_2: F_1 \in \mathcal F_1, F_2 \in 
-    \mathcal F_2\right\}\right)$. We note that, we do not define a particular probability measure on this space, that
-    is because what we are interested in at the moment is the structure of the space,
-    not a specfic measure on it.
 \end{definition}
-
+Here $\bigotimes_{m \in \mathcal M} \mathcal F_m$ denotes the product $\sigma$-algebra
+generated by cylinder sets. For two measurable spaces $(\Omega_1,\mathcal F_1)$ and 
+$(\Omega_2, \mathcal F_2)$ the product $\sigma$-algebra is given by
+\[
+\mathcal F_1 \otimes \mathcal F_2 := 
+    \sigma\left(\left\{F_1 \times F_2: F_1 \in \mathcal F_1, F_2 \in 
+    \mathcal F_2\right\}\right)
+\]
+We emphasize that no probability measure is specified on the global space at this stage.
+Our interest here lies in the measurable structure itself, independently of any particular
+choice of global state.
 \subsubsection*{Contexts}
-Next we talk about contexts. Contexts are given by the subset of labels or degrees of
-freedom a given observer cares about something he is interacting with. It can be seen
-as the fundamental set of questions he can ask about the part of the model he interacts 
-with.
-
-\begin{definition}[Context]
-    A context $C \subseteq \mathcal M$ is a finite collection of 
-    measurement labels that are jointly meaningful. 
-    To each context we associate a measurable space:
+We now introduce the notion of a context. A context represents a collection of measurement
+labels that are jointly accessible to an observer, or equivalently, a set of degrees of
+freedom that can be meaningfully considered together. Intuitively, a context specifies
+the questions an observer may simultaneously ask of the system.
+\begin{definition}[Context]\label{def:context}
+    A \textbf{context} is a finite subset $C \subseteq \mathcal M$ of measurement labels.
+    To each context we associate a measurable space
     \[
         (\Omega_{C}, \mathcal F_{C}) := \left(\prod_{m \in C}
         \Omega_m \;, \bigotimes_{m \in C} \mathcal F_m \right)
     \]
 \end{definition}
-
-Within a context we also define the projections:
-\begin{definition}[Canonical Context Projections]
-    The projections for a context $C$ are defined as \textbf{measurable functions} from a
-    context to one of its label spaces.
+\subsubsection*{Canonical Context Projections}
+Within a context, we define canonical projection maps onto the outcome spaces of 
+individual measurament labels.
+\begin{definition}[Canonical context projections]\label{def:can-proj}
+For a context $C$ and a label $m \in C$, the canonical projection is the measurable
+function
 \[
     \pi_{C \to \{m\}}: \Omega_C \to \Omega_m
 \]
-With:
+defined by
 \[
-    \pi_{C \to \{m\}}\left(\omega\right) = \omega_m \quad \forall \omega \in C
+    \pi_{C \to \{m\}}\left(\omega\right) = \omega_m \qquad \forall \omega \in \Omega_C
 \]
-\noindent
-That is, the projections map to the context corresponding to the label $m$ within
-the context $C$. The extension to a subcontext $D \subseteq C$ is naturally
-$\pi_{C\to D}$.
+More generally, for any subcontext $D \subseteq C$, we define the projection
+\[
+    \pi_{C \to D}: \Omega_C \to \Omega_D
+\]
+by restriction to the coordinates indexed by $D$.
 \end{definition}
-Intuitively projection can be seen as the \textbf{perspective} $C$ has on $m$. 
-For context projection we will also need its inverse definition.
-\begin{definition}[Cylinder Embedding]
-    For every outcome $\omega_1 \in \Omega_m$ we embed it in the context space 
-    $(\Omega_C,\mathcal F_C)$. This gives the definition:
+Intuitively, the projection $\pi_{C \to \{m\}}$ the \textbf{perspective} $C$ has on the
+measurament label $m$. The inverse images of projections define canonical measurable
+subsets of a context space.
+\begin{definition}[Cylinder Sets]\label{def:cyl-sets}
+    Let $C$ be a context and $m \in C$. For any $A \in \mathcal F_m$, the corresponding
+    \textbf{cylinder set} in $\Omega_C$ is defined by
     \[
-        \pi_{C\to\{m\}}^{-1}(A) := \left\{\omega \in \Omega_C:\; x_m \in A\right\}
+        \pi_{C\to\{m\}}^{-1}(A) := \left\{\omega \in \Omega_C \;\mid\; \omega_m \in A\right\}
     \]
     \noindent
-    Since $\pi$ is a measurable function by definition $\pi_{C\to\{m\}}^{-1}(A) \in 
-    \mathcal F_C$.
+    Since $\pi$ is a measurable function, all cylinder sets belong to $\mathcal F_C$.
 \end{definition}
-
-We importantly note that, a context require $\pi$. They tell the context where its events
-come from. In principle, a context does not hold \textbf{information that comes from nowhere.}
-
+Contexts do not introduce independent information: all events in a context arise as 
+pullbacks of events associated with its measurement labels via the canonical projections.
+In this sense, a context contains no information that does not originate from its 
+constituent labels.
 \subsubsection*{Empirical Model}
-We will now introduce the first concept that requires the use of specific probability 
-measures that is the definition of an \textbf{empirical model}. 
+We now introduce the first concept that explicitly involves probability measures: the
+notion of an \textbf{empirical model}.
 
-Intuitively can be seen as a particular realization of the model, or a 
-particular realization of a \textbf{perspective} on the underlying world. 
-We can also think of it as a particular family of \textbf{coodinates} in the probability 
-spaces of the contexts.
-\begin{definition}[Empirical model]
-    An \textbf{empirical model} is a family $\left\{e_C \right\}_{ C \in \mathcal M}$ 
-    of probability measures on $\left(\Omega_C, \mathcal F_C\right)$. 
-    For all $C,C' \in \mathcal M$ and all $D \in C \cap C'$ we have:
+Intuitively, an empirical model represents a particular realization of the system as
+accessed through different contexts. Equivalently, it may be viewed as a family of
+probability distributions describing the observable statistics associated with each
+context, subject to consistency on overlaps.
+\begin{definition}[Empirical model]\label{def:emp-model}
+    An \textbf{empirical model} is a family
     \[
-        \left(\pi_{C \to D}\right)_* e_C \; = \; \left(\pi_{C' \to D}\right)_* e_{C'}
+        \{\mu_C\,\}_{C \in \mathcal C}
     \]
-    This condition means that on overlaps, the probability measures must agree. They
-    come from the same underlying labels.
-\end{definition}
-
-\subsubsection*{Contextuality}
-The empirical families allows us to define what will be the driving feature of our 
-framework. It is the defintion of \textbf{Contextuality}. When \textbf{perspectives} 
-only completly exist on the context they came from.
-
-\begin{definition}[Contextuality]
-    The family $\left\{e_{E} \right\}_{ E \in \mathcal M}$ is called contextual 
-    in $\mathcal M$ if no probability measure $\mu$ on the global space $\mathcal M$ 
-    exists satisfying:
+    of probability measures, where for each context $C$,
     \[
-        \left(\pi_{C \to E}\right)_* \mu \; = e_{E} \quad \forall E \subset \mathcal M
+        \mu_C \text{ is a probability measure on } (\Omega_C, \mathcal F_C)
+    \]
+    
+    These measures are required to satisfy the following \emph{compatibility condition}:
+    For all $C,C' \in \mathcal C$ and all subcontexts $D \subseteq C \cap C'$,
+    \[
+        \left(\pi_{C \to D}\right)_* \mu_C \; = \; \left(\pi_{C' \to D}\right)_* \mu_{C'}
+    \]
+    This condition expresses the requirement that the probability distributions assigned to
+    different contexts agree on their common measurement labels, and hence represent
+    consistent marginals of a single underlying empirical situation.
+\end{definition}
+\subsubsection*{Contextuality}
+Empirical models allow us to define a central notion driving the framework developed in
+this work, that of \textbf{contextuality}. Informally, contextuality captures the failure
+of different observational perspectives to arise as consistent restrictions of a single
+global description.
+\begin{definition}[Contextuality]\label{def:prob-contextuality}
+    Let $\left\{\mu_{C} \right\}_{ C \in \mathcal C}$ be an empirical model.
+    The empirical model is said to be \textbf{contextual} if there exists no probability
+    measure $\mu$ on the global measurable space $(\Omega_\mathcal M, \mathcal F_\mathcal M)$
+    such that
+    \[
+        \left(\pi_{\mathcal M \to C}\right)_* \mu \; = \;
+        \mu_{C} \qquad \forall C \subset \mathcal C
     \]
     \noindent
-    They are called non-contextual, if such probability measure exists.
+    If such a probability measure exists, the empirical model is called 
+    \textbf{non-contextual}.
 \end{definition}
+Intuitively, non-contextuality means that the probabilistic data obtained from all 
+contexts can be understood as arising from a single joint probability distribution on the
+global space, with each context revealing only a partial perspective of that global state.
 
-Intuitively, it means that in that shared space, the questions still make perfect sense
-together if they are non-contextual. We know exactly where they came from.
+Contextuality, by contrast, indicates that no such global probability measure exists: 
+although each context admits a well-defined probabilistic description, these descriptions
+cannot be combined into a single coherent global model.
 
-If they are contextual then there is no way to pick a coordinate, or probability measure
-on the global space that agrees with all probabilities the contexts of that space found.
-
-The core feature we will need here is that, there exists experiments or real situations
-where the global space is contextual this fact can be seen in depth in 
-\cite{Abramsky&Brandenburger}. This particular definition, is of probabilistic 
-contextuality as defined on \cite{Abramsky&Brandenburger}.
+The existence of contextual empirical models is not merely a formal possibility.
+It is well established that there are experimental scenarios for which no
+non-contextual global description exists; a detailed analysis can be found in 
+\cite{Abramsky&Brandenburger}. The notion introduced here corresponds to probabilistic
+contextuality in the sense of \cite{Abramsky&Brandenburger}, expressed in measure-theoretic
+language.
+\subsection*{Standing Assumptions}
+All measurable spaces considered in this work are assumed to be standard Borel spaces. 
+Probability measures are taken to be Borel probability measures satisfying the 
+usual regularity conditions required for the constructions used below.
 \section{Structural Contextuality}
 To get a better understanding on RIF we need to look at other formulations of 
 contextuality. We want to understand contextuality without particular probability 
