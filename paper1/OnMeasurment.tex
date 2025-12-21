@@ -242,11 +242,8 @@ sheaf-theoretic formulation of contextuality introduced in \cite{Abramsky&Brande
 to a measure-theoretic framework.
 \subsubsection*{Labels and Contexts}
 We begin by introducing the notion of a measurement label. Intuitively, a measurement 
-label represents a physical distinction that can be probed in a system, that is, a question
-that may be asked of the system. Measurement labels encode the primitive degrees of freedom
-of the model.
-%NOTE: I don't nescessarely like the talk of labels as questions. that is the role of
-%the sigma algebra
+label represents a physical distinction that can be probed in a system. 
+Measurement labels encode the primitive degrees of freedom of the model.
 \subsubsection*{Measurement Labels}
 \begin{definition}[Measurement labels]\label{def:mes-label}
     A \textbf{measurement label} is an abstract symbol $m$ associated with an 
@@ -284,7 +281,7 @@ choice of global state.
 We now introduce the notion of a context. A context represents a collection of measurement
 labels that are jointly accessible to an observer, or equivalently, a set of degrees of
 freedom that can be meaningfully considered together. Intuitively, a context specifies
-the questions an observer may simultaneously ask of the system.
+the degrees an observer may simultaneously interact with on the system.
 \begin{definition}[Context]\label{def:context}
     A \textbf{context} is a finite subset $C \subseteq \mathcal M$ of measurement labels.
     To each context we associate a measurable space
@@ -392,93 +389,132 @@ All measurable spaces considered in this work are assumed to be standard Borel s
 Probability measures are taken to be Borel probability measures satisfying the 
 usual regularity conditions required for the constructions used below.
 \section{Structural Contextuality}
-To get a better understanding on RIF we need to look at other formulations of 
-contextuality. We want to understand contextuality without particular probability 
-distributions.
+To better understand RIF, we consider formulations of contextuality that do not rely on
+the specification of particular probability distributions. Instead, we focus on the
+underlying structural constraints imposed by measurable spaces themselves.
 
+This perspective is inspired by the sheaf-theoretic approach to contextuality, but goes
+beyond probabilistic inconsistency. In particular, it aligns with1 the notion of 
+\textbf{strong contextuality} as defined in \cite{Abramsky&Brandenburger}, where obstruction
+arises already at the level of compatible local descriptions.
 
-For this, we adapt the sheaf like condition, than just the failure of probabilities to
-have the correct marginals, this in particular matches the \textbf{strong contextuality} 
-defined in \cite{Abramsky&Brandenburger}. First we define a \textbf{Information Frame}.
+\subsection{Information Frames}
+We begin by introducing the notion of an \textbf{information frame}.
 
-\begin{definition}[Information Frame]
-    A information frame is a probability space over a context $C \subseteq \mathcal M$ 
-    with a particular event algebra 
-    $\mathcal F \subseteq \bigotimes_{m \in C} \mathcal F_m$ corresponding to the set
-    of distinctions that frame can see about the labels $m$.
+\begin{definition}[Information Frame]\label{def:info-frame}
+    Let $C \subseteq \mathcal M$ be a context. An \textbf{information frame} over $C$ is
+    a measurable space of the form
     \[
         \mathscr I_{C, \mathcal F} := \left(\prod_{m \in C} \Omega_m, \mathcal F\right)
     \]
-    \noindent
-    A information frame could be seen as a perspective on the world. A view of what it
-    can in principle see about a system. A probability measure there represents a 
-    particular state of the world. For notation convinience we will use 
-    $\mathscr I_1 = \mathscr I_{C1, \mathcal F_1}$
-\end{definition}
-
-In general, Information Frames are defined on the support of some probability measure,
-meaning we get rid of events that a context does not see as possible.
-
-An important piece we have in such spaces are shared events. We will often refer to shared
-events $E$ as follows:
-\begin{definition}[Shared Event]
-    We call an event $E$ a shared event of contexts $C$ and $C'$ when $C\cap C' = L \neq 
-    \emptyset$, the shared labels, and $E$ is a event only on those labels.
-
-    Then we can define, using the \textbf{Cylinder embeddings}:
+    Where $\mathcal F$ is a $\sigma$-algebra satisfying
     \[
-        E_1 = \pi_{C\to L}^{-1}(E) \quad E_2 = \pi_{C'\to L}^{-1}(E)
+        \mathcal F \; \subseteq\; \bigotimes_{m \in C} \mathcal F_m
     \]
-    We will often write $E \in \mathcal F_C \cap F_{C'}$, and even treat $E$ as an event
-    in those algebras. But it always corresponds to the events of the \textbf{Cylinder 
-    embedding}.
+    \noindent
+    The $\sigma$-algebra $\mathcal F$ represents the set of distinctions that the frame is
+    able to make about the measurement labels in $C$.
 \end{definition}
-We can now do a definition of contextuality based only on the structure of the 
-$\sigma$-algebras.
-\begin{definition}[Structural Contextuality]
-    Given a family of contexts $\mathcal C$ of $\mathcal M$ and corresponding 
+
+An information frame may be interpreted as a perspective on the system: it specifies what
+can, in principle, be distinguished within the context $C$. Probability measures on
+$\mathscr I_{C, \mathcal F}$ then represent particular states compatible with that 
+perspective.
+
+We note that when a probability measure is specified on an information frame, events are
+understood operationally up to null sets. That is, events that differ only on a set of
+measure zero are identified as representing the same distinction from the perspective of
+that frame.
+
+For notational convenience, when no ambiguity arises we write
+\[
+    \mathscr I_i \; = \; \mathscr I_{C_i, \mathcal F_i}
+\]
+\subsection{Structural Contextuality}
+\subsubsection*{Shared Events}
+First we must establish when two events in different contexts carry \textbf{shared} meaning.
+\begin{definition}[Shared Event]\label{def:shared-event}
+    Let $C,C' \in \mathcal C$ be contexts with nonempty intersection
+    \[
+        L := C \cap C' \neq \emptyset
+    \]
+    An event $E_L \in \mathcal F_L$ is called a \textbf{shared event} of $C$ and $C'$.
+
+    The corresponding events in the context spaces $(\Omega_C, \mathcal F_C)$ and
+    $(\Omega_{C'},\mathcal F_{C'})$ are given by the cylinder sets
+    \[
+        E_C := \pi_{C\to L}^{-1}(E_L), \qquad E_{C'} := \pi_{C'\to L}^{-1}(E_L)
+    \]
+\end{definition}
+\subsubsection*{Embeddings and Event images}
+We also note that, since all spaces considered are standard Borel, any embedding used in
+this work is understood to be a Borel embedding. In particular, the image of an embedding
+is a measurable subset of the target space. Consequently, for a embedding
+\[
+    \iota: (\Omega_1, \mathcal F_1) \to (\Omega_2,\mathcal F_2)
+\]
+and any event $E \in \mathcal F_1$, we have
+\[
+    \iota(E) \in \mathcal F_2
+\]
+In fact, for the purposes of this work, general $\sigma$-algebra homomorphism suffice.
+Under the standing assumptions, any measurable embedding induces an injective 
+$\sigma$-algebra homomorphism. We therefore freely move between these equivalent 
+perspectives when convenient.
+\subsubsection*{Structural Contextuality}
+We can now make precise a definition of contextuality that does not rely on probability
+measures.
+\begin{definition}[Structural Contextuality]\label{def:struc-context}
+    Given a family of contexts $\mathcal C$ over $\mathcal M$ with corresponding 
     information frames $\mathscr I_{C, \mathcal F_C}$ and a global space 
     $\left(\Omega, \mathcal F\right)$. 
 
-    The family is said to be \textbf{structuraly non-contextual} if there is a family of 
-    corresponding \textbf{embeddings} and some sub-$\sigma$-algebra 
-    $\mathcal G \subseteq \mathcal F$ such that:
+    The family is said to be \textbf{structuraly contextual} if there exists no family of 
+    \textbf{embeddings} into a common sub-$\sigma$-algebra
+    $\mathcal G \subseteq \mathcal F$,
     \[
         \iota_{C \in \mathcal C}: \mathscr I_{C, \mathcal F_C} \to 
-        \left(\Omega, \mathcal G\right)
+        \left(\Omega, \mathcal G\right) \qquad C \in \mathcal C
     \]
-    Such that for every pair $C,C'$ and every event 
-    $E \in \mathcal F_C \cap \mathcal F_{C'}$, that is events on shared labels, we have:
+    Such that for every pair $C,C'$ with $L = C \cap C'$ and every \textbf{shared event}
+    $E_L\in \mathcal F_L$,
     \[
-        \iota_C(E) = \iota_{C'}(E)
-    \]
-    Formally, for $L = C\cap C'$ that requires:
-    \[
-        \iota_C(\pi_{C\to L}^{-1}(E)) = \iota_{C'}(\pi_{C\to L}^{-1}(E))
+        \iota_C(\pi_{C\to L}^{-1}(E_L)) = \iota_{C'}(\pi_{C'\to L}^{-1}(E_L))
     \]
     \noindent
-    If no such embedding exists then the family is called \textbf{structuraly contextual}.
+    If such a family of embeddings exists, the family of frames is called 
+    \textbf{structurally non-contextual}.
 \end{definition}
 
-The existence of \textbf{strong contextuality} as seem in \cite{Abramsky&Brandenburger} 
-guarantees structural contextuality also exists, in particular the results in 
-\cite{Kochen-Specker} show that, if we try to keep the full $\sigma$-algebra 
-event structure, structural contextuality will eventually happen. This 
-shows contextuality is essentially inevitable in sufficiently complex logics.
+Intuitvely, structural contextuality relies criticaly on the failure of existence of 
+\emph{any} compatible embedding. That is, the events structure of the contexts are 
+incompatible to the extent that no faithful realization can identify shared events
+globally while preserving the full informational content of each context.
+\subsubsection*{Relationship with strong contextuality}
+While this notion is distinct from probabilistic contextuality, it is closely related.
+When event algebras fail to embed compatibly, any attempt to assign a single global
+probability measure respecting all contextual distinctions necessarily requires 
+coarse-graining, and may fail entirely.
 
-In general, in the product space, this can be seen as the failure of cylinder sets to hold
-all the complexity of all frames event structure. We can think of this in the simple case
-of two frames. Consider:
+The existence of \textbf{strong contextuality} in the sense of \cite{Abramsky&Brandenburger} 
+guarantees that structural contextuality occurs for suitably fine event structures. In
+particular the Kochen--Specker results \cite{Kochen-Specker} show that retaining the full
+$\sigma$-algebra structure of measurement contexts eventually obstructs any global 
+realization. This highlights the structural inevitability of contextuality in sufficiently
+rich logics.
+
+As a illustration in the product space, this can be viewed as the failure of cylinder sets 
+to capture the full complexity of the contextual event structures. Consider, for example,
+two embeddings
 \[
-    \iota_1(x) = (x, f(x)) \quad \iota_2(y) = (g(y), y) 
+    \iota_1(x) = (x, f(x)) \qquad \iota_2(y) = (g(y), y) 
 \]
-Here we simply represent the embedding as the identity on the labels it controls, that
-forces part of the embedding structure, the other part, corresponding to labels the original
-space does not see, is free to be any measurable function.
-
-The issue is when the events have non-trivial intersections. It is not always possible to
-match the functions and identity correctly that is precisely 
-\textbf{structural contextuality}.
+Here the embedding is fixed on the degrees of freedom controlled by each context, while
+the remaining components are unconstrained. Structural contextuality does not arise from a 
+lack of freedom in choosing the functions $f$ and $g$, but from the requirement that they
+simultaneously preserve the full event structures of the contexts. When shared events are
+refined incompatibly across contexts, no choice of $f$ and $g$ can reconcile all induced
+events in a single global-algebra.
 \section{The Relativity Of Information Frames}
 \subsection{Interaction}
 Now we work on making precise the meaning of the \textbf{Relativity of Information Frames

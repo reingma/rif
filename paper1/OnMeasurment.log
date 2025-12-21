@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2025.2.1)  20 DEC 2025 18:52
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2025.2.1)  21 DEC 2025 04:17
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -623,107 +623,106 @@ LaTeX Warning: Citation `Abramsky&Brandenburger' on page 4 undefined on input li
 
 [6]
 
-LaTeX Warning: Citation `Abramsky&Brandenburger' on page 7 undefined on input line 387.
+LaTeX Warning: Citation `Abramsky&Brandenburger' on page 7 undefined on input line 384.
 
 
-LaTeX Warning: Citation `Abramsky&Brandenburger' on page 7 undefined on input line 388.
+LaTeX Warning: Citation `Abramsky&Brandenburger' on page 7 undefined on input line 385.
 
 
-LaTeX Warning: Citation `Abramsky&Brandenburger' on page 7 undefined on input line 402.
+LaTeX Warning: Citation `Abramsky&Brandenburger' on page 7 undefined on input line 398.
 
 
 pdfTeX warning (ext4): destination with the same identifier (name{definition.1}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
 l.404 \begin{definition}[Information Frame]
-                                           
+                                           \label{def:info-frame}
+
+[7]
 pdfTeX warning (ext4): destination with the same identifier (name{definition.2}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.424 \begin{definition}[Shared Event]
-                                      
-
-[7]
+l.436 \begin{definition}[Shared Event]
+                                      \label{def:shared-event}
 pdfTeX warning (ext4): destination with the same identifier (name{definition.3}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.438 \begin{definition}[Structural Contextuality]
-                                                  
-
-LaTeX Warning: Citation `Abramsky&Brandenburger' on page 8 undefined on input line 463.
-
-
-LaTeX Warning: Citation `Kochen-Specker' on page 8 undefined on input line 465.
-
-
+l.467 \begin{definition}[Structural Contextuality]
+                                                  \label{def:struc-context}
 
 [8]
+
+LaTeX Warning: Citation `Abramsky&Brandenburger' on page 9 undefined on input line 499.
+
+
+LaTeX Warning: Citation `Kochen-Specker' on page 9 undefined on input line 501.
+
+
 pdfTeX warning (ext4): destination with the same identifier (name{definition.1}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.499 \begin{definition}[Joint Frame]
+l.535 \begin{definition}[Joint Frame]
                                      
+
+[9]
 pdfTeX warning (ext4): destination with the same identifier (name{definition.2}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.531 \begin{definition}[Local Projections]
+l.567 \begin{definition}[Local Projections]
                                            
 pdfTeX warning (ext4): destination with the same identifier (name{definition.3}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.547 \begin{definition}[Privilege]
+l.583 \begin{definition}[Privilege]
                                    
 
-[9]
-Package hyperref Info: bookmark level for unknown axiom defaults to 0 on input line 570.
-Package hyperref Info: bookmark level for unknown proposition defaults to 0 on input line 588.
-
-
 [10]
+Package hyperref Info: bookmark level for unknown axiom defaults to 0 on input line 606.
+Package hyperref Info: bookmark level for unknown proposition defaults to 0 on input line 624.
+
 pdfTeX warning (ext4): destination with the same identifier (name{definition.5}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.612 \begin{definition}[Pointer Algebra]
+l.648 \begin{definition}[Pointer Algebra]
                                          
-Package hyperref Info: bookmark level for unknown lemma defaults to 0 on input line 629.
-
 
 [11]
-Package hyperref Info: bookmark level for unknown theorem defaults to 0 on input line 687.
+Package hyperref Info: bookmark level for unknown lemma defaults to 0 on input line 665.
 
 
 [12]
+Package hyperref Info: bookmark level for unknown theorem defaults to 0 on input line 723.
+
 
 [13]
 
-Package amsfonts Warning: Obsolete command \bold; \mathbf should be used instead on input line 805.
-
-
-
 [14]
+
+Package amsfonts Warning: Obsolete command \bold; \mathbf should be used instead on input line 841.
+
+
 
 [15]
 
-LaTeX Warning: Citation `Gleanson' on page 16 undefined on input line 901.
+[16]
+
+LaTeX Warning: Citation `Gleanson' on page 17 undefined on input line 937.
 
 
-LaTeX Warning: Citation `Piron' on page 16 undefined on input line 909.
+LaTeX Warning: Citation `Piron' on page 17 undefined on input line 945.
 
 
-LaTeX Warning: Citation `Soler' on page 16 undefined on input line 909.
+LaTeX Warning: Citation `Soler' on page 17 undefined on input line 945.
 
 
-LaTeX Warning: Citation `Gleason' on page 16 undefined on input line 909.
+LaTeX Warning: Citation `Gleason' on page 17 undefined on input line 945.
 
 Package microtype Info: Loading generic protrusion settings for font family
 (microtype)             `cmss' (encoding: OT1).
 (microtype)             For optimal results, create family-specific settings.
 (microtype)             See the microtype manual for details.
 
-
-[16]
-
-LaTeX Warning: Citation `Gleanson' on page 17 undefined on input line 922.
+LaTeX Warning: Citation `Gleanson' on page 17 undefined on input line 958.
 
 
 
@@ -733,7 +732,7 @@ LaTeX Warning: Citation `Gleanson' on page 17 undefined on input line 922.
 
 [19]
 
-LaTeX Warning: Citation `Abramsky&Brandenburger' on page 20 undefined on input line 1076.
+LaTeX Warning: Citation `Abramsky&Brandenburger' on page 20 undefined on input line 1112.
 
 
 
@@ -743,7 +742,9 @@ LaTeX Warning: Citation `Abramsky&Brandenburger' on page 20 undefined on input l
 
 [22]
 
-[23] (./OnMeasurment.aux)
+[23]
+
+[24] (./OnMeasurment.aux)
  ***********
 LaTeX2e <2024-11-01> patch level 2
 L3 programming layer <2025-01-18>
@@ -753,21 +754,21 @@ L3 programming layer <2025-01-18>
 LaTeX Warning: There were undefined references.
 
 Package rerunfilecheck Info: File `OnMeasurment.out' has not changed.
-(rerunfilecheck)             Checksum: 9CFD115210F9F5C6B62891A9AC46290E;5442.
+(rerunfilecheck)             Checksum: BA93D0A579D0DD3CE4C7F53DB9AF2F98;5774.
  ) 
 Here is how much of TeX's memory you used:
- 16747 strings out of 473795
- 277445 string characters out of 5727276
+ 16760 strings out of 473795
+ 277663 string characters out of 5727276
  749429 words of memory out of 5000000
- 39380 multiletter control sequences out of 15000+600000
- 577485 words of font info for 183 fonts, out of 8000000 for 9000
+ 39388 multiletter control sequences out of 15000+600000
+ 577425 words of font info for 182 fonts, out of 8000000 for 9000
  695 hyphenation exceptions out of 8191
  79i,7n,93p,1009b,700s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmbxti10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cmextra/cmex8.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmss10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmti8.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt12.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/rsfs/rsfs10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/cm-super/sfrm1095.pfb>
-Output written on OnMeasurment.pdf (23 pages, 343175 bytes).
+Output written on OnMeasurment.pdf (24 pages, 345340 bytes).
 PDF statistics:
- 510 PDF objects out of 1000 (max. 8388607)
- 432 compressed objects within 5 object streams
- 166 named destinations out of 1000 (max. 500000)
- 43793 words of extra memory for PDF output out of 51595 (max. 10000000)
+ 527 PDF objects out of 1000 (max. 8388607)
+ 448 compressed objects within 5 object streams
+ 173 named destinations out of 1000 (max. 500000)
+ 43809 words of extra memory for PDF output out of 51595 (max. 10000000)
 
