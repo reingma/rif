@@ -53,11 +53,76 @@
 
 \vspace{0.5em}
 \begin{abstract}
+    We introduce a structural framework based on a symmetry principle we call the
+    \emph{Relativity of Information Frames} (RIF). The framework treats information
+    frames as fundamental objects and constrains how their event structures may be
+    jointly realized during interaction. Using measure theory and contextuality, we
+    formalize interactions as embeddings into a joint measurable space and show that
+    enforcing perspectival symmetry induces a canonical coarse-graining of events. From
+    a single RIF axiom, we derive a distinguished $\sigma$-algebra - the 
+    \emph{pointer algebra} - and prove that it is the maximally informative algebra
+    admitting non-contextual probability measures. Any consistent empirical family admits
+    a global probability measure on the pointer algebra, whereas any strict extension
+    generically reintroduces contextuality.
 
+    We then apply the framework to quantum theory. Without attempting a full reconstruction
+    we show how standard quantum structure are naturally represented: observables arise as
+    perspectival maps, probability emerges from coarse graining, and the born rule follows
+    from a martingale argument. Wigner-type scenarios are shown to be consistent via the
+    tower law, and unitary evolution is intrepreted as a manifestation of gauge freedom
+    in the choice of embeddings. We further discuss how the induced coarse-graining
+    introduces an intrinsic arrow of time and outline possible connections to causal 
+    structure and geometry. The results are structural rather than dynamical and provide
+    a unified perspective on contextuality, probability, and measurement.
 \end{abstract}
 
 \section{Introduction}
+This work develops a structural framework motivated by a simple but persistent tension in
+the foundations of physics: the apparent incompatibility between globally consistent
+descriptions of physical systems and the perspectival nature of information obtained through
+interaction. While the framework did not initially arise from a single ghiding principle,
+its development ultimately crystallized around a symmetry statement, which we call the
+\textbf{Relativity of Information Frames} (RIF).
 
+At its core, RIF asserts that no informational perspective should be privileged over another 
+in the description of physical events. This principle is not imposed dynamically, but
+structurally: it constrains which event structures can be jointly realized when multiple
+information frames interact. The framework developed here formalizes this idea using
+measure theory and contextuality, treating information frames as the fundamental ontic
+objects and interactions as operations that enforce perspectival consistency.
+
+Part~I of this paper establishes the formal framework. We introduce information frames,
+their embeddings into joint measurable spaces, and a notion of structural contextuality
+that captures when full informational structures cannot be jointly preserved. From a
+single RIF axiom, we derive a canonical coarse-graining of the joint event structure and
+prove that the resulting $\sigma$-algebra is, in a precise sense, the maximally informative
+non-contextual algebra compatible with the interaction. We refer to this algebra as the
+\textbf{pointer algebra}. We further show that, while probability measures need not exist
+on the full joint structure, any consistent empirical family admits a global probability
+measure on the pointer algebra, and that any strict extension of this algebra reintroduces
+contextuality.
+
+Part~II applies the framework to quantum theory. Without attempting a full reconstruction,
+we show how standard quantum structures are naturally represented within RIF. Observables
+arise as perspectival maps, conditioning corresponds to interaction, and probability
+assingnments emerge from coarse-graining rather than being postulated. We derive the
+Born rule operationally via a martingale argument, establish the consistency of Wigner-type
+scenarios using the tower law, and interpret unitary evolution as a manifestation of
+gauge freedom in the choice of embeddings. We also outline how familiar gauge symmetries
+may be viewed as relations between information frames.
+
+Beyond quantum mechanics, we explore several conceptual consequences of the framework. That
+enforced coarse-graining introduces an intrinsic irreversibility, providing a structural 
+arrow of time. Interactions define a relational graph of frames that suggests a notion
+of causal locality, and we briefly discuss how the degree of coarse-graining may be related
+to geometric and gravitational considerations.
+
+The results presented here are structural rather than dynamical. No specific dynamics are 
+assumed, and no new empirical predictions are claimed. Instead, the framework offers a
+unified perspective on contextuality, probability, and measuremen, clarifying the origin
+of quantum features that are often treated as axiomatic. We conclude by comparing
+RIF to existing approaches, including decoherence-based accounts, and by outlining 
+directions for further development.
 \section{Motivation - The Relativity of Information Frames}
 
 Consider two physical observers, Alice and Bob, each equipped with a clock and a ruler.
@@ -97,6 +162,7 @@ Measurement is not the revelation of a pre-existing global state; it is the join
 From this symmetry, quantum state update, pointer bases, and even causal 
 geometry follow as consequences.
 
+\part{Structural Framework}
 \section{Background}
 \subsection{Measure Theory}
 A full account of measure theory and probability theory is outside the scope of this paper;
@@ -695,6 +761,9 @@ of each interaction.
     \[
         F_{\mathcal J_I}^* := \sigma\left(\bigcup_{i \in I} \mathcal F_i^{\text{ptr}}\right)
     \]
+    \noindent
+    When the joint frame is obvious we may simply refer to the pointer algebra as 
+    $\mathcal F^*$.
 \end{definition}
 \subsubsection*{Interpretation}
 Local perspective maps do not represent physical operations performed in time, but rather
@@ -710,86 +779,292 @@ joint frame is generated by all such non-privileging events, and represents the 
 event structure that can be jointly realized without privileging any information frame.
 
 This algebra captures the emergent classical structure associated with the interaction.
+\subsubsection*{Coarse-Graining and the Emergence of Probability.}
+\begin{remark}\label{rem:probability-origin}
+In this framework, probability is not taken as a primitive notion. Instead, probabilistic 
+structure arises as a consequence of coarse-graining enforced by \cref{rif}.   
+\end{remark}
+ When an
+interaction removes distinctions that cannot be jointly maintained across information 
+frames, multiple incompatible bookkeeping events are identified as a single physically
+admissible event in the pointer algebra. From the perspective of an individual frame,
+these identified events are indistinguishable, yet no further structural information remains 
+available to discriminate between them.
 
+Any assignment of weights to physically admissible events that is stable under further
+coarse-graining and compatible with the structure of the pointer algebra must therefore
+take the form of a probability measure. In this sense, probabilities encode the residual
+information accessible to a frame after incompatible distinctions have been eliminated,
+rather than reflecting intrinsic randomness or ignorance of an underlying reality.
 \subsection{Relation to Contextuality}
-From structural contextuality, it is clear to see how closely related the concept of RIF
-is to contextuality. We will now explore the implications of the pointer algebra for
-contextuality.
-
-First we show that, when a joint frame with the pointer algebra is defined, we have a
-particular type of non-contextuality. It is important to note here, that our structural
-contextuality definition no longer applies. This is because after throwing away events
-we no longer have embeddings, the maps there might be many to one. So for this we equip
-the information frames with \textbf{empirical probability families}, and show that we
-can construct a well behaved measure on the \textbf{joint pointer frame}.
-\begin{lemma}[The Joint Pointer Frame is non-contextual]
-    Let $\left\{\mu_i\right\}_{i \in I}$ be a \text{empirical family} on the contexts of
-    the information frames $\left\{\mathscr I_i\right\}_{i \in I}$, then there exists
-    a probability measure $\mu$ in the \textbf{Pointer Joint Frame} such that:
-    \[
-        \mu(E) = \mu_i(\pi_{\mathcal J_I \to \mathcal C_i}(E))
-    \]
-    For every event $E$ and every choice of $i$.
-\end{lemma}
-\begin{proof}
-For some $i \in I$ and for each $E \in \mathcal F_{\text{ptr}}$, define:
-\[
-    \mu(E) := \mu_i(\pi_i(E))
-\]
-Let $E \in \mathcal F_{\text{ptr}}$ and let $C_j$ be some other context. If 
-$C_j\cap C_i = \emptyset$, no consistency condition is required.
-If $C_j\cap C_i \neq \emptyset$ RIF implies that either both are trivial or they have
-the exact same projection onto $C_i \cap C_j$. In the later case the consistency conditions
-imply:
-\[
-    \mu(E) = \mu_i(\pi_i(E)) = \mu_j(\pi_j(E))
-\]
-So $\mu$ is a consistent probability measure on the joint pointer frame.
-\end{proof}
-We now see that, for contextual families, RIF is not satisfied.
-\begin{proposition}[Contextuality violates RIF]
-    If a family of contexts given by $I$ is \textbf{structurally contextual}. 
-    Then the naive joint frame $\mathcal J_I$ violates RIF for some event.
+Structural contextuality makes precise the close relationship between the Relativity of
+Information Frames and contextuality in the usual sense. In particular, if a family of
+information frames is structurally non-contextual in the sense of \cref{def:struc-context},
+then no privileged events arise and the pointer algebra coincides with the full 
+$\sigma$-algebra of the joint frame.
+\begin{proposition}[Pointer algebra relation to structural contextuality]
+    If $\left\{\mathscr I_i\right\}_{i \in I}$ is a family of information frames as and
+    $\left\{\iota_i\right\}_{i \in I}$ their corresponding embeddings. Then the following
+    hold for the \textbf{pointer algebra of the joint frame} 
+    \begin{itemize}
+        \item if the family is structurally non-contextual $\mathcal F^*_{\mathcal J_I} = 
+            \mathcal F_{\mathcal J_I}$
+        \item if the family is structurally contextual $\mathcal F^*_{\mathcal J_I} 
+            \subsetneq \mathcal F_{\mathcal J_I}$
+    \end{itemize}
 \end{proposition}
 \begin{proof}
-    For simplicity consider only two frames that disagree.
-    We know there is a shared event $E$ for which
-    \[
-        \iota_1(\pi_1(E)) \neq \iota_2(\pi_2(E))
-    \]
-    Now let $A = \iota_1(\pi_1(E))$ and $E = \iota_2(\pi_2(E))$. This makes it clear
-    that:
-    \[
-        \pi_2(E) \neq \pi_2(A)
-    \]
-    Since otherwise, because the embeddings are injective we would have $A = E$. This 
-    already implies:
-    \[
-        e_2 \circ e_1(E) \neq e_2(E)
-    \]
-    So RIF is violated for the event $E$.
+    The proof follows directly from the definitions.
 \end{proof}
-Now we show that, using a larger $\sigma$-algebra then RIF, allows us to construct
-a contextual empirical family.
-\begin{lemma}[Any larger $\sigma$-algebra is contextual]
-    Suppose $\mathcal G$ is a $\sigma$-algebra on a joint frame such that 
-    $\mathcal F_\text{ptr} \subsetneq \mathcal G$. Then there exists a empirical family
-    $\left\{\mu_i\right\}_{i \in I}$ for which no consistent probability measure $\mu$
-    exists on the joint frame with $\mathcal G$.
+
+While this observation already captures a nontrivial physical mechanism - namely, the
+elimination of incompatible distinctions - we now establish a stronger and more informative
+result. Specifically, we show that the pointer algebra is, in a precise sense, the
+\textbf{maximally informative non-contextual algebra} compatible with the given joint 
+structure.
+
+Structural contextuality alone is not sufficient for our purposes, as it detects 
+contextuality only when one attempts to preserve the full informational structure of
+each frame. A similar limitation applies to standard probabilistic contextuality.
+However, probability measures provide additional flexibility, allowing one to distinguish
+between different $\sigma$-algebras on the joint frame without modifying the underlying
+event structure.
+
+We therefore fix a consistent empirical model $\left\{\mathscr I_i\right\}_{i \in I}$ as
+in \cref{def:emp-model}. For each context we consider the associated information frame
+$\mathscr I_i$, with event algebras representing the support of the corresponding probability
+measures, as described previously. Using a choice of embeddings $\{\iota_i\}_{i \in I}$,
+we construct the joint frame $\mathcal J_I$.
+
+We begin by defining the following induced measure on the joint frame:
+\begin{equation}
+    \tilde{\mu_i}(E) := \mu_i(\iota^{-1}_i(E)), \qquad E \in \iota_i(\mathcal F_i)
+    \label{eq:glob-meas}
+\end{equation}
+Which represents the ppushfoward of $\mu_i$ to the embedded event algebra. Restricting this
+measure to the frame pointer algebra yields
+\begin{equation}
+    \tilde{\mu}^{\mathrm{ptr}}_i := \tilde\mu_i \restriction \mathcal F_i^{\mathrm{ptr}}
+    \label{eq:res-meas}
+\end{equation}
+In order to glue these restricted measures into a single global measure on the pointer
+algebra $\mathcal F^*$, it is necessary that they agree on overlaps:
+\begin{equation}
+    \tilde\mu_i^{\mathrm{ptr}}(E) = \tilde\mu_j^{\mathrm{ptr}}(E) \qquad \forall E 
+    \in \mathcal F_i^{\mathrm{ptr}} \cap \mathcal F_j^{\mathrm{ptr}}.
+    \label{eq:consistency}
+\end{equation}
+We then state the following lemma:
+\begin{lemma}[Pointer Overlap Consistency]\label{lemma:overlap-consistency}
+    If $E \in \mathcal F_i^{\mathrm{ptr}} \cap \mathcal F_j^{\mathrm{ptr}}$, then
+    $E$ is a \textbf{shared event} whose identification is order-independent, hence
+    any empirical family assigns it the same weight.
 \end{lemma}
-\begin{proof}
+\begin{proof}[Sketch]
+    By construction, events in $\mathcal F_i^{\mathrm{ptr}}
+    \cap \mathcal F_j^{\mathrm{ptr}}$ admit a frame-independent identification in the joint
+    structure. Such events correspond to shared events whose embeddings agree up to
+    $\sigma$-algebra homomorphisms, and hence empirical consistency on overlaps implies
+    the equality of their assigned weights.
 \end{proof}
-Both together allow us to conclude
-\begin{theorem}[The Pointer Algebra is the maximally informative non-contextual $\sigma$-algebra]
-    The algebra $\mathcal F_\text{ptr}$ is maximally informative. That is, any other 
-    event from the interaction frame, allows contextuality.
+
+From this lemma, it is obvious that \cref{eq:consistency} holds, which allows us to state
+the desired result
+\begin{proposition}[Existence of a non-contextual measure]
+    If $\tilde\mu_i^{\mathrm{ptr}}$ agree on overlaps, there exists a probability measure
+    $\mu^*$ on $(\Omega_{\mathcal J}, \mathcal F^*)$ extending them. 
+\end{proposition}
+\begin{proof}[Sketch]
+We define a pre-measure $\mu_0$ for $\mathcal F^*$, since the frame pointer algebras are
+the generators of $\mathcal F^*$ we can define, whenever $E \in \mathcal F_i^{\mathrm{ptr}}$
+\[
+    \mu_0(E) = \tilde \mu_i^{\mathrm{ptr}}(E)
+\]
+Since we have \cref{eq:consistency}, this is well defined. Since 
+$\mu_0(\Omega_\mathcal J) = 1$ and $\mu_0 \geq 0$ we can use the 
+\emph{Caratheodory Extension Theorem}\cref{Catheodory} to get a measure $\mu^*$ on 
+$\mathcal F^*$ with the required overlap consistency.
+\end{proof}
+This result shows that, starting from a empirical model which may or may not be contextual
+on the constructed joint frame, the potential coarse graining to the pointer algebra
+directly admits a consistent probability measure with that empirical model.
+
+In what follows, since we had fixed a empirical model and constructed the joint
+frame and pointer algebra relative to the $\sigma$-algebraic structure induced by the
+that model. Maximality here is understood relative to this joint frame.
+\begin{proposition}[Maximality of the pointer algebra]
+    Any strict extension $\mathcal F^* \subsetneq \mathcal G \subseteq \mathcal 
+    F_{\mathcal J_I}$ fails to admit a consistent global measure extending the fixed
+    empirical family.
+\end{proposition}
+\begin{proof}[Sketch]
+    Since $\mathcal G$ must have a event $E$ that is not \textbf{RIF admissible} we have
+    for some pair $i,j$:
+    \[
+        E \in \iota_i(\mathcal F_i) \cap \iota_j(\mathcal F_j) \quad \text{ and }
+        \quad e_j(e_i(E)) \neq e_j(E)
+    \]
+    Since the events are in the support from the initial assumptions and they
+    are distinct events we must have:
+    \[
+        \tilde\mu_j(e_j(e_i(E))) \neq \tilde\mu_j(e_j(E))
+    \]
+    Then suppose we can build a global measure. 
+    But as we have seen, consistency would require 
+    \[
+        \tilde\mu_j(e_j(e_i(E))) = \tilde\mu_j(e_j(E))
+    \]
+    So $\mathcal G$ cannot admit a consistent global measure.
+\end{proof}
+These results imply a strong correlation between contextuality and the RIF pointer algebra.
+\begin{theorem}[The Pointer Algebra is the Maximally Informative Non-Contextual Algebra]
+    For a joint frame built from a family of information frames the pointer algebra 
+    is the largest $\sigma$-algebra that admits consistent probability measures.
 \end{theorem}
-\begin{proof}
-    Immediate from both lemmas.
-\end{proof}
+\subsubsection*{Remarks}
+We note that this result is in some sense informal, there is a real limiation on how
+contextuality is defined to talk about a maximally informative \textbf{non-contextual} 
+algebra, the construction is far more natural in the \textbf{RIF} definition, but the
+arguments strongly show the link between the concepts.
+
+It is important to note that if one fixes the joint frame first, and look at what empirical 
+families can be built on it. Non-contextuality of the pointer algebra becomes
+relative to this joint frame. With this understanding, the pointer algebra
+has two key properites:
+\begin{itemize}
+    \item Any consistent empirical family admits a global probability measure on the 
+        pointer algebra.
+    \item Any strict extension of the pointer algebra admits a locally consistent 
+        probability assignment that do not glue to a global measure.
+\end{itemize}
+\part{Physical Structure and Consequences}
 \section{Quantum Mechanics}
-Here we endevor to trace the parallels with standard quantum mechanics. Where each
-ingredient fits in the picture of information frames we have built and how are they related.
+In this section we clarify the connection between the RIF framework and quantum theory.
+Our goal is not a full formal reconstruction of quantum meachanics, but to show that
+the event structures arising naturally in RIF coincide with the algebraic structures 
+underlying quantum theory. In particular, we show that the collection of contextual event
+algebras forms an orthomodular lattice, and that standard Hilbert space realizations arise 
+under the usual structural assumptions. Consequences such as the Born rule and Wigner-type
+consistency conditions will then be seen to follow naturally from RIF invariance.
+\subsection{The Hilbert Space Realization}
+We will not attempt a full Hilbert space reconstruction in this work. Instead, we situate
+the RIF event structure within the well-established framework of quantum logic, highlighting
+where RIF provides a natural physical interpretation of the underlying assumptions.
+\subsubsection*{The Orthomodular Lattice of Events}
+Let $(\mathcal F_i)_{i \in I}$ denote the Boolean $\sigma$-algebras associated to each 
+information frame (context), and let the usual embeddings $(\iota_i)_{i \in I}$ into 
+a joint frame, as \cref{def:joint-frame},  be given.
+
+From the usual quantum logic perspective, the events on the joint frame algebra form a 
+lattice. 
+\[
+    \mathcal L := \mathcal F_{\mathcal J_I} := \sigma\! \left(\bigcup_{i \in I} 
+        \iota_i(\mathcal F_i)\right)
+\]
+Naturally $\mathcal L$ is a lattice with its operations
+\begin{itemize}
+    \item complement $E\rightarrow E^c$,
+    \item meet: $E \wedge F = E \cap F$,
+    \item join: $E \vee F = \text{cl}_\mathcal L (E \cup F)$
+\end{itemize}
+
+\begin{proposition}[$\mathcal L$ is a orthomodular lattice]
+    The event structure $\mathcal L$ is an orthomodular lattice. Each contextual algebra
+    $\iota_i(\mathcal F_i)$ embeds as a maximal Boolean subalgebra of $\mathcal L$.
+\end{proposition}
+\begin{proof}[Sketch]
+    Each $\mathcal F_i$ is a Boolean algebra and therefore an orthocomplemented distributive
+    lattice. The embeddings $\iota_i$ preserve complements and finite meets, ensuring
+    that $\mathcal L$ is orthocomplemented.
+
+    Distributivity fails in $\mathcal L$ whenever events arising from incompatible frames 
+    cannot be jointly refined, which is precisely the manifestation of contextuality in
+    the RIF framework. However, the consistency of partial refinements between compatible
+    events ensures that the orthomodular law holds. Thus $\mathcal L$ is an orthomodular, but generally 
+    non-distributive lattice.
+\end{proof}
+Under standard assumptions, the same we established in this framework, classical results
+in quantum logic \cite{Piron} imply that $\mathcal L$ admits a representation as the
+projection lattice of a Hilbert space:
+\[\mathcal L \cong \mathsf{Proj}(\mathcal H)\]
+where $\mathcal H$ is a Hilbert space over $\mathbb R$, $\mathbb C$ or $\mathbb H$.
+\subsubsection*{Relabeling Gauge of the Joint Frame - Unitary Action}
+The joint frame construction $\mathcal J_I$ introduces an intrinsic gauge freedom.
+Since $\Omega_{\mathcal J_I}$ is a product space over labels $\mathcal C$, different
+measurable relabelings of the joint sample space may induce the same relational event
+structure. This redundancy is not an additional assumption, but is present by
+definition.
+
+Let $\mathrm{Aut}(\mathcal J_I)$ denote the group of measurable bijections
+$T:\Omega_{\mathcal J_I}\to\Omega_{\mathcal J_I}$ preserving the joint
+$\sigma$-algebra $\mathcal F_{\mathcal J_I}$. Fixing a reference frame $i\in I$, we define
+the relabeling gauge group relative to $i$ by
+\[
+G_i
+\;:=\;
+\big\{
+T\in \mathrm{Aut}(\mathcal J_I)
+\;:\;
+T^{-1}(\iota_i(\mathcal F_i))=\iota_i(\mathcal F_i)
+\big\}.
+\]
+Elements of $G_i$ correspond to relabelings of the joint description that leave invariant
+the event structure accessible to frame $i$, while re-identifying how other contexts are
+embedded.
+
+Two joint-frame realizations are said to be gauge-equivalent relative to $i$ when they
+are related by an element of $G_i$. The physical content of the RIF construction is thus
+identified with structures invariant under this relabeling gauge.
+
+Upon translation to a Hilbert space realization
+$\mathcal F_{\mathcal J_I}\cong\mathsf{Proj}(\mathcal H)$, this relabeling gauge is
+represented by the familiar projective \textbf{unitary} (and antiunitary) symmetries of the
+Hilbert description. Parametrizations of subgroups of $G_i$ may be introduced for
+convenience, but are not fundamental at the level of RIF.
+\subsubsection*{Complex Structure and Gauge Freedom}
+
+The Hilbert space realization of the joint-frame event structure carries, by construction,
+a representation of the intrinsic relabeling gauge of the RIF framework. This gauge is
+implemented in the Hilbert description as a projective unitary symmetry acting on
+$\mathcal H$.
+
+Supporting a nontrivial and continuous projective unitary action places strong
+constraints on the underlying scalar field. Real Hilbert spaces do not admit a
+sufficiently rich phase structure to represent generic gauge transformations, while
+quaternionic Hilbert spaces introduce additional constraints on the localization and
+composition of such symmetries.
+
+By contrast, complex Hilbert spaces provide the minimal setting in which continuous
+projective unitary representations, local gauge freedom, and consistent composition of
+independent subsystems coexist. From the RIF perspective, the appearance of complex
+structure is therefore not an independent postulate, but a natural consequence of
+representing the intrinsic joint-frame gauge in a linear space.
+\subsubsection*{A Structural Remark on Internal Gauge Symmetry}
+The relabeling gauge inherent in the joint-frame construction is represented, upon a
+Hilbert-space realization of the framework, as a projective unitary symmetry acting on
+$\mathcal H$. At this level, the gauge symmetry is generically very large, reflecting the
+freedom in identifying joint descriptions related by relabeling of events.
+
+A further restriction on this relabeling gauge arises from the presence of local
+perspective maps and the requirement that no information frame be privileged, as formalized
+by \cref{rif}. While $\mathrm{Aut}(\mathcal J_I)$ represents the full descriptive
+redundancy of the joint frame, not all such relabelings are compatible with perspectival
+symmetry.
+
+In particular, admissible relabelings must preserve the equivalence of descriptions induced
+by local perspective maps, in the sense that no information frame can detect a preferred
+identification of joint events. This requirement selects a distinguished subgroup of the
+relabeling gauge, consisting of transformations that are relationally invisible across all
+frames.
+
+Upon Hilbert-space realization, this perspectivally admissible gauge is represented as a
+restricted subgroup of the projective unitary symmetry.
+
+We emphasize that no derivation of a specific gauge group is claimed here. Rather, this
+discussion is intended to indicate that familiar gauge symmetries, including those of the
+Standard Model, are compatible with—and may be viewed as particular reductions of—the
+intrinsic relabeling gauge symmetry present in the RIF framework, once restricted to
+physically admissible transformations.
 \subsection{Observables, Measurements and Operators}
 \subsubsection*{Measurement Device}
 We begin by defining the measurement devices. In this theory a measurement device is
@@ -802,16 +1077,12 @@ An observable, for a particular measurement device $i$, is a random variable
 $O_i: \Omega_i \to \mathcal O$. Where $\mathcal O$ is the outcome space, it can be 
 $\mathbb R$ or other such spaces.
 
-Each observable through the original embeddings, induces a global random variable 
-on the joint context, which we will
-denote with $\left(\Omega, \mathcal F\right)$. To define the global random variables we 
-need the partial inverse:
+Each observable through the frame embeddings, induces a global random variable 
+on the joint context, which for convinience will
+denote with $\left(\Omega, \mathcal F\right)$. 
+The representative of the observable in the joint frame is:
 \[
-    \pi_i: \iota_i(\Omega_i) \to \Omega_i
-\]
-Then the representative of the observable in the joint frame is:
-\[
-    \widetilde{O}_i := O_i \circ \pi_i: \Omega \to \mathcal O
+    \widetilde{O}_i := O_i \circ \iota_i^{-1} \Omega \to \mathcal O
 \]
 The $\sigma$-algebra generated by $\widetilde{O}_i$ represents the set of events 
 distinguishable by the observable $O_i$. We say observables are \textbf{compatible} if 
@@ -831,34 +1102,18 @@ If they are incompatible, we will have:
     e_i^{O_i} \circ e_j^{O_j} \neq e_j^{O_j} \circ e_i^{O_i}
 \]
 Similarly to what we saw for local projections.
-\subsubsection*{Unitary Evolution}
-Basicaly it is automorphism selection.
-%TODO: continue this
-\subsubsection*{General Operators}
-Other operators, those not associated with observables such as stochastic maps, 
-or Hilbert-space operators without direct observational intrepetation appear
-only as a transformation built from the basic local projections of Definition~5.2 and 
-their compositions and mixtures.
-
-In general, in the Hilbert space representation, the contextual transformations 
-are represented by completely positive maps associated with the corresponding measurement.
 \subsubsection*{Measurement}
 A measurement of an observable $O_i$ corresponds to evaluating its lifted form 
-$\widetilde{O}_i: \Omega \to \mathcal O$. However, the collapse theorem restricts the
-physically admissible events to those lying in the pointer $\sigma$-algebra 
-$\mathcal F_{\text{ptr}}$.
+$\widetilde{O}_i: \Omega \to \mathcal O$, where the only physically admissible events are
+those in the pointer algebra, in particular the frame pointer algebra of the frame of
+that observable.
 
 Consequently, only those values of $\widetilde{O}_i$ whose events are compatible with
-$\mathcal F_{\text{ptr}}$ can occur as outcomes. In this sense, measurement reduces 
-to evaluating the observable on the pointer algebra. The observable possible values are
-exactly those that survive the collpase into $\mathcal F_{\text{ptr}}$.
-
-Once a definite outcome happens after sampling. The frames carry the information 
-of that outcome. Effectively, the algebras are conditioned on the outcome $A$. That is
-\[
-    \mathcal F \mid A := \left\{E \cap A : E \in \mathcal F\right\}
-\]
-That is, the perspectives of the frames are filtered to the outcome produced.
+$\mathcal F_i^{\mathrm{ptr}}$ can occur as outcomes. The coarse graining of that algebra
+implies proability in the description of the event as per \cref{rem:probability-origin},
+and if a measurement is repeated the system remains conditioned on that event for the
+interaction. If a new \textbf{incompatible} interaction takes place, coarse-graining
+implies a new introduction of distinctions for th previous operator.
 \subsection{Born Rule Martingale}
 In this section we explore how the Born rule appears in this framework. We do not claim,
 with the current tools, to recover the quadratic nature of the born rule or its usual 
@@ -866,7 +1121,7 @@ form. That is left to a reconstruction of the Hilbert space.
 
 \subsubsection*{Setup}
 First we consider a particular context's frame $\mathscr I_i$. We define a probability
-measure representing that frame $\mu_0$. Th
+measure representing that frame $\mu_0$.
 
 In the joint frame we can look at the pushfoward measure given by the original embedding.
 \[\mu := \mu_0 \pi_i = \mu_0(\pi_i(E)) \quad E \in \mathcal F_\mathcal J\]
@@ -968,51 +1223,6 @@ The tower law for martingales gives:
 \]
 Thus, when the friend's description is updated to the Wigner's pointer frame is 
 exactly Wigner's own description.
-\subsection{The Hilbert Space Realization}
-We will not attempt a full Hilbert space reconstruction in this paper. But we note the
-relations to previous work that fits this picture and where some structure might help
-narrow some things.
-\subsubsection*{The Orthomodular Lattice}
-We have Boolean $\sigma$-algebras corresponding to each context $\mathcal F_i$. We have
-their embeddings $\iota_i$ into the joint frame.
-
-We can then define on the joint frame:
-\[
-    \mathcal L := \text{ the closure of } \bigcup_i \iota_i(\mathcal F_i)
-\]
-Events here have:
-\begin{itemize}
-    \item events complement $E\rightarrow E^c$,
-    \item events meet $E \wedge F = E \cap F$,
-    \item events join $E \vee F = \text{cl}_\mathcal L (E \cup F)$,
-\end{itemize}
-\begin{proposition}[$\mathcal L$ is a orthomodular lattice]
-    The event structure $\mathcal L$, generated by all frame embeddings in the joint frame
-    is an orthomodular lattice. Each frame embeds as a maximal Boolean subalgebra of 
-    $\mathcal L$. Contextuality is exactly the failure of distributivity in $\mathcal  L$
-    and what makes it orthomodular.
-\end{proposition}
-\begin{proof}
-    The relation to contextuality allows us to use the standard theorems such as 
-    \cite{Gleanson} to see how this algebra represents a orthomodular lattice.
-\end{proof}
-\subsubsection*{The Complex Field}
-While we don't attempt to prove the uniqueness of the choice of the complex field in this
-work we note that, accumulation of amplitudes and its removal through the RIF principle
-leaves space to narrow down amplitudes that fit $\mathbb C$ over something like $\mathbb H$.
-\subsubsection*{The Hilbert Space}
-Under the usual regularity assumptions on $\mathcal L$, the standard representation theorems
-of quantum logic apply (e.g \cite{Piron}, \cite{Soler}, \cite{Gleason}). 
-Therefore there exists a Hilbert space $\mathcal H$ and a lattice
-isomorphism.
-\[\mathcal L \cong \mathsf{Proj}(\mathcal H)\]
-\subsubsection*{The Pointer Algebra}
-Each frame corresponds to a maximal commuting family of projections in $\mathcal H$. The
-pointer algebra $\mathcal F_\text{ptr}$ becomes the lattice of projections associated with
-a single classical basis (a maximal distributive subalgebra). 
-
-Thus the pointer corresponds to the diagonal projections in a distinguished basis, the 
-pointer basis.
 \subsubsection*{States in the Hilbert Space}
 Since $\mathcal L$ carries empirical probability measures representing the pushfoward
 from the frames preparations as we done previously, Gleanson's theorem \cite{Gleanson}
@@ -1061,6 +1271,9 @@ This point of view makes several dynamical properties appear naturally:
         Because interactions only merge $\sigma$-algebras along edges of the locality graph,
         and collapse happens locally on the joint frame, no frame can influence another 
         without a mediated interaction.
+    \item Gravity
+
+        The coarse grainining imballance %TODO: continues her
 \end{enumerate}
 None of these dynamical features require any additional axioms. They follow from Axiom~1 
 and the definitions of how interactions are built.
@@ -1231,6 +1444,10 @@ This is a purely structural notion of causal separation.
 \subsubsection*{Intrepretation}
 No signaling in this framework is almost tautological, information cannot be transmitted 
 between frames that have not interacted.
+\subsection{Gravity}
+How gravity is the imbalance between algebra %TODO: complete
+\subsubsection*{Intrepretation}
+
 \section{Intrepetation and Comparisons}
 Here we explore the theory in the context of the broader literature on measurement and
 study some of its features, including the implications it has on ontology. We begin with
@@ -1306,19 +1523,9 @@ $z$ basis.
 \subsection{Comparisons - Intrepetations}
 \section{Discussion}
 \subsection{Geometry and Dynamics}
-By taking the Markov view in section 5.5 we can explore this framework from the point of
-view of the fisher metric. When contextuality happens, the ricci curvature of the fisher
-metric blows up. That should trigger a back action on the tensor to adjust for the pointer
-basis.
-
-Known derivations of the schrodiger equation using the quantum fisher metric can be explained
-and made canonical with this framework.
-
-Furthermore, one can define a action principle of interactions. Using information geometry,
-we believe that can give a new way to model physical systems.
-\subsection{The Complex Field}
 \subsection{Reconstruction Programs}
-\subsection{Spacetime}
+\subsection{Chaos}
+\subsection{Implications for gravity}
 \section{Conclusion}
 
 \phantomsection
