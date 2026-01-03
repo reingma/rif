@@ -4,13 +4,17 @@
 \usepackage{microtype}
 \usepackage{booktabs}
 \usepackage{thmtools}
+\usepackage{placeins}
 \usepackage[hidelinks]{hyperref}
 \usepackage[nameinlink]{cleveref}
 \usepackage{mathrsfs}
 \geometry{margin=1in}
-
-\title{On Measurement: The Relativity of Information Frames}
-\author[ ]{Gabriel Masarin}
+\usepackage{booktabs}
+\usepackage{tabularx}
+\usepackage{array}
+\setlength{\tabcolsep}{4pt}
+\title{The Relativity of Information Frames}
+\author[ ]{Gabriel Masarin Aguiar}
 \affil[ ]{\texttt{g.masarin@proton.me}}
 \date{}
 \theoremstyle{plain}
@@ -68,8 +72,7 @@
     We then apply the framework to quantum theory. Without attempting a full reconstruction
     we show how standard quantum structure are naturally represented: observables arise as
     perspectival maps, probability emerges from coarse graining, and the born rule follows
-    from a martingale argument. Wigner-type scenarios are shown to be consistent via the
-    tower law, and unitary evolution is intrepreted as a manifestation of gauge freedom
+    from a martingale argument. Wigner-type scenarios are shown to be consistent, and unitary evolution is intrepreted as a manifestation of gauge freedom
     in the choice of embeddings. We further discuss how the induced coarse-graining
     introduces an intrinsic arrow of time and outline possible connections to causal 
     structure and geometry. The results are structural rather than dynamical and provide
@@ -103,13 +106,15 @@ measure on the pointer algebra, and that any strict extension of this algebra re
 contextuality.
 
 Part~II applies the framework to quantum theory. Without attempting a full reconstruction,
-we show how standard quantum structures are naturally represented within RIF. Observables
-arise as perspectival maps, conditioning corresponds to interaction, and probability
-assingnments emerge from coarse-graining rather than being postulated. We derive the
-Born rule operationally via a martingale argument, establish the consistency of Wigner-type
-scenarios using the tower law, and interpret unitary evolution as a manifestation of
-gauge freedom in the choice of embeddings. We also outline how familiar gauge symmetries
-may be viewed as relations between information frames.
+we show how standard quantum structures are naturally represented within RIF. Quantum
+logic naturally fits this theory, and standard results showing how the Hilbert
+space relates to a non-distributive orthomodular lattice then give their relation.
+Observables arise as perspectival maps, conditioning corresponds to interaction, 
+and probability assingnments emerge from coarse-graining rather than being postulated. 
+We derive the Born rule operationally via a martingale argument, establish the 
+consistency of Wigner-type scenarios, and interpret unitary 
+evolution as a manifestation of gauge freedom in the choice of embeddings. We also 
+outline how familiar gauge symmetries may be viewed as relations between information frames.
 
 Beyond quantum mechanics, we explore several conceptual consequences of the framework. That
 enforced coarse-graining introduces an intrinsic irreversibility, providing a structural 
@@ -176,7 +181,7 @@ In measure-theoretic probability, a probability space is given by a triple:
 \[
     (\Omega, \mathcal F, \mu)
 \]
-where each component encodes a distinct element of a probality model.
+where each component encodes a distinct element of a probability model.
 \subsubsection*{The Sample Space $\Omega$}
 The sample space $\Omega$ is the set of all possible outcomes of an experiment. It's elements
 $\omega \in \Omega$ represent individual realizations or trials. In general, $\Omega$ is
@@ -564,7 +569,7 @@ coarse-graining, and may fail entirely.
 
 The existence of \textbf{strong contextuality} in the sense of \cite{Abramsky&Brandenburger} 
 guarantees that structural contextuality occurs for suitably fine event structures. In
-particular the Kochen--Specker results \cite{Kochen-Specker} show that retaining the full
+particular the Kochen--Specker results \cite{KochenSpecker} show that retaining the full
 $\sigma$-algebra structure of measurement contexts eventually obstructs any global 
 realization. This highlights the structural inevitability of contextuality in sufficiently
 rich logics.
@@ -841,7 +846,7 @@ We begin by defining the following induced measure on the joint frame:
     \tilde{\mu_i}(E) := \mu_i(\iota^{-1}_i(E)), \qquad E \in \iota_i(\mathcal F_i)
     \label{eq:glob-meas}
 \end{equation}
-Which represents the ppushfoward of $\mu_i$ to the embedded event algebra. Restricting this
+Which represents the pushfoward of $\mu_i$ to the embedded event algebra. Restricting this
 measure to the frame pointer algebra yields
 \begin{equation}
     \tilde{\mu}^{\mathrm{ptr}}_i := \tilde\mu_i \restriction \mathcal F_i^{\mathrm{ptr}}
@@ -882,8 +887,8 @@ the generators of $\mathcal F^*$ we can define, whenever $E \in \mathcal F_i^{\m
 \]
 Since we have \cref{eq:consistency}, this is well defined. Since 
 $\mu_0(\Omega_\mathcal J) = 1$ and $\mu_0 \geq 0$ we can use the 
-\emph{Caratheodory Extension Theorem}\cref{Catheodory} to get a measure $\mu^*$ on 
-$\mathcal F^*$ with the required overlap consistency.
+\emph{Carath\'eodory Extension Theorem}\cite{CaratheodoryExtension,Billingsley} to get 
+a measure  $\mu^*$ on  $\mathcal F^*$ with the required overlap consistency.
 \end{proof}
 This result shows that, starting from a empirical model which may or may not be contextual
 on the constructed joint frame, the potential coarse graining to the pointer algebra
@@ -946,7 +951,7 @@ underlying quantum theory. In particular, we show that the collection of context
 algebras forms an orthomodular lattice, and that standard Hilbert space realizations arise 
 under the usual structural assumptions. Consequences such as the Born rule and Wigner-type
 consistency conditions will then be seen to follow naturally from RIF invariance.
-\subsection{The Hilbert Space Realization}
+\subsection{The Hilbert Space Realization}\label{sec:hilbert-space}
 We will not attempt a full Hilbert space reconstruction in this work. Instead, we situate
 the RIF event structure within the well-established framework of quantum logic, highlighting
 where RIF provides a natural physical interpretation of the underlying assumptions.
@@ -984,10 +989,11 @@ Naturally $\mathcal L$ is a lattice with its operations
     non-distributive lattice.
 \end{proof}
 Under standard assumptions, the same we established in this framework, classical results
-in quantum logic \cite{Piron} imply that $\mathcal L$ admits a representation as the
+in quantum logic \cite{Piron,Soler} imply that $\mathcal L$ admits a representation as the
 projection lattice of a Hilbert space:
 \[\mathcal L \cong \mathsf{Proj}(\mathcal H)\]
 where $\mathcal H$ is a Hilbert space over $\mathbb R$, $\mathbb C$ or $\mathbb H$.
+\subsection{Unitary Evolution and the Gauge Symmetries in RIF}
 \subsubsection*{Relabeling Gauge of the Joint Frame - Unitary Action}
 The joint frame construction $\mathcal J_I$ introduces an intrinsic gauge freedom.
 Since $\Omega_{\mathcal J_I}$ is a product space over labels $\mathcal C$, different
@@ -1015,12 +1021,82 @@ embedded.
 Two joint-frame realizations are said to be gauge-equivalent relative to $i$ when they
 are related by an element of $G_i$. The physical content of the RIF construction is thus
 identified with structures invariant under this relabeling gauge.
-
+\subsubsection*{One parameter gauge slices and the emergence of a time parameter}
 Upon translation to a Hilbert space realization
-$\mathcal F_{\mathcal J_I}\cong\mathsf{Proj}(\mathcal H)$, this relabeling gauge is
-represented by the familiar projective \textbf{unitary} (and antiunitary) symmetries of the
-Hilbert description. Parametrizations of subgroups of $G_i$ may be introduced for
-convenience, but are not fundamental at the level of RIF.
+$\mathcal F_{\mathcal J_I}\cong\mathsf{Proj}(\mathcal H)$, the relabeling gauge is
+represented by the familiar projective \textbf{unitary} (and antiunitary) symmetries of 
+the Hilbert description. 
+
+In particular, the fact that admissible re-descriptions in RIF must:
+\begin{itemize}
+    \item be invertible,
+    \item preserve probability measure,
+    \item preserve conditional structure.
+\end{itemize}
+This structure is represented in the Hilbert space description by unitary operators $U$
+satisfying
+\[
+    U^\dagger U = I
+\]
+Once we make a few \emph{additional structural choices}:
+\begin{itemize}
+    \item descriptions can be related continuously,
+    \item coarse-graining changes continuously under small interactions,
+    \item inference is stable under infinitesimal re-descriptions.
+\end{itemize}
+Under these choices one may select a \emph{strongly continuous one-parameter} 
+subgroup of the gauge. 
+Then by Stone's theorem \cite{Stone}, the strongly continuous one-parameter group admits 
+a self-adjoint generator.
+\[
+    U(\lambda) = e^{-i\lambda G}
+\]
+The time $t$ is a choice of $\lambda$ used to track a chosen gauge slice, and $G$ labels
+the motion along a gauge orbit, not the dynamical evolution of the system.
+\subsubsection*{Predictiveness: why gauge unitarity still yields sharp sequential 
+probabilities}
+Consider a bookkeeping joint frame $\mathcal J := (\Omega, \mathcal F)$ representing
+all interactions over time. Let $\mathcal F_t^*$ represent the pointer algebra at
+the stage where we label the slice by $t$, for an eventual pointer event 
+$A \in \mathcal F_{t_2}^*$ we define the probability assignment at time $t_1$:
+\[
+    M(t_1; A) :=  \mathbb{E}\left[\mathbf{1}_A \mid \mathcal F_{t_1}^*\right]
+\]
+We note that no particular probability measure is fixed in the definition of
+$\mathbb{E}$. This is intentional, as gauge transport acts on the event structure
+independently of the chosen measure. The emergence and transport of specific
+probability measures via pushforward are discussed in \cref{sec:born-rule}.
+
+Consistency across stages is then a martingale:
+\[
+    \mathbb{E}[M(t_1; A)\mid \mathcal F_{t_2}^*] = M(t_2;A), \qquad (t_1 \leq t_2)
+\]
+So the propagation between $t_2$ and $t_1$, which in the Hilbert space representation is
+\[
+    U(t_2 - t_1)
+\]
+it acts as an \emph{identification map} induced by the chosen gauge slices. 
+The only non-trivial update occurs at $t_2$, where conditioning onto the later pointer
+algebra is performed. Gauge unitarity provides the coherent transport structure required
+for this conditioning to be well-defined across descriptions, without representing 
+dynamical evolution. We note that predictive consistency is measure-covariant, it is 
+preserved under arbitary choices of probability measures compatible with a given 
+information frame.
+\subsubsection*{Retrodiction and the appearence of dynamical evolution}
+After an experiment is performed and an event $A \in \mathcal F_{t_2}^*$ is registered,
+earlier descriptions are updated by conditioning on $A$. For events $B \in \mathcal 
+F_{t_1}^*$ with $t_1 \leq t_2$ we have
+\[
+    \mathbb{E}\left[\mathbf{1}_B \mid A\right],
+\]
+with conditional expectation taken with respect to the later pointer algebra.
+
+The apparent predictiveness of unitary evolution arises from the fact that gauge
+transport and conditionalization commute in a controlled way. This allows coherent
+\emph{forward prediction} and \emph{backward retrodiction} across descriptions. When
+retrodictive updates are interpreted as physical processes occurring between $t_1$ and
+$t_2$, this coherence is often mistaken for underlying dynamical evolution, even though
+no such evolution is represented in the RIF framework.
 \subsubsection*{Complex Structure and Gauge Freedom}
 
 The Hilbert space realization of the joint-frame event structure carries, by construction,
@@ -1039,7 +1115,7 @@ projective unitary representations, local gauge freedom, and consistent composit
 independent subsystems coexist. From the RIF perspective, the appearance of complex
 structure is therefore not an independent postulate, but a natural consequence of
 representing the intrinsic joint-frame gauge in a linear space.
-\subsubsection*{A Structural Remark on Internal Gauge Symmetry}
+\subsubsection*{Structural Remark: Internal Gauge Symmetry}
 The relabeling gauge inherent in the joint-frame construction is represented, upon a
 Hilbert-space realization of the framework, as a projective unitary symmetry acting on
 $\mathcal H$. At this level, the gauge symmetry is generically very large, reflecting the
@@ -1195,7 +1271,7 @@ defined event structure is not merely unnecessary but ill-defined as a physical 
 Any attempt to treat a global description as ontic would privilege descriptions that would 
 violate \cref{rif}. Admissible events are therefore defined only relative to interactions,
 and no single frame provides a complete description of what occurs.
-\subsection{Born Rule Martingale}
+\subsection{Born Rule Martingale}\label{sec:born-rule}
 In this section we explore how the Born rule appears in this framework. We do not claim,
 with the current tools, to recover the quadratic nature of the born rule or its usual 
 form. That is left to a reconstruction of the Hilbert space.
@@ -1207,7 +1283,7 @@ measure representing that frame $\mu_0$.
 In the joint frame we can look at the pushfoward of the contextual measure $\mu_0$ to the
 joint $\sigma$-algebra.
 \[
-\mu := \mu_0 \circ \iota_i^{-1} = \mu_0(\iota_i^{-1}(E)) \quad E \in \mathcal F_\mathcal J
+\mu := \mu_0 \circ \pi_i = \mu_0(\pi_i(E)) \quad E \in \mathcal F_\mathcal J
 \]
 We note that this probability measure does not, nescessarly, represent all contexts of
 the joint frame. In fact, in contextual cases, that is not possible. This is simply
@@ -1229,12 +1305,12 @@ partial measurements}.
 We can now use $\mu$ as a probability measure to define, for any event $A \in 
 \mathcal F_\mathcal J$ we define:
 \[
-    M_n := \mathbb E_{\mu}\left[ \bold{1}_A \mid \mathcal F_n\right]
+    M_n := \mathbb E_{\mu}\left[ \mathbf{1}_A \mid \mathcal F_n\right]
 \]
 As seen \cite{Williams1991} we know this is a Martingale on the reverse filtration, 
 and by Doob convergence theorem we have:
 \[
-    M_n \rightarrow \mathbb E_{\mu}\left[\bold{1}_A \mid F_\text{ptr}\right] \quad 
+    M_n \rightarrow \mathbb E_{\mu}\left[\mathbf{1}_A \mid F_\text{ptr}\right] \quad 
     \text{(a.s.)}
 \]
 Thus the conditional probability of $A$ given the pointer algebra coincides with the 
@@ -1253,294 +1329,716 @@ repeated measurement, as required by empirical repeatability.
 We will now turn our attention to looking at how Wigner's Friend paradox looks like in this
 framework.
 \subsubsection*{Setup}
-For the Wigner friend scenario we acutually have two interactions. First the interaction
-of the friend, which we will map to the joint frame $\mathcal J_\text{friend}$. Which
+For the Wigner friend scenario we actually have two interactions. First the interaction
+of the friend, which we will map to the joint frame $\mathcal J_\text{friend}$ which
 represents the interaction between the system and the friend.
 
-Once that interaction goes through the system has collapsed to the pointer frame
-$\mathcal J_\text{friend}^\text{ptr}$. Then Wigner comes and interacts with that joint
-frame, forming a new frame $\mathcal J_\text{Wigner}$, which again must collapse to 
-$\mathcal J_\text{Wigner}^\text{ptr}$.
+Once that interaction goes through, the joint frame has the physically admissible algebra, 
+the pointer algebra $\mathcal F_{\text{friend}}^*$. Then Wigner comes and interacts with 
+that joint frame, forming a new joint frame $\mathcal J_\text{Wigner}$, which again has its
+coarse-grained pointer algebra $\mathcal F_\text{Wigner}^*$.
 
 We use the fact that, these algebras can all be seen as filtrations of each other to show
-that, Wigner cannot assign inconsistant probabilities to the events it can observe.
+that, Wigner cannot assign inconsistent probabilities to the events he can observe.
 \subsubsection*{The Sequence of Filtrations}
 When the friend interacts with the system, he generates the joint frame 
-$\mathcal J_\text{friend}^\text{ptr}$. When Wigner interacts with that frame, a new
+$\mathcal J_\text{friend}$. When Wigner interacts with that frame, a new
 joint frame must be built. That joint frame starts by lifting the algebras through the
 embeddings $\iota_\text{friend}$ and $\iota_\text{Wigner}$.
 
 The nature of embeddings mean we can consider this all a sequence of filtrations on the
-same space. Namely:
+same space, in particular we consider the \textbf{frame pointer algebra} as in 
+\cref{def:frame-pointer-algebra} for what can physically happen in the joint frame.
 \[
-    \mathcal F \supseteq \mathcal F_\text{friend}^\text{ptr} 
-    \supseteq F_\text{Wigner}^\text{ptr}
+    \mathcal F_{\mathcal J_{\text{Wigner}}} \supseteq \iota_{\text{friend}}
+    (\mathcal F_{\text{friend}}^*) \supseteq \mathcal F_\text{Wigner}^\text{ptr} \cap 
+    \mathcal F_\text{friend}^\text{ptr}
 \]
-With these filtrations in place, we can look at the same style of probability assignments
+With that relation in place, we can look at the same style of probability assignments
 we had in the born rule.
 \subsubsection{The Probabilities}
-Now let $A \in \mathcal F_\text{Wigner}^\text{ptr}$
-be a event that exists in the final pointe algebra. That is, a event that all systems
-involved can talk about.
-
-We can determine the friend's probaility for event $A$ as we did for the born rule 
-martingale:
+Now let $A \in \in \mathcal F_\text{friend}^\text{ptr} \cap 
+\mathcal F_\text{Wigner}^\text{ptr}$ be an event that both frames can meaningfully 
+talk about. We can determine the friend's probability for event $A$ as we did for 
+the born rule martingale:
 \[
-    M_\text{friend} := \mathbb E_\mu \left[\bold{1}_A \mid 
+    \mathbb E_{\mu_f} \left[\mathbf{1}_A \mid 
     \mathcal F_\text{friend}^\text{ptr}\right]
 \]
 Now for Wigner, we have the same:
 \[
-    M_\text{Wigner} := \mathbb E_\mu \left[\bold{1}_A \mid 
+    \mathbb E_{\mu_w} \left[\mathbf{1}_A \mid 
     \mathcal F_\text{Wigner}^\text{ptr}\right]
 \]
-But since we have
+But this trivially yields:
 \[
-    F_\text{Wigner}^\text{ptr} \subseteq \mathcal F_\text{friend}^\text{ptr} 
-    \subseteq \mathcal F
+    \mathbb E_{\mu_w} \left[\mathbf{1}_A \mid 
+    \mathcal F_\text{Wigner}^\text{ptr}\right] =  \mathbf{1}_A = 
+    \mathbb E_{\mu_f} \left[\mathbf{1}_A \mid \mathcal F_\text{friend}^\text{ptr}\right]
 \]
-The tower law for martingales gives:
-\[
-    \mathbb E_\mu \left[M_\text{friend} \mid 
-    \mathcal F_\text{Wigner}^\text{ptr}\right] = 
-    \mathbb E_\mu \left[\mathbb E_\mu \left[\bold{1}_A \mid 
-    \mathcal F_\text{friend}^\text{ptr}\right] \mid 
-    \mathcal F_\text{Wigner}^\text{ptr}\right] = \mathbb E_\mu \left[\bold{1}_A \mid 
-    \mathcal F_\text{Wigner}^\text{ptr}\right]
-\]
-Thus, when the friend's description is updated to the Wigner's pointer frame is 
-exactly Wigner's own description.
+Since admissible events already belong to the relevant pointer algebras, conditioning acts
+trivially, and probabilities coincide. Thus, when the friend's description is updated 
+to the Wigner's pointer frame it is exactly Wigner's own description. 
+Wigner and the friend cannot assign inconsistent probabilities to any event that both 
+can meaningfully discuss.
 \section{Dynamics}
-In this version of the framework, dynamics is not introduced as a primitive law like a 
-Hamiltonian flow or differential equation. Instead, dynamics arises from the structure
-of interactions between information frames.
+In this framework, dynamics is not introduced as a primitive law such as a 
+Hamiltonian flow or differential equation. Instead, dynamical behavior arises from 
+the structure of interactions between information frames.
 
 Each interaction between contexts induces:
 \begin{itemize}
-    \item A creation of a joint frame,
-    \item followed by collapse to its pointer algebra,
-    \item and a pushfoward updated of the preparation measure.
+    \item The creation of a joint frame,
+    \item a corresponding coarse-grained pointer algebra,
+    \item and the induced probability measures on the interacting frames.
 \end{itemize}
-Thus, from a fixed frame point of view, the time evolution of it's description of the world
-is simply a sequence of coarse-grained $\sigma$-algebras obtained from sucessive interations,
-effectively a filtration:
+From the perspective of a fixed frame, the time evolution of it's description of the world
+is thus given by a sequence of coarse-grained $\sigma$-algebras generated by 
+sucessive interations. This defined a filtration on its \emph{frame pointe algebras}:
 \[
     \mathcal F_\text{frame} =: \mathcal F_0 \supseteq 
-    \mathcal F_1 \supseteq \mathcal F_2 \supseteq ... \supseteq \mathcal F_n \supseteq ...
+    \mathcal F_1^{\text{ptr}} \supseteq \mathcal F_2^{\text{ptr}}
+    \supseteq ... \supseteq \mathcal F_n^{\text{ptr}} \supseteq ...
 \]
-This point of view makes several dynamical properties appear naturally:
+This perspective makes several dynamical features appear naturally:
 \begin{enumerate}
-    \item Arrow of Time
+    \item \textbf{Arrow of Time.}
 
-        Because each contextual interaction corresponds to additional coarse-graining,
-        the evolution of $\sigma$-algebras is monotone (information losing). This
-        monotonicity defines a natural direction of time.
-    \item Locality Graph
+        Each contextual interaction corresponds to additional coarse-graining,
+        the evolution of $\sigma$-algebras is monotone and information-losing. This
+        monotonicity defines a natural, frame-relative direction of time.
+    \item \textbf{Locality Graph.}
 
-        Interactions occur only between specific frames. The pattern of which frame couples
-        to which determines a graph structure, which plays the role of space locality.
+        Interactions occur only between specific frames. The pattern of which frames 
+        interact defines an emergent graph structure, which plays the role of space locality.
     \item Maximum Speed of Influence
 
         In contextual scenarios, incompatibility forces coarse-graining. The maximal number
-        of interaction steps before contextuality appears bounds how "fast" influence can
+        of interaction steps before contextuality appears bounds how influence can
         propagate along the locality graph.
-    \item No Signaling
+    \item \textbf{No Signaling.}
 
         Because interactions only merge $\sigma$-algebras along edges of the locality graph,
-        and collapse happens locally on the joint frame, no frame can influence another 
-        without a mediated interaction.
-    \item Gravity
+        and the physically admissible events remain consistent across frames, 
+        no frame can influence another without a mediated interaction.
+    \item \textbf{Gravity.}
 
-        The coarse grainining imballance %TODO: continues her
+    Interactions force coarse-graining of admissible event algebras in order to maintain
+    physical consistency. Frames that are already highly coarse-grained are comparatively
+    stable under further interaction, while less coarse-grained frames must adapt their
+    descriptions more strongly. This persistent asymmetry under interaction induces a
+    directional bias in how descriptions evolve, defining a gravitational-like structure at
+    the level of information flow.
 \end{enumerate}
 None of these dynamical features require any additional axioms. They follow from Axiom~1 
-and the definitions of how interactions are built.
+and the definitions governing interactions.
 \subsection{Arrow of Time}
-In this framework, time is not an external parameter. Instead we use the ordering of 
-interactions between information frames to induce a canonical direction: each interaction
-generates a joint frame where the initial frame algebra is embedded, collapse forces a
-coarse graining of its algebra, this monotone loss of distinguishability defines a 
-natural arrow of time for that frame.
+In this framework, time is not an external parameter. Instead, the ordering of 
+interactions between information frames induces a canonical direction: each interaction
+generates a bookkeeping joint frame in which the initial frame algebra is embedded. By 
+\cref{rif}, this interaction forces a coarse-grained description of the frame in
+the corresponding \emph{frame pointer algebra}. This monotone loss of 
+distinguishability defines a natural arrow of time for a given information frame.
 \subsubsection*{Interaction-induced evolution of $\sigma$-algebras}
-To begin, we first fix a information frame $\mathscr I_0$. It then proceeds to interact
-with several frames $\mathscr I_{j_1}, \mathscr I_{j_2}$ and so on. 
+To begin, we first fix an information frame $\mathscr I_0$, which proceeds to interact
+successively with other frames $\mathscr I_{1}, \mathscr I_{2}$, and so on. 
 
-At each step, a joint frame is first created to host the interaction, Axiom~1 and the 
-collapse theorem then converge into a physically realizable joint frame with a sigma algebra
+At each step, a joint frame is created to host the interaction, which then 
+converges into a physically realizable joint frame with a corresponding frame pointer 
+algebra, as defined in \cref{def:frame-pointer-algebra},
 \[
-    \mathcal F_{\mathcal J_n}^{\text{ptr}}
+    \mathcal F_{n}^{\text{ptr}}
 \]
-That is, the pointer frame on the $n$-th joint frame. Since this is always constructed
-by embedding the original $\sigma$-algebra $\mathcal F_0$, we can track its evolution
-along the interactions.
+That is, the frame pointer algebra on the $n$-th joint frame. Since each such pointer
+algebra is constructed by embedding the pointer algebra from the previous step, we may
+track the evolution of $\mathscr I_0$'s description along successive interactions.
 
-We can look at the events of $\mathcal F_0$ that survive in the pointer frame 
-$\mathcal F_{\mathcal J_1}^\text{ptr}$ as the $\sigma$-algebra of $\mathscr I_0$ at step
-1. That is:
+We identify the effective $\sigma$-algebra of $\mathscr I_0$ after $n$ interactions with
+the subalgebra of events in $\mathcal F_0$ that remain physically admissible in the pointer
+algebra $\mathcal F_{n}^{\text{ptr}}$, and define
 \[
-    \mathcal F_1 := \mathcal F_{\mathcal J_1}^\text{ptr} \cap \iota_1(\mathcal F_0)
+    \mathcal F_n := \mathcal F_{n}^\text{ptr}
 \]
+Which represents the effective $\sigma$-algebra of $\mathscr I_0$ after $n$ interactions.
 This gives a natural sequence:
 \[
-    \mathcal F_0 \supseteq \mathcal F_1\supseteq \mathcal F_1 \supseteq ...
+    \mathcal F_0 \supseteq \mathcal F_1\supseteq \mathcal F_2 \supseteq \cdots
 \]
-Each step removes events that are incompatible with the new join. The future 
-$\sigma$-algebras representations of $\mathcal F_0$ are strictly coarser algebras. There
-is no way physical way in the framework to restore the lost distinctions.
+Each interaction removes distinctions incompatible with the new join, producing 
+strictly coarser $\sigma$-algebras. There is no mechanism within the framework to 
+restore the lost distinctions. The resulting monotone coarse-graining defines a natural,
+frame-relative direction of time.
 \subsection{Locality Graph}
-In this theory, \textbf{locality} is not a geometric primitive yet. It is the combinatorial
-structure that records which frames have interacted and must therefore share a joint
-pointer algebra.
+In this framework, \textbf{locality} is not introduced as a geometric primitive. Instead, it 
+is defined as a combinatorial structure recording which frames have interacted, and
+therefore share a joint pointer algebra.
 \subsubsection*{The Locality Graph}
 Let $\left\{\mathscr I_i\right\}_{i \in I}$ be a family of relevant information frames. We
-define the graph:
+define an undirected graph
 \[
     G = (V,E)
 \]
+With vertex set $V = I$ and edge set $E \subseteq I \times I$ given by
 \[
     (i,j) \in E \quad \iff \quad \text{frames }\mathscr I_i \text{ and } \mathscr I_j
-    \text{ have interacted.}
+    \text{ have interacted}.
 \]
-And at every point, an edge represents there is a joint frame where the collapse has
-taken place between $(i,j) \in E$.
-\subsubsection*{Locality as constraint on the pointer basis}
-If frames $i$ and $j$ have interacted, then their local projections $e_i$ and $e_j$ both
-act on the same joint frame. Namely the pointer basis there must satisfy:
-\[
-    \mathcal F_\text{ptr} \subseteq \text{Fix}(e_i)\cap \text{Fix}(e_j)
-\]
-And if they have not interacted their projetions do not constrain the same $\sigma$-algebra,
-which means:
+An edge thus records the existence of a joint frame in which the interaction between
+$\mathscr I_i$ and $\mathscr I_j$ has generated a shared pointer algebra.
+\subsubsection*{Locality as constraint on admissible events}
+If frames $\mathscr I_i$ and $\mathscr I_j$ have interacted, then their local perspective 
+maps $e_i$ and $e_j$(cf.~\cref{def:local-per}) act on a common joint frame and therefore
+constrain the same pointer algebra. If no such interaction has occured, their perspectives
+do not act on a shared admissible event structure.
+
+As consequence:
 \begin{itemize}
-    \item Frames in the same subgraph in $G$ influence one another through constraints in
-        the same pointer algebra
-    \item Frames in different subgraphs remain completely independent. No constraints 
-        propagate between them.
+    \item Frames in the same connected component of $G$ may influence one another 
+        through constraints propagated via a shared pointer algebra.
+    \item Frames in different connected components remain strictly independent; 
+        no constraints or influence propagate between them.
 \end{itemize}
-This reproduces the operational notion of locality, influence propagates only along paths in
-the interaction graph.
+This reproduces the operational notion of locality, influence propagates only along 
+paths in the interaction graph.
 \subsubsection*{Dynamics respects the locality graph}
-When a new interaction occurs between frames $i$ and $j$ we:
+When a new interaction occurs between frames $\mathscr I_i$ and $\mathscr I_j$, the
+locality graph $G$ is updated by:
 \begin{enumerate}
-    \item add an edge $(i,j)$ to $G$;
-    \item build the joint frame of all contexts in the connected component containing $i$ 
-        and $j$
-    \item collapse using all local projections in that component.
+    \item adding an edge $(i,j)$ to $G$;
+    \item constructing the joint frame associated with the connected component of $G$
+    containing $i$ and $j$.
 \end{enumerate}
-Therefore every subgraph of $G$ behaves as local regions, every interaction affects only 
-the $\sigma$-algebra generated by its own components.
 
-Locality therefore appears as:
+As a consequence, each connected component of $G$ behaves as a local region: interactions
+affect only the $\sigma$-algebra generated by frames within that component. No update acts
+on frames outside the affected component.
+
+Locality therefore manifests in two complementary forms:
 \begin{itemize}
-    \item graph locality where edges are interactions
-    \item probabilistic locality conditional expectations factor across components of the
-        sub graph
+    \item \textbf{Graph locality:} interactions are represented by edges in $G$, and
+    influence propagates only along paths in the graph.
+    \item \textbf{Probabilistic locality:} as a consequence, probability assignments 
+        and conditional expectations factor across disconnected components of $G$.
 \end{itemize}
 \subsubsection*{Intrepretation}
-This provides a structural notion of spacetime locality:
+This construction provides a purely structural notion of spacetime locality:
 \begin{itemize}
-    \item Information frames as "positions".
-    \item Interactions as "lightlike" adjacency.
-    \item Paths in G are the only channels through which constraints can propagate.
+    \item Information frames play the role of relational "positions",
+    \item interactions define adjacency relations analogous to lightlike contact,
+    \item paths in the locality graph $G$ are the only channels through which 
+        constraints and influence can propagate.
 \end{itemize} 
-There is no geometry at this stage, geometry would be additional structure placed on top
-of the locality graph.
+At this stage, no geometric or metric structure is assumed: Geometry, if present, must
+arise as additional structure placed on top of the locality graph.
 
-We emphasize that "locality" and "time" in this theory are entirely structural notions.
-They arise from the patterns of interactions between frames, not from any pre-assumed 
-geometric spacetime. Any system that can be expressed through interacting information frames
-possesses a well-defined locality graph and a induced temporal order, even when no 
-traditional spacetime background is specified.
-\subsection{Maximum Speed}
-In this framework, influence can propagate only through interactions between frames, and
-such interactions are encoded by edges in the locality graph $G$.
+We emphasize that both "locality" and "time" in this framework are structural notions.
+They arise from the pattern and ordering of interactions between frames, rather than
+from a pre-assumed spacetime background. Any system describable in terms of 
+interacting information frames therefore admits a well-defined locality graph and a 
+induced temporal order, even in the absence of an underlying geometric spacetime.
+\subsection{Maximum Speed of Influence}
+In this framework, influence propagates only through interactions between information
+frames, which are represented by edges in the locality graph $G$. Any propagation of
+constraints must therefore occur along paths in $G$.
 
-However contextuality imposes an additional constraint: after a sufficiently long chain
-of interactions on mixed degrees of freedom, contextual incompatibility nescessarely appears.
-Forcing a coarse-graining of the joint $\sigma$-algebra. This defines a \textbf{time step},
-the length of the chain in that time step is always bounded by contextuality.
-\subsubsection*{Contextuality forces coarse-graining}
-A fundamental structural fact of contextuality (\cite{Abramsky&Brandenburger}) is that
-for a sufficiently large family of information frames on shared degrees of freedom, their
-combined $\sigma$-algebra on the joint frame cannot remain non-contextual.
+However, contextuality imposes an additional structural limitation. In sufficiently rich
+families of interacting information frames sharing degrees of freedom, joint
+non-contextual descriptions cannot be maintained indefinitely
+\cite{Abramsky&Brandenburger}. When contextual incompatibility arises, the joint description
+must coarse-grain to a physically admissible pointer algebra.
 
-While this is not a formal statement, as we could stay replaying interactions on 
-non-contextual frames, in realistic scenarios contextuality will show up. At such step,
-the pointer algebra will nescessarly coarse grain for some frame. That frame then sees
-the length of the chain over the time step as the first interaction step.
+\subsubsection*{Contextuality-induced coarse-graining}
+While contextuality need not arise in every interaction sequence, in generic interaction
+patterns involving mixed degrees of freedom it inevitably appears after a finite number
+of steps. When this occurs, at least one participating frame undergoes a strict
+coarse-graining of its admissible $\sigma$-algebra.
 
-Over several interactions, such chains which are always finite, have varying length. But 
-any such interaction will have a finite upper bound.
-\subsubsection*{Maximum speed for frame $i$}
-Once we fix a frame $i$ we see its interaction path in $G$ as:
+Such an event marks the end of a propagation epoch: beyond this point, further interactions
+cannot transmit fine-grained distinctions without degradation.
+
+\subsubsection*{Propagation depth for a fixed frame}
+Fix an information frame $\mathscr I_i$, and consider a path in the locality graph
 \[
-    i = i_0 \rightarrow i_1 \rightarrow ... \rightarrow i_n = j
+    i = i_0 \rightarrow i_1 \rightarrow \cdots \rightarrow i_n .
 \]
-In the step $i_n$ is when the first coarse graining happens. We can then define:
+Let $\{\mathcal F_k\}$ denote the effective $\sigma$-algebras of $\mathscr I_i$ induced by
+successive interactions along this path. Define the propagation depth of $\mathscr I_i$ as
 \[
-    v_i := \sup {n: \mathcal F_n = \mathcal F_0}
+    v_i := \sup \{\, n \mid \mathcal F_k = \mathcal F_0 \text{ for all } k \le n \,\},
 \]
-That is, the largest number of sequential interactions along which the $\sigma$-algebra of
-$i$ remains untouched.
-\subsubsection*{Intrepetation}
-This pehnomenon should not be interpreted as the emergence of a specific relativistic sped
-such as a "speed of light". It is a structural consequence of contextuality: in any 
-sufficiently rich system of interacting information frames, repeated interactions inevitably 
-produce contextual incompatibilities, which force coarse-graining and thereby prevent
-influence from propagating indefinitely without degradation.
+that is, the largest number of sequential interactions along which the frame's admissible
+event structure remains unchanged.
 
-The resulting bound is a maximum interaction speed inherent to the information structure
-itself. Although different contexts may have different local bounds, a common finite upper
-bound always exists for any fixed system.
+By construction, $v_i$ is finite in generic contextual scenarios.
+
+\subsubsection*{Interpretation}
+This bound should not be interpreted as the emergence of a specific relativistic speed.
+Rather, it is a structural consequence of contextuality: in sufficiently complex systems
+of interacting information frames, repeated interactions necessarily lead to
+incompatibilities that force coarse-graining.
+
+The resulting bound limits how far influence can propagate along the locality graph
+without loss of distinguishability. Although different frames may exhibit different local
+bounds, propagation without degradation is always finite in physically relevant systems.
 \subsection{No Signaling}
-No signaling is an immediate structural consequence of the locality graph and Axiom~1. 
-Because interactions are encoded as edges in the graph, and Axiom~1 applies only on the 
-joint frames of the interacting frames, no frame can influence another without a path
-of interaction connecting them.
-\subsubsection*{Local Independence}
-Let $i$ and $j$ represent two frames. If they have never interacted, they lie on different
-subgraphs of $G$. Then no local projection $e_i$ of $i$ acts on any algebra observed by $j$.
+No signaling is an immediate structural consequence of the locality graph and
+\cref{rif}. Since interactions are encoded as edges in the locality graph $G$, and
+the RIF update rules apply only on joint frames associated with interacting frames,
+no frame can influence another without a path of interactions connecting them.
 
-Thus any mutual time step between then leaves $\mathcal F_j$ untouched, that is:
+\subsubsection*{Local independence}
+Let $\mathscr I_i$ and $\mathscr I_j$ be two information frames. If they have never
+interacted, then they lie in different connected components of the locality graph $G$.
+In this case, no local perspective map $e_i$ acts on any admissible $\sigma$-algebra
+accessible to $\mathscr I_j$.
+
+Consequently, any interaction step not involving $\mathscr I_j$ leaves its effective
+$\sigma$-algebra unchanged:
 \[
-    \mathcal F_j^{n+1} = \mathcal F_j^n
+    \mathcal F_j^{n+1} = \mathcal F_j^n .
 \]
-When that time step operates on $i$, quite simply that is, a frame cannot alter the algebra
-of a frame unless they interact.
-\subsubsection*{Causal Separation}
-If $i$ and $j$ lie in different subgraphs, let $e_k$ bet the local projection of a new
-interaction on the subgraph of $i$. Since there is no path from $k$ to $j$ the projection
-$e_k$ has no overlap with the algebras $j$ can see. Therefore, $e_k$ has no effect on 
-$\mathcal F_j$.
+A frame’s admissible event structure can be altered only through interactions in which
+it directly participates.
 
-Therefore
+\subsubsection*{Causal separation}
+More generally, let $\mathscr I_k$ be a frame participating in a new interaction within
+the connected component of $\mathscr I_i$, with $\mathscr I_j$ lying in a different
+connected component. Since there is no path in $G$ connecting $k$ to $j$, the local
+perspective map $e_k$ acts only on joint frames disjoint from those accessible to
+$\mathscr I_j$. As a result, the interaction has no effect on $\mathcal F_j$.
+
+It follows that:
 \begin{itemize}
-    \item Effects of interactions propagate only along paths in the locality graph.
-    \item Only frames lying in the same subgraph can influence each other.
+    \item the effects of interactions propagate only along paths in the locality graph;
+    \item only frames belonging to the same connected component of $G$ can influence one
+    another.
 \end{itemize}
-This is a purely structural notion of causal separation.
-\subsubsection*{Intrepretation}
-No signaling in this framework is almost tautological, information cannot be transmitted 
-between frames that have not interacted.
-\subsection{Gravity}
-How gravity is the imbalance between algebra %TODO: complete
-\subsubsection*{Intrepretation}
 
+This defines a purely structural notion of causal separation.
+
+\subsubsection*{Interpretation}
+No signaling in this framework is a direct corollary of the interaction structure:
+information cannot be transmitted between frames that are not connected by a sequence
+of interactions. No additional dynamical or probabilistic assumptions are required.
+\subsection{Asymmetric Coarse-Graining and Gravitational Structure}\label{sec:gravity}
+At this stage of the framework, no geometric notion of spacetime has been introduced.
+All structure arises from interactions between information frames, the resulting pointer
+algebras, and the cumulative effects of coarse-graining. Nevertheless, the framework
+admits a natural structural notion corresponding to gravitational behavior.
+\subsubsection*{Asymmetry under interaction}
+Interactions between information frames induce coarse-graining of their admissible
+$\sigma$-algebras in order to maintain physical consistency. When two frames interact,
+the induced joint pointer algebra may require unequal coarse-graining of the respective
+descriptions.
+
+We say that a frame $\mathscr I_i$ is \emph{interaction-stable} if, for every interaction
+with another frame $\mathscr I_j$, the induced coarse-graining map leaves
+$\mathcal F_i^{\mathrm{ptr}}$ invariant, while $\mathcal F_j^{\mathrm{ptr}}$ undergoes
+strict coarse-graining in the joint frame. Such frames have already resolved a large
+amount of contextuality and therefore exhibit minimal further loss of distinguishability
+under interaction.
+
+Repeated interactions of this kind induce a systematic asymmetry: neighboring frames are
+forced to adapt their admissible event structures toward that of $\mathscr I_i$, while
+$\mathscr I_i$ remains comparatively unchanged. This persistent asymmetry defines a
+gravitational structure within the interaction network.
+
+\subsubsection*{Stability versus magnitude}
+In realistic scenarios, no frame remains strictly invariant under all interactions.
+Nevertheless, the framework does not require a quantitative measure of coarse-graining
+to identify gravitational structure. The ordering induced by asymmetric loss of
+distinguishability is sufficient: frames whose admissible algebras are coarser than those
+of their neighbors act as stable attractors under interaction, forcing surrounding
+descriptions to adapt preferentially toward them.
+
+\subsubsection*{Geometric interpretation (heuristic)}
+If probability assignments on pointer algebras are represented in an information-geometric
+space—such as a Fisher--Rao metric space—this asymmetry manifests as a directional
+distortion of probabilistic transport. Highly coarse-grained descriptions correspond to
+stable regions toward which nearby probabilistic descriptions are deflected, producing
+effective curvature in the information-geometric representation.
+
+No claim is made here that this mechanism reproduces gravitational dynamics or spacetime
+geometry. The purpose of this interpretation is solely to indicate how gravitational
+structure, if emergent within the RIF framework, would admit a geometric representation.
 \section{Intrepetation and Comparisons}
-Here we explore the theory in the context of the broader literature on measurement and
-study some of its features, including the implications it has on ontology. We begin with
-a informal example of the framework applied to the spin of a electron. To illustrate
-how this framework maps to standard Quantum Mechanics.
+Here we situate the RIF framework within the broader literature on quantum measurement
+and interpretation, and discuss its ontological commitments and explanatory structure.
 \subsection{The Ontology of Information Frames}
-\subsection{Comparisons - Collapse Models}
-\subsection{Comparisons - Intrepetations}
+An information frame represents a contextual organization of events, rather than a physical 
+entity or epistemic state. Frames are defined relationally, through their capacity to 
+be embedded into other frames and to participate in consistency constraints imposed 
+by the RIF axiom.
+
+In RIF, states do not evolve and probabilities are not fundamental; both emerge as
+contextual summaries constrained by consistency under interactions between frames. 
+Even spacetime structure arises as an effective description of these interactions.
+
+Objectivity in RIF is secured not by appeal to a privileged description, but by the 
+invariants that persist across incompatible frames. The absence of a global description 
+does not undermine realism; rather, it shifts realism from descriptive objects to 
+relational structure. What is real is not what any one frame asserts, but what no 
+consistent interaction between frames can eliminate.
+\subsection{No Privileged Frame, No Global Description}
+In RIF, the assumption that there exists a single global description capable of consistently 
+accounting for all event distinctions is not merely unmotivated, but structurally 
+forbidden. The RIF axiom constrains which joint descriptions may exist, and in general 
+does not permit a global event space in which all contextual distinctions can 
+be simultaneously embedded.
+
+This structural restriction manifests, in operational terms, as a failure of
+assumptions commonly used to motivate global hidden-variable models. In particular,
+the preparation independence condition employed in Bell-type arguments does not hold
+in RIF: systems prepared independently do not retain independent descriptions once
+interaction is taken into account. Their joint description is not defined prior to
+interaction, but is constituted through it.
+
+From this perspective, Bell-type nonlocality does not signal superluminal influence 
+or dynamical violation of locality. Rather, it reflects the impossibility of assigning 
+a global factorized description to events whose joint structure is only 
+defined relationally. Any attempt to impose such a global description encounters 
+precisely the inconsistencies highlighted by Bell’s theorem.
+
+While this failure is often phrased in terms of locality, RIF reveals a more 
+fundamental origin. The gauge nature of time evolution implies that interaction 
+itself constrains which events can meaningfully occur. Once interaction takes place,
+later distinctions are not independent of earlier contextual structure, not due to 
+causal influence propagating in spacetime, but because no privileged, 
+interaction-independent description exists.
+
+Importantly, experimental violations of Bell inequalities do not contradict RIF; 
+rather, they confirm the impossibility of a global, interaction-independent description 
+of events. RIF does not satisfy the assumptions required to derive Bell inequalities, 
+and therefore lies outside their domain of applicability while remaining fully 
+consistent with experimental results.
+\subsection{Predictiveness Without Fundamental Dynamics}
+Throughout this work, we have seen how a single axiom restricting which descriptions may 
+be jointly defined gives rise to a rich and highly constrained structure. The 
+predictive power of RIF does not primarily lie in the generation of numerical 
+time evolutions, but in the limitation it places on which joint event 
+structures are admissible. Predictions arise from the requirement that descriptions 
+remain mutually consistent under interaction, rather than from the propagation of states 
+in time.
+
+This perspective clarifies why RIF remains empirically predictive despite 
+lacking fundamental dynamics. What changes between interactions is not an 
+underlying physical state, but the relational structure through which events are 
+jointly describable. Apparent temporal evolution and probability updating emerge 
+from successive interactions and consistency constraints, rather than from an ontic 
+time-parameterized process. Predictiveness in RIF is therefore structural: it consists 
+in ruling out incompatible descriptions and correlations, leaving only those consistent 
+with the framework’s relational constraints.
+\subsection{Comparisons with Quantum Interpretations}
+The RIF framework is not an interpretation of quantum mechanics in the traditional sense. 
+It does not begin with the formalism of quantum theory and assign meaning to its 
+elements. Instead, RIF imposes a structural restriction on what can be jointly 
+described as physically real, from which much of the standard quantum formalism 
+emerges as an effective description.
+
+As a consequence, most of the structures predicted by RIF are fully aligned with 
+quantum mechanics in its established domain of applicability. Where RIF diverges, it 
+does so primarily outside the conventional scope of quantum theory, notably in 
+regimes involving chaotic dynamics and emergent gravitational structure. Within the 
+quantum domain, RIF is empirically equivalent to standard quantum mechanics while 
+differing in its ontological commitments.
+
+Nevertheless, by grounding quantum phenomena in relational constraints rather 
+than fundamental dynamics or global states, RIF induces a distinct perspective on the 
+nature of the quantum world. It is these interpretative consequences—arising from 
+the framework rather than imposed upon it—that we examine in the following comparisons.
+\subsubsection{Comparisson table}
+In \cref{tab:interpretations-commitments} we give a overall view of how RIF relates to
+some popular intrepretations.
+\FloatBarrier
+
+\begin{table}[t]
+\centering
+\caption{Schematic comparison of intrepretations. Entries indicate 
+structural roles rather than evaluative judgments.}
+\label{tab:interpretations-commitments}
+\begin{tabularx}{\textwidth}{@{}>{\raggedright\arraybackslash}p{3.2cm} *{5}{>{\raggedright\arraybackslash}X}@{}}
+\toprule
+\textbf{Aspect} & \textbf{Copenhagen} & \textbf{Many Worlds} & \textbf{QBism} & \textbf{Relational QM} & \textbf{RIF} \\
+\midrule
+Primitive postulates
+& Classical--quantum cut; measurement primitives
+& Universal state (global wavefunction); universal unitary
+& Agent-centered coherence/normative consistency; personal probabilities
+& Relational facts between systems; no absolute state
+& Joint describability restriction (RIF axiom); frame non-privilege \\
+
+Global description (fundamental)
+& Not defined / not required
+& Posited (global state)
+& Not meaningful (agent-relative)
+& No absolute state, but inter-system relational description
+& Forbidden (no privileged global frame) \\
+
+Measurement (fundamental status)
+& Primitive update / collapse at cut
+& No collapse; branching within global unitary
+& Action + belief update for an agent
+& Event is relative to interacting systems
+& Joint description formation + conditioning; not a primitive dynamical law \\
+
+Observer (fundamental role)
+& Essential in practice (classical description)
+& Not fundamental (emergent from global state)
+& Fundamental (agent and experiences central)
+& Not fundamental as “observer,” but systems define relations
+& None (frames are relational, not agents) \\
+
+Dynamics (fundamental status)
+& Mixed (unitary + collapse rules)
+& Fundamental unitary dynamics
+& No ontic dynamics (normative updating)
+& Typically unitary for closed systems; relational updating
+& Unitary as gauge; fundamental constraints are interaction-based \\
+
+Probability
+& Born rule (rule for outcomes)
+& Branch weights (Born measure as typicality)
+& Subjective degrees of belief (normative)
+& Relational probabilities
+& Emergent from contextual coarse-graining \\
+
+Joint descriptions
+& Classical joint descriptions privileged at cut
+& Global joint description always available (in principle)
+& Joint description is agent-relative
+& Joint facts only relative to systems
+& Joint description generally requires coarse-graining \\
+\bottomrule
+\end{tabularx}
+\end{table}
+\FloatBarrier
+\subsection{Comparisons with Objective Collapse Models}
+The RIF framework is not compatible with objective collapse models. This incompatibility 
+is structural rather than empirical. In RIF, time is not a fundamental parameter but 
+an emergent ordering arising from interaction and conditioning. Any model that 
+assigns collapse a fixed rate, mass scale, or spacetime-localized trigger 
+therefore presupposes precisely the kind of privileged temporal or frame-dependent 
+structure that RIF excludes.
+
+In objective collapse theories, collapse is treated as a physical dynamical 
+process occurring in time. In contrast, RIF does not regard collapse as a physical 
+mechanism at all. Events that do not belong to the pointer algebra are not 
+physically admissible descriptions in the first place; collapse corresponds to the 
+formation of a joint description followed by conditioning, not to an additional 
+dynamical law modifying unitary evolution.
+
+From this perspective, RIF also clarifies a persistent difficulty faced by collapse 
+models: the assignment of a collapse time. Any such assignment necessarily privileges 
+a particular frame or foliation, reintroducing a global structure incompatible with 
+frame non-privilege. As a result, collapse models must either tolerate hidden 
+signaling structures or impose additional constraints to suppress them, whereas in RIF 
+no such tension arises, since collapse is not a time-localized physical event.
+\subsection{Implications for Decoherence}
+Standard decoherence theory proceeds by specifying a system–environment Hamiltonian 
+and tracing over environmental degrees of freedom, yielding the suppression of 
+interference in a preferred basis. Within decoherence theory, the emergence of a pointer 
+basis is often presented as a dynamical consequence of environmental interaction. 
+From the RIF perspective, however, this ordering is reversed. The choice of 
+Hamiltonian already fixes the invariant structure of the interaction, and with it 
+the pointer algebra. Decoherence does not select the pointer basis; it reveals the 
+basis that remains invariant under interaction. The demotion of unitary evolution to 
+gauge makes this structural role explicit.
+
+Lindblad dynamics can be understood analogously. Rather than describing a 
+fundamental physical process that destroys coherence, Lindblad operators characterize 
+the effect of noise on predictive models within a given context. The environment 
+functions as a noise generator, and the Lindblad equation tracks how increasing 
+noise degrades the ability of a contextual description to maintain sharp 
+probabilistic predictions. As noise increases, fewer features of the description 
+remain stable across interaction, until only the invariant event structure—
+the pointer algebra—survives.
+
+From this viewpoint, decoherence is not the physical mechanism by which classical 
+outcomes are produced, but a measure of how predictive a given description remains 
+under environmental noise. When decoherence is weak, detailed probabilistic predictions 
+are possible; when decoherence is strong, predictive power is lost, and only 
+coarse, invariant events remain admissible. The appearance of classicality reflects 
+the survival of these invariant structures, not the elimination of superpositions 
+as physical entities.
+
+This interpretation is directly mirrored in classical modeling. Consider a 
+classical description of a projectile fired toward a wall. A detailed dynamical 
+model predicts the projectile’s trajectory, and weak probes placed along the path refine 
+the probability distribution for the point of impact. As long as environmental noise 
+is limited, the model remains predictive. If strong noise is introduced—for example 
+through an uncontrolled magnetic field—the detailed predictions degrade. The 
+probability distribution for the point of impact broadens, yet the invariant fact that 
+the projectile will strike the wall within a finite region remains. What survives is 
+not the detailed model, but the stable event structure.
+
+Decoherence operates in precisely this way. Under high environmental noise, detailed 
+quantum descriptions lose predictive sharpness, and the only admissible events are 
+those associated with the pointer algebra. This does not signal a physical collapse 
+induced by the environment, but the exhaustion of the descriptive power of a given 
+context. In classical settings this distinction is rarely emphasized, because it is 
+evident that one is dealing with a model. In the quantum setting, decoherence has often 
+been misinterpreted as providing more than this: not merely a description of 
+noise-induced loss of predictability, but an explanation of outcome selection. 
+RIF makes clear that decoherence accomplishes the former, not the latter.
+\subsection{Classical Limits, Chaos, and Emergent Forces}
+Classical behavior in RIF arises in regimes where information frames are highly compatible,
+allowing joint descriptions to remain stable across interaction. In such regimes,
+coarse-graining is weak and successive interactions preserve a rich event structure,
+yielding the appearance of deterministic dynamics. The classical limit is therefore not
+defined by the absence of contextuality, but by its effective suppression through
+compatibility.
+
+These regimes form a continuum: from highly compatible interactions supporting stable
+classical descriptions, through intermediate regimes where small incompatibilities are
+amplified, to strongly coarse-grained regimes in which only invariant structures remain
+predictive.
+
+Chaos occupies an intermediate and revealing role. In standard formulations, chaos is
+characterized by sensitivity to initial conditions within a given model. From the RIF
+perspective, this sensitivity reflects a deeper instability: the rapid amplification of
+small incompatibilities between contextual descriptions. As interactions accumulate, joint
+descriptions require increasingly aggressive coarse-graining in order to remain consistent,
+causing detailed event distinctions to become unstable.
+
+In this sense, chaotic systems are those for which the maintenance of fine-grained joint
+descriptions is structurally fragile. What appears as exponential divergence of
+trajectories is the effective manifestation of repeated contextual mismatches that cannot
+be jointly resolved without loss of information. Chaos thus marks the boundary between
+regimes where detailed classical descriptions remain predictive and regimes where only
+coarse, invariant structures survive.
+
+This amplification of coarse-graining has direct consequences for emergent forces. As
+contextual mismatches accumulate, certain structural features dominate joint descriptions,
+biasing the effective organization of events. These biases appear, at the descriptive
+level, as force-like tendencies guiding coarse-grained behavior. Gravity provides a 
+prominent example of such an emergent structure as seen in \cref{sec:gravity}, 
+where persistent asymmetry under interaction gives rise to stable, directionally 
+biased descriptions.
 \section{Discussion}
 \subsection{Geometry and Dynamics}
-\subsection{Reconstruction Programs}
-\subsection{Chaos}
-\subsection{Implications for gravity}
-\section{Conclusion}
+The framework developed in this work defines dynamical behavior structurally, 
+through constraints on joint describability and interaction, rather than through 
+fundamental time evolution. Nevertheless, the structure uncovered suggests that a 
+geometric formulation may be both natural and fruitful. In particular, an 
+information-geometric approach, in which compatibility between information frames 
+is parametrized by an appropriate metric—such as a Fisher–Rao—offers a promising 
+direction.
 
+Within such a formulation, contextual incompatibility between frames would be reflected 
+as curvature in the information geometry. Interactions that require coarse-graining 
+could then be interpreted as processes that deform the effective metric in order 
+to stabilize relations between descriptions. Dynamics, in this setting, would not 
+be fundamental but emergent, arising from extremal principles defined on the 
+information-geometric structure.
+
+A fully explicit construction of RIF dynamics remains an open problem. Developing such 
+a formulation is an important next step and may provide a unified language for extending 
+the framework beyond its present scope.
+\subsection{Reconstruction Programs}
+As discussed in \cref{sec:hilbert-space}, RIF naturally lends itself to reconstruction
+programs in quantum foundations. Starting from a single restriction on joint describability
+, the framework provides new tools for addressing long-standing questions, including the
+emergence of Hilbert space structure, the preference for the complex field $\mathbb{C}$ 
+over alternatives, and the origin of unitary transformations.
+
+Unlike traditional reconstruction approaches, which often assume significant portions of
+the quantum formalism from the outset, RIF constrains structure indirectly 
+through relational and consistency requirements. This suggests that several features 
+usually taken as axiomatic may instead be derivable as necessary conditions for 
+maintaining non-privileged, interaction-consistent descriptions.
+\subsection{Chaos}
+The reinterpretation of chaos offered by RIF points toward a number of open 
+research directions. Rather than treating chaos solely as sensitivity to initial 
+conditions within a fixed model, RIF associates chaotic behavior with the instability 
+of fine-grained joint descriptions under repeated interaction and coarse-graining.
+
+A more formal study of this relationship may clarify the role of contextuality in 
+classical and semiclassical systems, and could provide new tools for analyzing 
+chaotic regimes without relying exclusively on trajectory-based descriptions. 
+Such an investigation would likely benefit from an explicit geometric and 
+dynamical formulation of the framework, as discussed above.
+\subsection{Implications for gravity}
+RIF suggests that gravitational phenomena may be understood as emergent effects arising 
+from imbalances in contextual interactions. In regimes where incompatibility 
+between descriptions accumulates, coarse-graining becomes increasingly asymmetric,
+biasing the structure of joint descriptions. At the effective level, this bias may 
+manifest as curvature or force-like behavior.
+
+When combined with the connection between chaos and contextual incompatibility, 
+this perspective raises the possibility that phenomena commonly attributed to dark 
+matter could, in part, reflect unaccounted-for curvature induced by highly chaotic 
+systems. While speculative, this viewpoint motivates further investigation into 
+the relationship between information loss, contextuality, and effective geometry.
+
+Within this framework, black holes may be interpreted as systems whose admissible 
+event structure collapses to an extremely coarse, effectively trivial sigma algebra. 
+Such a perspective may offer new insights into the informational aspects of quantum 
+gravity, without presupposing a fundamental spacetime background.
+\subsection{Cosmological constant}
+In standard general relativity, the cosmological constant $\Lambda$ appears as a fixed
+background parameter, commonly interpreted as vacuum energy or large-scale spacetime
+curvature. In RIF, by contrast, spacetime itself is not fundamental; large-scale geometry 
+is descriptive, emerging from accumulated interactions across the cosmic network.
+
+From this perspective, $\Lambda$ can be interpreted as a measure of the aggregate effect 
+of asymmetric coarse-graining at cosmological scales. The universe is dominated by 
+highly coarse-grained, interaction-stable structures, and their cumulative 
+imbalance produces an effective expansion tendency in geometric descriptions. It is 
+this tendency that $\Lambda$ parametrizes.
+
+Because coarse-graining in RIF is historical and cumulative, the effective value 
+of $\Lambda$ need not be strictly constant. As interactions proceed and contextual incompatibilities are resolved at different rates across regions of the universe, the 
+net asymmetry may evolve slowly over cosmic time. This suggests a natural avenue 
+for exploring departures from strict constancy without introducing new fundamental fields 
+or background structure.
+\section{Conclusion}
+In this work we introduced the \textbf{Relativity of Information Frames(RIF)} as a structural
+principle governing the joint description of interacting systems. Information frames were
+treated as the primary ontic objects, with physical admissibility determined not by
+dynamics or collapse postulates, but by the absence of privileged perspectives under
+interaction.
+
+Using measure-theoretic tools and contextuality theory, we showed that enforcing RIF leads
+naturally to a distinguished coarse-grained event structure-the \textbf{pointer algebra}-
+which is maximal among $\sigma$-algebras admitting consistent probability measures across
+frames. This result reframes the apperance of probabilistic behavior not as a fundamental
+feature of nature, but as an emergent consequence of necessary coarse-graining imposed by
+incompatible informational perspectives.
+
+The framework clarifies the relatinship between contextuality, probability, and measurement.
+Events are not assumed to possess global meaning independent of interaction; rather, joint
+descriptions arise only through compatible embeddings of frame-specific event structures.
+When such compatibility fails, probability measures appear as bookkepping devices encoding
+unavoidable loss of distinction. In this sense, probabilistic collapse is not a physical
+process in time, but a structural feature of interaction.
+
+Within this setting, unitary evolution emerges as a gauge symmetry associated with relational
+re-descriptions, rather than as a fundamental dynamical law. Temporal ordering and 
+irreversibility arise only once coarse-graining is imposed, suggesting that time itself
+is an emergent notion tied to interaction and information loss. This perspective allows
+standard quantum phenomena-including incompatible measurements, Born-rule statistics,
+and Wigner-type scenarios-to be consistently represented without invoking observer-dependent
+collapse or hidden ontic states.
+
+We emphasize that the results presented here are \textbf{structural rather than dynamical}.
+No specific Hamiltonians, equations of motion, or quantitative predictions are derived.
+Instead, the contribution of this work lies in isolating a minimal and physically natural
+principle-non-privilege of informational perspectives-and exploring its consequences at
+the level of event structure and probability.
+
+The framework suggests several directions for future research. These include a full 
+reconstruction of Hilbert-space quantum theory from RIF principles, a systematic study
+of emergent temporal and causal structures, and a deeper investigation into how classicality,
+chaos, and effective forces arise from compatibility regimes of information frames. More
+broadly, RIF offers a unifying language in which quantum measurement, contextuality, and
+probabilistic reasoning appear as aspects of a single structural constraint on physical
+description.
+
+Whether RIF ultimately serves as a foundation for quantum theory or as a clarifying 
+reformulation of its conceptual core, it provides a concrete framework in which long-standing
+interpretational tensions can be addressed without adding ad hoc dynamics or ontological
+assumptions. The extent to which this perspective can be extended or experimentally 
+constrained remains an open and promising question.
 \phantomsection
 \addcontentsline{toc}{section}{References}
 \begin{thebibliography}{9}
@@ -1549,20 +2047,50 @@ how this framework maps to standard Quantum Mechanics.
 D. Williams,  
 \textit{Probability with Martingales},  
 Cambridge University Press, 1991.
-
-\bibitem{Pollard2002}
-D. Pollard,  
-\textit{A User’s Guide to Measure-Theoretic Probability},  
-Cambridge University Press, 2002. 
-\bibitem{Kallenberg}
-O. Kallenberg,  
-\textit{Foundations of Modern Probability},  
-Springer, 2002.
-\bibitem{Csiszar}
-I. Csiszár,
-\textit{Information-type measures of difference of probability distributions and indirect observation},  
-Studia Sci. Math. Hungarica, 1967.
-
+\bibitem{Abramsky&Brandenburger}
+S.~Abramsky and A.~Brandenburger,
+\textit{The sheaf-theoretic structure of non-locality and contextuality,},  
+\emph{New J. \ Phys.} \textbf{13},
+113036 (2011),
+\href{https://arxiv.org/abs/1102.0264}{arXiv:1102.0264 [quant-ph]}.
+\bibitem{KochenSpecker}
+S.~Kochen and E.~P.~Specker,
+\textit{The problem of hidden variables in quantum mechanics},  
+\emph{J. \ Math. \ Mech.} \textbf{17},
+58--87 (1967).
+\bibitem{CaratheodoryExtension}
+C.~Carath\'eodory
+\textit{Uber das lineare Ma\ss\ von Punktmengen -- eine Verallgemeinerung des 
+L\"angenbegriffs},  
+\emph{Nachr.\ Ges.\ Wiss.\ G\"ottingen, Math.-Phys.\ K1.},
+404--426 (1914).
+\bibitem{Billingsley}
+P.~Billingsley
+\textit{Probability and Measure},  
+3rd ed., Wiley, New York (1995).
+\bibitem{Piron}
+C.~Piron,
+\emph{Foundations of Quantum Physics},
+W.\ A.\ Benjamin, Reading, MA (1976)
+M.~P.~Sol\`er,
+\textit{Characterization of Hilbert spaces by orthomodular spaces},  
+\emph{Commun.\ Algebra} \textbf{23},
+219--243 (1995).
+\bibitem{Soler}
+M.~P.~Sol\`er,
+\textit{Characterization of Hilbert spaces by orthomodular spaces},  
+\emph{Commun.\ Algebra} \textbf{23},
+219--243 (1995).
+\bibitem{Stone}
+M.~H.~Stone,
+\textit{On one-parameter unitary groups in Hilbert space},  
+\emph{Ann.\ Math.} \textbf{33},
+643--648 (1932).
+\bibitem{Stern-Gerlach}
+W.~Gerlach and O.~Stern,
+\textit{Der experimentelle Nachweis der Richtungsquantelung im Magnetfeld},  
+\emph{Z.\ Phys.} \textbf{9},
+349--352 (1922).
 \end{thebibliography}
 \end{document}
 

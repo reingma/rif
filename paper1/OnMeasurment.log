@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2025.2.1)  31 DEC 2025 16:10
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2025.2.1)  3 JAN 2026 06:10
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -365,7 +365,9 @@ Package: thm-restate 2023/05/04 v0.76
 ) (/usr/local/texlive/2024/texmf-dist/tex/latex/thmtools/thm-amsthm.sty
 Package: thm-amsthm 2023/05/04 v0.76
 \thmt@style@headstyle=\toks34
-)) (/usr/local/texlive/2024/texmf-dist/tex/latex/hyperref/hyperref.sty
+)) (/usr/local/texlive/2024/texmf-dist/tex/latex/placeins/placeins.sty
+Package: placeins 2005/04/18  v 2.2
+) (/usr/local/texlive/2024/texmf-dist/tex/latex/hyperref/hyperref.sty
 Package: hyperref 2024-11-05 v7.01l Hypertext links for LaTeX
  (/usr/local/texlive/2024/texmf-dist/tex/generic/pdfescape/pdfescape.sty
 Package: pdfescape 2019/12/09 v1.15 Implements pdfTeX's escape features (HO)
@@ -375,12 +377,12 @@ Package: hycolor 2020-01-27 v1.10 Color options for hyperref/bookmark (HO)
 Package: nameref 2023-11-26 v2.56 Cross-referencing by name of section
  (/usr/local/texlive/2024/texmf-dist/tex/latex/refcount/refcount.sty
 Package: refcount 2019/12/15 v3.6 Data extraction from label references (HO)
-) (/usr/local/texlive/2024/texmf-dist/tex/generic/gettitlestring/gettitlestring.sty
+)
+(/usr/local/texlive/2024/texmf-dist/tex/generic/gettitlestring/gettitlestring.sty
 Package: gettitlestring 2019/12/15 v1.6 Cleanup title references (HO)
 )
 \c@section@level=\count304
-)
-(/usr/local/texlive/2024/texmf-dist/tex/generic/stringenc/stringenc.sty
+) (/usr/local/texlive/2024/texmf-dist/tex/generic/stringenc/stringenc.sty
 Package: stringenc 2019/11/29 v1.12 Convert strings between diff. encodings (HO)
 )
 \@linkdim=\dimen173
@@ -473,33 +475,52 @@ Package cleveref Info: include cross-reference names in hyperlinks on input line
 ) (/usr/local/texlive/2024/texmf-dist/tex/latex/jknapltx/mathrsfs.sty
 Package: mathrsfs 1996/01/01 Math RSFS package v1.0 (jk)
 \symrsfs=\mathgroup6
+) (/usr/local/texlive/2024/texmf-dist/tex/latex/tools/tabularx.sty
+Package: tabularx 2023/12/11 v2.12a `tabularx' package (DPC)
+ (/usr/local/texlive/2024/texmf-dist/tex/latex/tools/array.sty
+Package: array 2024/10/17 v2.6g Tabular extension package (FMi)
+\col@sep=\dimen177
+\ar@mcellbox=\box61
+\extrarowheight=\dimen178
+\NC@list=\toks35
+\extratabsurround=\skip128
+\backup@length=\skip129
+\ar@cellbox=\box62
 )
-\c@theorem=\count316
+\TX@col@width=\dimen179
+\TX@old@table=\dimen180
+\TX@old@col=\dimen181
+\TX@target=\dimen182
+\TX@delta=\dimen183
+\TX@cols=\count316
+\TX@ftn=\toks36
+)
+\c@theorem=\count317
  (/usr/local/texlive/2024/texmf-dist/tex/latex/setspace/setspace.sty
 Package: setspace 2022/12/04 v6.7b set line spacing
 )
-\c@axiom=\count317
+\c@axiom=\count318
  (./OnMeasurment.aux)
 \openout1 = `OnMeasurment.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 51.
-LaTeX Font Info:    ... okay on input line 51.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 51.
-LaTeX Font Info:    ... okay on input line 51.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 51.
-LaTeX Font Info:    ... okay on input line 51.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 51.
-LaTeX Font Info:    ... okay on input line 51.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 51.
-LaTeX Font Info:    ... okay on input line 51.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 51.
-LaTeX Font Info:    ... okay on input line 51.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 51.
-LaTeX Font Info:    ... okay on input line 51.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 51.
-LaTeX Font Info:    ... okay on input line 51.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 51.
-LaTeX Font Info:    ... okay on input line 51.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 55.
+LaTeX Font Info:    ... okay on input line 55.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 55.
+LaTeX Font Info:    ... okay on input line 55.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 55.
+LaTeX Font Info:    ... okay on input line 55.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 55.
+LaTeX Font Info:    ... okay on input line 55.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 55.
+LaTeX Font Info:    ... okay on input line 55.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 55.
+LaTeX Font Info:    ... okay on input line 55.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 55.
+LaTeX Font Info:    ... okay on input line 55.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 55.
+LaTeX Font Info:    ... okay on input line 55.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 55.
+LaTeX Font Info:    ... okay on input line 55.
 
 *geometry* driver: auto-detecting
 *geometry* detected driver: pdftex
@@ -537,59 +558,59 @@ LaTeX Font Info:    ... okay on input line 51.
 
 (/usr/local/texlive/2024/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count318
-\scratchdimen=\dimen177
-\scratchbox=\box61
-\nofMPsegments=\count319
-\nofMParguments=\count320
-\everyMPshowfont=\toks35
-\MPscratchCnt=\count321
-\MPscratchDim=\dimen178
-\MPnumerator=\count322
-\makeMPintoPDFobject=\count323
-\everyMPtoPDFconversion=\toks36
+\scratchcounter=\count319
+\scratchdimen=\dimen184
+\scratchbox=\box63
+\nofMPsegments=\count320
+\nofMParguments=\count321
+\everyMPshowfont=\toks37
+\MPscratchCnt=\count322
+\MPscratchDim=\dimen185
+\MPnumerator=\count323
+\makeMPintoPDFobject=\count324
+\everyMPtoPDFconversion=\toks38
 )
-LaTeX Info: Redefining \microtypecontext on input line 51.
-Package microtype Info: Applying patch `item' on input line 51.
-Package microtype Info: Applying patch `toc' on input line 51.
-Package microtype Info: Applying patch `eqnum' on input line 51.
+LaTeX Info: Redefining \microtypecontext on input line 55.
+Package microtype Info: Applying patch `item' on input line 55.
+Package microtype Info: Applying patch `toc' on input line 55.
+Package microtype Info: Applying patch `eqnum' on input line 55.
 
 
-Package microtype Warning: Unable to apply patch `footnote' on input line 51.
+Package microtype Warning: Unable to apply patch `footnote' on input line 55.
 
-Package microtype Info: Applying patch `verbatim' on input line 51.
-LaTeX Info: Redefining \microtypesetup on input line 51.
+Package microtype Info: Applying patch `verbatim' on input line 55.
+LaTeX Info: Redefining \microtypesetup on input line 55.
 Package microtype Info: Generating PDF output.
 Package microtype Info: Character protrusion enabled (level 2).
 Package microtype Info: Using default protrusion set `alltext'.
 Package microtype Info: Automatic font expansion enabled (level 2),
 (microtype)             stretch: 20, shrink: 20, step: 1, non-selected.
 Package microtype Info: Using default expansion set `alltext-nott'.
-LaTeX Info: Redefining \showhyphens on input line 51.
+LaTeX Info: Redefining \showhyphens on input line 55.
 Package microtype Info: No adjustment of tracking.
 Package microtype Info: No adjustment of interword spacing.
 Package microtype Info: No adjustment of character kerning.
 (/usr/local/texlive/2024/texmf-dist/tex/latex/microtype/mt-cmr.cfg
 File: mt-cmr.cfg 2013/05/19 v2.2 microtype config. file: Computer Modern Roman (RS)
 )
-Package hyperref Info: Link coloring OFF on input line 51.
+Package hyperref Info: Link coloring OFF on input line 55.
  (./OnMeasurment.out) (./OnMeasurment.out)
 \@outlinefile=\write3
 \openout3 = `OnMeasurment.out'.
 
-LaTeX Font Info:    Trying to load font information for U+msa on input line 53.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 57.
  (/usr/local/texlive/2024/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 ) (/usr/local/texlive/2024/texmf-dist/tex/latex/microtype/mt-msa.cfg
 File: mt-msa.cfg 2006/02/04 v1.1 microtype config. file: AMS symbols (a) (RS)
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 53.
+LaTeX Font Info:    Trying to load font information for U+msb on input line 57.
  (/usr/local/texlive/2024/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 ) (/usr/local/texlive/2024/texmf-dist/tex/latex/microtype/mt-msb.cfg
 File: mt-msb.cfg 2005/06/01 v1.0 microtype config. file: AMS symbols (b) (RS)
 )
-LaTeX Font Info:    Trying to load font information for U+rsfs on input line 53.
+LaTeX Font Info:    Trying to load font information for U+rsfs on input line 57.
  (/usr/local/texlive/2024/texmf-dist/tex/latex/jknapltx/ursfs.fd
 File: ursfs.fd 1998/03/24 rsfs font definition file (jk)
 )
@@ -604,125 +625,91 @@ Package microtype Info: Loading generic protrusion settings for font family
 {/usr/local/texlive/2024/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 151.
-
-
-Package mdframed Warning: You got a bad break
-(mdframed)                because the last box will be empty
-(mdframed)                you have to change it manually
-(mdframed)                by changing the text, the space
-(mdframed)                or something else on input line 158.
-
+(mdframed)              on input line 156.
+Package mdframed Info: Not enough space on this page on input line 163.
 
 
 [2{/usr/local/texlive/2024/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc}]
-Package hyperref Info: bookmark level for unknown definition defaults to 0 on input line 193.
+Package mdframed Info: Not enough space on this page on input line 163.
+Package hyperref Info: bookmark level for unknown definition defaults to 0 on input line 198.
 
 
 [3]
 
 [4]
 
-LaTeX Warning: Citation `Abramsky&Brandenburger' on page 5 undefined on input line 307.
-
-
-
 [5]
 
 [6]
 
 [7]
-
-LaTeX Warning: Citation `Abramsky&Brandenburger' on page 8 undefined on input line 450.
-
-
-LaTeX Warning: Citation `Abramsky&Brandenburger' on page 8 undefined on input line 451.
-
-
-LaTeX Warning: Citation `Abramsky&Brandenburger' on page 8 undefined on input line 464.
-
-
 pdfTeX warning (ext4): destination with the same identifier (name{definition.1}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.470 \begin{definition}[Information Frame]
+l.475 \begin{definition}[Information Frame]
                                            \label{def:info-frame}
 
 [8]
 pdfTeX warning (ext4): destination with the same identifier (name{definition.2}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.502 \begin{definition}[Shared Event]
+l.507 \begin{definition}[Shared Event]
                                       \label{def:shared-event}
 pdfTeX warning (ext4): destination with the same identifier (name{definition.3}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.533 \begin{definition}[Structural Contextuality]
+l.538 \begin{definition}[Structural Contextuality]
                                                   \label{def:struc-context}
 
 [9]
-
-LaTeX Warning: Citation `Abramsky&Brandenburger' on page 10 undefined on input line 565.
-
-
-LaTeX Warning: Citation `Kochen-Specker' on page 10 undefined on input line 567.
-
-
 
 [10]
 pdfTeX warning (ext4): destination with the same identifier (name{definition.1}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.602 \begin{definition}[Joint Frame]
+l.607 \begin{definition}[Joint Frame]
                                      \label{def:joint-frame}
 pdfTeX warning (ext4): destination with the same identifier (name{definition.2}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.636 \begin{definition}[Local Perspective Maps]
+l.641 \begin{definition}[Local Perspective Maps]
                                                 \label{def:local-per}
 
 [11]
-Package hyperref Info: bookmark level for unknown proposition defaults to 0 on input line 659.
-Package hyperref Info: bookmark level for unknown remark defaults to 0 on input line 669.
+Package hyperref Info: bookmark level for unknown proposition defaults to 0 on input line 664.
+Package hyperref Info: bookmark level for unknown remark defaults to 0 on input line 674.
 
 pdfTeX warning (ext4): destination with the same identifier (name{definition.5}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.677 \begin{definition}[Privilege]
+l.682 \begin{definition}[Privilege]
                                    \label{def:privilege}
-Package hyperref Info: bookmark level for unknown axiom defaults to 0 on input line 701.
+Package hyperref Info: bookmark level for unknown axiom defaults to 0 on input line 706.
 
 
 [12]
 pdfTeX warning (ext4): destination with the same identifier (name{definition.7}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.746 \begin{definition}[Frame Pointer Algebra]
+l.751 \begin{definition}[Frame Pointer Algebra]
                                                \label{def:frame-pointer-alge...
 pdfTeX warning (ext4): destination with the same identifier (name{definition.8}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.758 \begin{definition}[Pointer Algebra]
+l.763 \begin{definition}[Pointer Algebra]
                                          \label{def:pointer-algebra}
 
 [13]
 
 [14]
-Package hyperref Info: bookmark level for unknown lemma defaults to 0 on input line 858.
-
-
-LaTeX Warning: Reference `Catheodory' on page 1 undefined on input line 885.
-
+Package hyperref Info: bookmark level for unknown lemma defaults to 0 on input line 863.
 
 
 [15]
-Package hyperref Info: bookmark level for unknown theorem defaults to 0 on input line 920.
+Package hyperref Info: bookmark level for unknown theorem defaults to 0 on input line 925.
 
 
 [16]
-
-LaTeX Warning: Citation `Piron' on page 17 undefined on input line 987.
-
 Package microtype Info: Loading generic protrusion settings for font family
 (microtype)             `cmss' (encoding: OT1).
 (microtype)             For optimal results, create family-specific settings.
@@ -735,17 +722,9 @@ Package microtype Info: Loading generic protrusion settings for font family
 
 [19]
 
-LaTeX Warning: Citation `Stern-Gerlach' on page 20 undefined on input line 1130.
-
-
-
 [20]
 
 [21]
-
-Package amsfonts Warning: Obsolete command \bold; \mathbf should be used instead on input line 1232.
-
-
 
 [22]
 
@@ -757,39 +736,64 @@ Package amsfonts Warning: Obsolete command \bold; \mathbf should be used instead
 
 [26]
 
-LaTeX Warning: Citation `Abramsky&Brandenburger' on page 27 undefined on input line 1463.
-
-
-
 [27]
 
 [28]
 
-[29] (./OnMeasurment.aux)
+[29]
+
+[30]
+Overfull \hbox (2.38397pt too wide) in paragraph at lines 1655--1660
+\OT1/cmr/m/n/10.95 (-20) If prob-a-bil-ity as-sign-ments on pointer al-ge-bras are rep-re-sented in an information-geometric space|such
+ []
+
+
+
+[31]
+Overfull \hbox (5.01488pt too wide) in paragraph at lines 1812--1812
+\OT1/cmr/m/n/10.95 (-20) ence/normative 
+ []
+
+
+LaTeX Warning: Float too large for page by 8.10347pt on input line 1813.
+
+
+
+[32]
+
+[33]
+
+[34
+
+]
+
+[35]
+
+[36]
+
+[37]
+
+[38] (./OnMeasurment.aux)
  ***********
 LaTeX2e <2024-11-01> patch level 2
 L3 programming layer <2025-01-18>
  ***********
-
-
-LaTeX Warning: There were undefined references.
-
 Package rerunfilecheck Info: File `OnMeasurment.out' has not changed.
-(rerunfilecheck)             Checksum: CEF5274C4309CA8B886892BB04F14C0B;6315.
+(rerunfilecheck)             Checksum: 7F434E7BCAF417AED05622C133614882;8472.
  ) 
 Here is how much of TeX's memory you used:
- 16905 strings out of 473795
- 279802 string characters out of 5727276
- 750429 words of memory out of 5000000
- 39460 multiletter control sequences out of 15000+600000
- 581483 words of font info for 213 fonts, out of 8000000 for 9000
+ 17128 strings out of 473795
+ 283358 string characters out of 5727276
+ 759573 words of memory out of 5000000
+ 39631 multiletter control sequences out of 15000+600000
+ 582146 words of font info for 221 fonts, out of 8000000 for 9000
  695 hyphenation exceptions out of 8191
- 79i,8n,93p,1009b,701s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 79i,10n,93p,1009b,701s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmbxti10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmss10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmti8.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt12.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/rsfs/rsfs10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/cm-super/sfrm1095.pfb>
-Output written on OnMeasurment.pdf (29 pages, 358020 bytes).
+Output written on OnMeasurment.pdf (38 pages, 399436 bytes).
 PDF statistics:
- 601 PDF objects out of 1000 (max. 8388607)
- 518 compressed objects within 6 object streams
- 207 named destinations out of 1000 (max. 500000)
- 52025 words of extra memory for PDF output out of 61914 (max. 10000000)
+ 710 PDF objects out of 1000 (max. 8388607)
+ 617 compressed objects within 7 object streams
+ 233 named destinations out of 1000 (max. 500000)
+ 52081 words of extra memory for PDF output out of 61914 (max. 10000000)
 

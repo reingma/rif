@@ -1,5 +1,5 @@
 # Fdb version 4
-["pdflatex"] 1767193820.97808 "OnMeasurment.tex" "OnMeasurment.pdf" "OnMeasurment" 1767193821.69576 0
+["pdflatex"] 1767417023.51148 "OnMeasurment.tex" "OnMeasurment.pdf" "OnMeasurment" 1767417024.28613 0
   "/usr/local/texlive/2024/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc" 1136849721 2900 1537cc8184ad1792082cd229ecc269f4 ""
   "/usr/local/texlive/2024/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "/usr/local/texlive/2024/texmf-dist/fonts/tfm/jknappen/ec/tcrm1095.tfm" 1136768653 1536 02c06700a42be0f5a28664c7273f82e7 ""
@@ -125,6 +125,7 @@
   "/usr/local/texlive/2024/texmf-dist/tex/latex/microtype/mt-msb.cfg" 1711748042 5594 8fda8f8cdec9bc22efbe5b6131c207e1 ""
   "/usr/local/texlive/2024/texmf-dist/tex/latex/needspace/needspace.sty" 1364856750 852 0e34dbb72efc69fa07602405ad95585e ""
   "/usr/local/texlive/2024/texmf-dist/tex/latex/physics/physics.sty" 1356048875 29610 a9597219b282d9c78b02393dcd7d4322 ""
+  "/usr/local/texlive/2024/texmf-dist/tex/latex/placeins/placeins.sty" 1137110565 4087 636308456f60d2b31cbf97867db5708d ""
   "/usr/local/texlive/2024/texmf-dist/tex/latex/preprint/authblk.sty" 1368488610 7016 985a983ce041cc8959cd31133cba0244 ""
   "/usr/local/texlive/2024/texmf-dist/tex/latex/refcount/refcount.sty" 1576624809 9878 9e94e8fa600d95f9c7731bb21dfb67a4 ""
   "/usr/local/texlive/2024/texmf-dist/tex/latex/rerunfilecheck/rerunfilecheck.sty" 1657483315 9714 ba3194bd52c8499b3f1e3eb91d409670 ""
@@ -138,6 +139,8 @@
   "/usr/local/texlive/2024/texmf-dist/tex/latex/thmtools/thm-patch.sty" 1683232183 6878 1730928da9b392ec6c2f6b0e2273b4b9 ""
   "/usr/local/texlive/2024/texmf-dist/tex/latex/thmtools/thm-restate.sty" 1683232183 8051 10018eb9c2d166333bfceb517a425f4d ""
   "/usr/local/texlive/2024/texmf-dist/tex/latex/thmtools/thmtools.sty" 1683232183 1913 873bc7fbf18d7dd934dc3a6cc156472e ""
+  "/usr/local/texlive/2024/texmf-dist/tex/latex/tools/array.sty" 1730496337 14552 27664839421e418b87f56fa4c6f66b1a ""
+  "/usr/local/texlive/2024/texmf-dist/tex/latex/tools/tabularx.sty" 1717359999 7243 e5dac1240636811edb77568b81818372 ""
   "/usr/local/texlive/2024/texmf-dist/tex/latex/url/url.sty" 1388531844 12796 8edb7d69a20b857904dd0ea757c14ec9 ""
   "/usr/local/texlive/2024/texmf-dist/tex/latex/xcolor/xcolor.sty" 1727642399 55384 b454dec21c2d9f45ec0b793f0995b992 ""
   "/usr/local/texlive/2024/texmf-dist/tex/latex/zref/zref-abspage.sty" 1694723124 2269 4fe6fb3396214c91f164d45faf9bec45 ""
@@ -146,9 +149,9 @@
   "/usr/local/texlive/2024/texmf-var/fonts/map/pdftex/updmap/pdftex.map" 1738446539 5413271 2de48ba2042d69ba85dad6587c95396e ""
   "/usr/local/texlive/2024/texmf-var/web2c/pdftex/pdflatex.fmt" 1738446647 3239474 77641216d98f51c6d08a0105f3b8a5ad ""
   "/usr/local/texlive/2024/texmf.cnf" 1738446536.40057 455 5b996dcaa0eb4ef14a83b026bc0a008c ""
-  "OnMeasurment.aux" 1767193821.64053 15988 c85b4b25214018befd3f307faef22ea7 "pdflatex"
-  "OnMeasurment.out" 1767193821.64074 6315 cef5274c4309ca8b886892bb04f14c0b "pdflatex"
-  "OnMeasurment.tex" 1767193819.07575 78857 b390cd797ca0644c6cb11a2b344f3366 ""
+  "OnMeasurment.aux" 1767417024.22916 18280 27889ed0b37e532a75624afb68b4dc0e "pdflatex"
+  "OnMeasurment.out" 1767417024.2309 8472 7f434e7bcaf417aed05622c133614882 "pdflatex"
+  "OnMeasurment.tex" 1767417021.80818 111766 b22a5d80b62f96f56b6ce19c07847a06 ""
   (generated)
   "OnMeasurment.aux"
   "OnMeasurment.log"
