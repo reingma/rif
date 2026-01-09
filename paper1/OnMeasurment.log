@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2025.2.1)  3 JAN 2026 06:10
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2025.2.1)  9 JAN 2026 21:52
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -625,13 +625,13 @@ Package microtype Info: Loading generic protrusion settings for font family
 {/usr/local/texlive/2024/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 156.
-Package mdframed Info: Not enough space on this page on input line 163.
+(mdframed)              on input line 157.
+Package mdframed Info: Not enough space on this page on input line 164.
 
 
 [2{/usr/local/texlive/2024/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc}]
-Package mdframed Info: Not enough space on this page on input line 163.
-Package hyperref Info: bookmark level for unknown definition defaults to 0 on input line 198.
+Package mdframed Info: Not enough space on this page on input line 164.
+Package hyperref Info: bookmark level for unknown definition defaults to 0 on input line 199.
 
 
 [3]
@@ -646,19 +646,19 @@ Package hyperref Info: bookmark level for unknown definition defaults to 0 on in
 pdfTeX warning (ext4): destination with the same identifier (name{definition.1}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.475 \begin{definition}[Information Frame]
+l.476 \begin{definition}[Information Frame]
                                            \label{def:info-frame}
 
 [8]
 pdfTeX warning (ext4): destination with the same identifier (name{definition.2}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.507 \begin{definition}[Shared Event]
+l.508 \begin{definition}[Shared Event]
                                       \label{def:shared-event}
 pdfTeX warning (ext4): destination with the same identifier (name{definition.3}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.538 \begin{definition}[Structural Contextuality]
+l.539 \begin{definition}[Structural Contextuality]
                                                   \label{def:struc-context}
 
 [9]
@@ -667,46 +667,46 @@ l.538 \begin{definition}[Structural Contextuality]
 pdfTeX warning (ext4): destination with the same identifier (name{definition.1}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.607 \begin{definition}[Joint Frame]
+l.608 \begin{definition}[Joint Frame]
                                      \label{def:joint-frame}
 pdfTeX warning (ext4): destination with the same identifier (name{definition.2}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.641 \begin{definition}[Local Perspective Maps]
+l.642 \begin{definition}[Local Perspective Maps]
                                                 \label{def:local-per}
 
 [11]
-Package hyperref Info: bookmark level for unknown proposition defaults to 0 on input line 664.
-Package hyperref Info: bookmark level for unknown remark defaults to 0 on input line 674.
+Package hyperref Info: bookmark level for unknown proposition defaults to 0 on input line 665.
+Package hyperref Info: bookmark level for unknown remark defaults to 0 on input line 675.
 
 pdfTeX warning (ext4): destination with the same identifier (name{definition.5}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.682 \begin{definition}[Privilege]
+l.683 \begin{definition}[Privilege]
                                    \label{def:privilege}
-Package hyperref Info: bookmark level for unknown axiom defaults to 0 on input line 706.
+Package hyperref Info: bookmark level for unknown axiom defaults to 0 on input line 707.
 
 
 [12]
 pdfTeX warning (ext4): destination with the same identifier (name{definition.7}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.751 \begin{definition}[Frame Pointer Algebra]
+l.752 \begin{definition}[Frame Pointer Algebra]
                                                \label{def:frame-pointer-alge...
 pdfTeX warning (ext4): destination with the same identifier (name{definition.8}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.763 \begin{definition}[Pointer Algebra]
+l.764 \begin{definition}[Pointer Algebra]
                                          \label{def:pointer-algebra}
 
 [13]
 
 [14]
-Package hyperref Info: bookmark level for unknown lemma defaults to 0 on input line 863.
+Package hyperref Info: bookmark level for unknown lemma defaults to 0 on input line 864.
 
 
 [15]
-Package hyperref Info: bookmark level for unknown theorem defaults to 0 on input line 925.
+Package hyperref Info: bookmark level for unknown theorem defaults to 0 on input line 926.
 
 
 [16]
@@ -743,19 +743,19 @@ Package microtype Info: Loading generic protrusion settings for font family
 [29]
 
 [30]
-Overfull \hbox (2.38397pt too wide) in paragraph at lines 1655--1660
+Overfull \hbox (2.38397pt too wide) in paragraph at lines 1656--1661
 \OT1/cmr/m/n/10.95 (-20) If prob-a-bil-ity as-sign-ments on pointer al-ge-bras are rep-re-sented in an information-geometric space|such
  []
 
 
 
 [31]
-Overfull \hbox (5.01488pt too wide) in paragraph at lines 1812--1812
+Overfull \hbox (5.01488pt too wide) in paragraph at lines 1813--1813
 \OT1/cmr/m/n/10.95 (-20) ence/normative 
  []
 
 
-LaTeX Warning: Float too large for page by 8.10347pt on input line 1813.
+LaTeX Warning: Float too large for page by 8.10347pt on input line 1814.
 
 
 
@@ -770,30 +770,38 @@ LaTeX Warning: Float too large for page by 8.10347pt on input line 1813.
 [35]
 
 [36]
+Underfull \hbox (badness 10000) in paragraph at lines 1996--1996
+[]|\OT1/cmr/m/n/10 (+20) Inferred
+ []
+
+
 
 [37]
 
-[38] (./OnMeasurment.aux)
+[38]
+
+[39] (./OnMeasurment.aux)
  ***********
 LaTeX2e <2024-11-01> patch level 2
 L3 programming layer <2025-01-18>
  ***********
 Package rerunfilecheck Info: File `OnMeasurment.out' has not changed.
-(rerunfilecheck)             Checksum: 7F434E7BCAF417AED05622C133614882;8472.
+(rerunfilecheck)             Checksum: A5987CDAFA8A03637E152A33D8469D84;8472.
  ) 
 Here is how much of TeX's memory you used:
- 17128 strings out of 473795
- 283358 string characters out of 5727276
+ 17174 strings out of 473795
+ 283919 string characters out of 5727276
  759573 words of memory out of 5000000
- 39631 multiletter control sequences out of 15000+600000
- 582146 words of font info for 221 fonts, out of 8000000 for 9000
+ 39646 multiletter control sequences out of 15000+600000
+ 584449 words of font info for 238 fonts, out of 8000000 for 9000
  695 hyphenation exceptions out of 8191
- 79i,10n,93p,1009b,701s stack positions out of 10000i,1000n,20000p,200000b,200000s
-</usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmbxti10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmss10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmti8.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt12.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/rsfs/rsfs10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/cm-super/sfrm1095.pfb>
-Output written on OnMeasurment.pdf (38 pages, 399436 bytes).
+ 79i,12n,93p,1009b,701s stack positions out of 10000i,1000n,20000p,200000b,200000s
+</usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmbxti10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmss10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmti8.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt12.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/rsfs/rsfs10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/cm-s
+uper/sfrm1095.pfb>
+Output written on OnMeasurment.pdf (39 pages, 426867 bytes).
 PDF statistics:
- 710 PDF objects out of 1000 (max. 8388607)
- 617 compressed objects within 7 object streams
- 233 named destinations out of 1000 (max. 500000)
- 52081 words of extra memory for PDF output out of 61914 (max. 10000000)
+ 738 PDF objects out of 1000 (max. 8388607)
+ 638 compressed objects within 7 object streams
+ 238 named destinations out of 1000 (max. 500000)
+ 62321 words of extra memory for PDF output out of 74296 (max. 10000000)
 
